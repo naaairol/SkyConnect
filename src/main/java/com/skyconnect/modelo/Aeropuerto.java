@@ -29,7 +29,9 @@ public class Aeropuerto {
     public String getPais() {
         return pais;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Aeropuerto{" + "codigoIATA=" + codigoIATA + ", nombre=" + nombre + ", ciudad=" + ciudad + ", pais=" + pais + '}';
+    }
 }

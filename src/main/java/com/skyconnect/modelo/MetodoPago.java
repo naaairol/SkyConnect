@@ -1,8 +1,9 @@
+
 package com.skyconnect.modelo;
 
-public class Pasaje {
+public interface MetodoPago {
     
-    private int idPasaje;
+
     
     
 }

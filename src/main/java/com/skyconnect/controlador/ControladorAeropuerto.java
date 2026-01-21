@@ -1,5 +1,6 @@
 package com.skyconnect.controlador;
 
-public class Ctr {
-    
+public class ControladorAeropuerto {
+
+
 }
