@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.skyconnect.vista;
+import java.awt.CardLayout;
+
 
 /**
  *
@@ -11,13 +13,59 @@ package com.skyconnect.vista;
 public class MainFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainFrame.class.getName());
-
+    private CardLayout cardLayout;
+    
+    // ===== VISTAS (UNA SOLA INSTANCIA) =====
+    private InicioView inicioView;
+    private LoginView loginView;
+    private BuscarVueloView buscarVueloView;
+    private ClaseVueloView claseVueloView;
+    private AsientosView asientosView;
+    private EquipajeExtraView equipajeExtraView;
+    private IniciarSesionView iniciarSesionView;
+    private CreacionUsuarioView creacionUsuarioView;
+    private PagoView pagoView;
     /**
      * Creates new form MainFrame
      */
     public MainFrame() {
         initComponents();
+        inicializarVistas();
     }
+    private void inicializarVistas() {
+
+    cardLayout = (CardLayout) PanelContenedor.getLayout();
+    
+    // Crear vistas (UNA SOLA VEZ)
+        inicioView = new InicioView();
+        buscarVueloView = new BuscarVueloView();
+        claseVueloView = new ClaseVueloView();
+        asientosView = new AsientosView();
+        equipajeExtraView = new EquipajeExtraView();
+        loginView = new LoginView();
+        iniciarSesionView = new IniciarSesionView();
+        creacionUsuarioView = new CreacionUsuarioView();
+        pagoView = new PagoView();
+        
+        // Agregar vistas al CardLayout
+        PanelContenedor.add(inicioView, "INICIO");
+        PanelContenedor.add(buscarVueloView, "BUSCAR");
+        PanelContenedor.add(claseVueloView, "CLASE");
+        PanelContenedor.add(asientosView, "ASIENTOS");
+        PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
+        PanelContenedor.add(loginView, "LOGIN");
+        PanelContenedor.add(iniciarSesionView, "INICIAR");
+        PanelContenedor.add(creacionUsuarioView, "CREAR");
+        PanelContenedor.add(pagoView, "PAGO");
+        
+        //Vista inicial 
+        mostrarVista("INICIO");
+}
+    
+   public void mostrarVista(String nombreVista) {
+    cardLayout.show(PanelContenedor, nombreVista);
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,17 +76,28 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelContenedor = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        PanelContenedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        PanelContenedor.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 536, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 474, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 449, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -70,5 +129,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PanelContenedor;
     // End of variables declaration//GEN-END:variables
 }

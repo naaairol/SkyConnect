@@ -322,7 +322,8 @@ public class InicioView extends javax.swing.JPanel {
     }//GEN-LAST:event_btnInSesionActionPerformed
 
     private void jbtnExplorarVuelosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExplorarVuelosActionPerformed
-        // TODO add your handling code here:
+            MainFrame frame = (MainFrame) javax.swing.SwingUtilities.getWindowAncestor(this);
+            frame.mostrarVista("BUSCAR");
     }//GEN-LAST:event_jbtnExplorarVuelosActionPerformed
 
 
