@@ -10,6 +10,7 @@ public class App {
 
     public static void main(String[] args) {
         
+        
         //En este punto se carga la informacion necesaria
         ArrayList<Aeropuerto> listaAeropuertos = new ArrayList<>();
         listaAeropuertos = AeropuertoDAO.cargarAeropuertos("resources/aeropuerto.txt");
@@ -19,11 +20,14 @@ public class App {
         SwingUtilities.invokeLater(() -> {
         MainFrame mainFrame = new MainFrame();
         mainFrame.setTitle("SkyConnect");
-        mainFrame.setLocationRelativeTo(null);
+        mainFrame.setLocationRelativeTo(null); 
         mainFrame.setVisible(true);
         });
         //Se despliega la vista
         //MainFrame ventanaInicio = new MainFrame();
         //ventanaInicio.setVisible(true);
+        
+        
+        
     }
 }

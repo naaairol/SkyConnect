@@ -6,5 +6,3 @@ GPS, Seymour, Galápagos, Ecuador
 PTY, Tocumen, Ciudad de Panamá, Panamá
 MIA, Miami International, Miami, Estados Unidos
 MAD, Adolfo Suárez Madrid-Barajas, Madrid, España
-AMS, Schiphol, Ámsterdam, Países Bajos
-

@@ -6,5 +6,8 @@ public class Visa extends Tarjeta implements MetodoPago {
         super(cc, fecha, cvv); 
     }
 
+    @Override
+    public void realizarPago(){
+    }
     
 }

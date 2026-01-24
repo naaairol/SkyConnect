@@ -6,4 +6,8 @@ public class Mastercard extends Tarjeta implements MetodoPago {
         super(cc, fecha, cvv);
     }
     
+    @Override
+    public void realizarPago(){
+    }
+    
 }
