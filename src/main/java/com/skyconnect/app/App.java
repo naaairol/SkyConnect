@@ -13,7 +13,7 @@ public class App {
         
         //En este punto se carga la informacion necesaria
         ArrayList<Aeropuerto> listaAeropuertos = new ArrayList<>();
-        listaAeropuertos = AeropuertoDAO.cargarAeropuertos("resources/aeropuerto.txt");
+        listaAeropuertos = AeropuertoDAO.cargarAeropuertos("src/main/java/Resources/aeropuerto.txt");
         System.out.println(listaAeropuertos);
         
         //Se inicializan las pestañas de las GUI creadas
@@ -26,7 +26,6 @@ public class App {
         //Se despliega la vista
         //MainFrame ventanaInicio = new MainFrame();
         //ventanaInicio.setVisible(true);
-        
         
         
     }
