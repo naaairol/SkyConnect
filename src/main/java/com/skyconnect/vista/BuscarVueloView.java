@@ -77,7 +77,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
         btnDestino.setText("DESTINO:");
 
         cmbxDestino.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbxDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una ciudad", "Guayaquil", "Cuenca", "Galápagos", "Bogotá", "Ciudad de Panamá", "Miami", "Madrid", "Ámsterdam" }));
+        cmbxDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una ciudad", "Guayaquil", "Cuenca", "Galápagos", "Bogotá", "Ciudad de Panamá", "Miami", "Madrid" }));
         cmbxDestino.setToolTipText("");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

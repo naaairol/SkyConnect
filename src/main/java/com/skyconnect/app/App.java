@@ -4,6 +4,7 @@ import com.skyconnect.modelo.*;
 import com.skyconnect.vista.*;
 import com.skyconnect.controlador.*;
 import java.util.ArrayList;
+import javax.swing.SwingUtilities;
 
 public class App {
 
@@ -14,7 +15,13 @@ public class App {
         listaAeropuertos = AeropuertoDAO.cargarAeropuertos("resources/aeropuerto.txt");
         System.out.println(listaAeropuertos);
         
-        
+        //Se inicializan las pestañas de las GUI creadas
+        SwingUtilities.invokeLater(() -> {
+        MainFrame mainFrame = new MainFrame();
+        mainFrame.setTitle("SkyConnect");
+        mainFrame.setLocationRelativeTo(null);
+        mainFrame.setVisible(true);
+        });
         //Se despliega la vista
         //MainFrame ventanaInicio = new MainFrame();
         //ventanaInicio.setVisible(true);
