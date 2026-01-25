@@ -21,6 +21,10 @@ public class App {
         listaAeropuertos = aeropuertoDAO.cargarAeropuertos("src/main/java/Resources/aeropuerto.txt");
         listaVuelos = vueloDAO.cargarVuelos("src/main/java/Resources/vuelos.txt", listaAeropuertos);
         
+            Vuelo c = listaVuelos.get(0);
+            System.out.println("Vuelo cargado: " + c.getNumeroVuelo());
+            System.out.println("Origen: " + c.getRuta().getAeroSalida().getNombre());
+            System.out.println("Precio: $" + c.getPrecioEstimado());
         /*
         //Se inicializan las pestañas de las GUI creadas
         SwingUtilities.invokeLater(() -> {
