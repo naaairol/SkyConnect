@@ -18,8 +18,8 @@ public class App {
         AeropuertoDAO aeropuertoDAO = new AeropuertoDAO();
         VueloDAO vueloDAO = new VueloDAO();
         
-        listaAeropuertos = aeropuertoDAO.cargarAeropuertos("src/main/java/Resources/aeropuerto.txt");
-        listaVuelos = vueloDAO.cargarVuelos("src/main/java/Resources/vuelos.txt", listaAeropuertos);
+        listaAeropuertos = aeropuertoDAO.cargarAeropuertos("database/aeropuerto.txt");
+        listaVuelos = vueloDAO.cargarVuelos("database/vuelos.txt", listaAeropuertos);
         
             Vuelo c = listaVuelos.get(0);
             System.out.println("Vuelo cargado: " + c.getNumeroVuelo());

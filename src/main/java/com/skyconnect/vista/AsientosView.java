@@ -13,7 +13,11 @@ public class AsientosView extends javax.swing.JPanel {
     /**
      * Creates new form AsientosView
      */
-    public AsientosView() {
+    private MainFrame mainFrame; 
+    // Constructor que inicializa la vista y permite la navegación entre pantallas
+    // a través del MainFrame usando CardLayout.
+    public AsientosView(MainFrame mainFrame) {
+        this.mainFrame = mainFrame; 
         initComponents();
     }
 
@@ -192,7 +196,6 @@ public class AsientosView extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jCheckBoxAgregarEquipajeExtra = new javax.swing.JCheckBox();
         jLabel4 = new javax.swing.JLabel();
-        btnInSesion1 = new javax.swing.JButton();
         jbtnSeleccionarConfirmarAsientos = new javax.swing.JButton();
 
         jLabel11.setText("2");
@@ -1344,10 +1347,6 @@ public class AsientosView extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Ecuador $ (USD) ");
 
-        btnInSesion1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnInSesion1.setText("Iniciar Sesion");
-        btnInSesion1.addActionListener(this::btnInSesion1ActionPerformed);
-
         jbtnSeleccionarConfirmarAsientos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jbtnSeleccionarConfirmarAsientos.setText("Seleccionar");
         jbtnSeleccionarConfirmarAsientos.addActionListener(this::jbtnSeleccionarConfirmarAsientosActionPerformed);
@@ -1363,8 +1362,6 @@ public class AsientosView extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnInSesion1)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jpPanelAvion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1398,7 +1395,6 @@ public class AsientosView extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInSesion1)
                     .addComponent(jLabel4))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1446,17 +1442,12 @@ public class AsientosView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAsientosSeleccionadosActionPerformed
 
-    private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInSesion1ActionPerformed
-
     private void jbtnSeleccionarConfirmarAsientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSeleccionarConfirmarAsientosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnSeleccionarConfirmarAsientosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnInSesion1;
     private javax.swing.JCheckBox jCheckBoxAgregarEquipajeExtra;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1526,10 +1517,6 @@ public class AsientosView extends javax.swing.JPanel {
     private javax.swing.JToggleButton jToggleButton132;
     private javax.swing.JToggleButton jToggleButton133;
     private javax.swing.JToggleButton jToggleButton134;
-    private javax.swing.JToggleButton jToggleButton135;
-    private javax.swing.JToggleButton jToggleButton136;
-    private javax.swing.JToggleButton jToggleButton137;
-    private javax.swing.JToggleButton jToggleButton138;
     private javax.swing.JToggleButton jToggleButton139;
     private javax.swing.JToggleButton jToggleButton140;
     private javax.swing.JToggleButton jToggleButton141;
@@ -1620,7 +1607,6 @@ public class AsientosView extends javax.swing.JPanel {
     private javax.swing.JButton jbtnPagarAsientosView;
     private javax.swing.JButton jbtnSeleccionarConfirmarAsientos;
     private javax.swing.JPanel jpPanelAvion1;
-    private javax.swing.JPanel jpPanelDerecho6;
     private javax.swing.JPanel jpPanelDerechoBusinessCl;
     private javax.swing.JPanel jpPanelDerechoEconomicCl;
     private javax.swing.JPanel jpPanelIzquierdoBussinesCl;

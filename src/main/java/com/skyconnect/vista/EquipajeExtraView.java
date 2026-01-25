@@ -13,7 +13,11 @@ public class EquipajeExtraView extends javax.swing.JPanel {
     /**
      * Creates new form EquipajeExtraView
      */
-    public EquipajeExtraView() {
+    private MainFrame mainFrame; 
+    // Constructor que inicializa la vista y permite la navegación entre pantallas
+    // a través del MainFrame usando CardLayout.
+    public EquipajeExtraView(MainFrame mainFrame) {
+        this.mainFrame = mainFrame; 
         initComponents();
     }
 

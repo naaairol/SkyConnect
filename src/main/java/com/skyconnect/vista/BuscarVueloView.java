@@ -13,7 +13,11 @@ public class BuscarVueloView extends javax.swing.JPanel {
     /**
      * Creates new form BuscarVueloView
      */
-    public BuscarVueloView() {
+    private MainFrame mainFrame; 
+    // Constructor que inicializa la vista y permite la navegación entre pantallas
+    // a través del MainFrame usando CardLayout.
+    public BuscarVueloView(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
         initComponents();
     }
 
@@ -27,6 +31,11 @@ public class BuscarVueloView extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel9 = new javax.swing.JLabel();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        jPopupMenu3 = new javax.swing.JPopupMenu();
+        jPopupMenu4 = new javax.swing.JPopupMenu();
+        jPopupMenu5 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         radBtnIdaVuelta = new javax.swing.JRadioButton();
         radBtnIda = new javax.swing.JRadioButton();
@@ -37,7 +46,6 @@ public class BuscarVueloView extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnInSesion1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -49,7 +57,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
         jSpinner7 = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
         jSpinner4 = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
+        jbtnSiguienteBuscarVuelo = new javax.swing.JButton();
         jdtFechaViaje = new com.toedter.calendar.JDateChooser();
         jdtFechaRetorno = new com.toedter.calendar.JDateChooser();
 
@@ -88,10 +96,6 @@ public class BuscarVueloView extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Ecuador $ (USD) ");
-
-        btnInSesion1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnInSesion1.setText("Iniciar Sesion");
-        btnInSesion1.addActionListener(this::btnInSesion1ActionPerformed);
 
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -163,9 +167,9 @@ public class BuscarVueloView extends javax.swing.JPanel {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Siguiente");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        jbtnSiguienteBuscarVuelo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbtnSiguienteBuscarVuelo.setText("Siguiente");
+        jbtnSiguienteBuscarVuelo.addActionListener(this::jbtnSiguienteBuscarVueloActionPerformed);
 
         jdtFechaViaje.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -204,12 +208,9 @@ public class BuscarVueloView extends javax.swing.JPanel {
                                     .addComponent(btnDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cmbxDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addComponent(jLabel1)
-                                            .addGap(31, 31, 31)
-                                            .addComponent(btnInSesion1))
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(jbtnSiguienteBuscarVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel1)))))))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -217,10 +218,8 @@ public class BuscarVueloView extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnInSesion1)
-                            .addComponent(jLabel1)))
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,7 +250,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(37, 37, 37)
-                .addComponent(jButton1)
+                .addComponent(jbtnSiguienteBuscarVuelo)
                 .addGap(34, 34, 34))
         );
 
@@ -282,22 +281,16 @@ public class BuscarVueloView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbxOrigenActionPerformed
 
-    private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInSesion1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jbtnSiguienteBuscarVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteBuscarVueloActionPerformed
+       
+    }//GEN-LAST:event_jbtnSiguienteBuscarVueloActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnDestino;
-    private javax.swing.JButton btnInSesion1;
     private javax.swing.JLabel btnOrigen;
     private javax.swing.JComboBox<String> cmbxDestino;
     private javax.swing.JComboBox<String> cmbxOrigen;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -310,10 +303,16 @@ public class BuscarVueloView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
+    private javax.swing.JPopupMenu jPopupMenu3;
+    private javax.swing.JPopupMenu jPopupMenu4;
+    private javax.swing.JPopupMenu jPopupMenu5;
     private javax.swing.JSpinner jSpinner4;
     private javax.swing.JSpinner jSpinner5;
     private javax.swing.JSpinner jSpinner6;
     private javax.swing.JSpinner jSpinner7;
+    private javax.swing.JButton jbtnSiguienteBuscarVuelo;
     private com.toedter.calendar.JDateChooser jdtFechaRetorno;
     private com.toedter.calendar.JDateChooser jdtFechaViaje;
     private javax.swing.JRadioButton radBtnIda;

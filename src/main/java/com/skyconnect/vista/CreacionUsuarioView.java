@@ -13,7 +13,11 @@ public class CreacionUsuarioView extends javax.swing.JPanel {
     /**
      * Creates new form CreacionUsuarioView
      */
-    public CreacionUsuarioView() {
+    private MainFrame mainFrame; 
+    // Constructor que inicializa la vista y permite la navegación entre pantallas
+    // a través del MainFrame usando CardLayout.
+    public CreacionUsuarioView(MainFrame mainFrame) {
+        this.mainFrame = mainFrame; 
         initComponents();
     }
 

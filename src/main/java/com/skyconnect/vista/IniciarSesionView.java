@@ -13,7 +13,11 @@ public class IniciarSesionView extends javax.swing.JPanel {
     /**
      * Creates new form IniciarSesionView
      */
-    public IniciarSesionView() {
+    private MainFrame mainFrame; 
+    // Constructor que inicializa la vista y permite la navegación entre pantallas
+    // a través del MainFrame usando CardLayout.
+    public IniciarSesionView(MainFrame mainFrame) {
+        this.mainFrame = mainFrame; 
         initComponents();
     }
 
@@ -39,7 +43,7 @@ public class IniciarSesionView extends javax.swing.JPanel {
         });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Usuario:");
+        jLabel3.setText("Correo electrónico:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("Contraseña:");
@@ -47,6 +51,11 @@ public class IniciarSesionView extends javax.swing.JPanel {
         btnIngresarUsuarioIniciarSesion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnIngresarUsuarioIniciarSesion.setText("Ingresar");
         btnIngresarUsuarioIniciarSesion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnIngresarUsuarioIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarUsuarioIniciarSesionActionPerformed(evt);
+            }
+        });
 
         jpasswordIngreseContraseñaIniciarS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -103,6 +112,10 @@ public class IniciarSesionView extends javax.swing.JPanel {
     private void txtfUsuarioIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfUsuarioIniciarSesionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtfUsuarioIniciarSesionActionPerformed
+
+    private void btnIngresarUsuarioIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarUsuarioIniciarSesionActionPerformed
+        mainFrame.mostrarVista("ASIENTOS");
+    }//GEN-LAST:event_btnIngresarUsuarioIniciarSesionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

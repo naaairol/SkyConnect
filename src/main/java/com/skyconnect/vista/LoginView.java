@@ -13,7 +13,11 @@ public class LoginView extends javax.swing.JPanel {
     /**
      * Creates new form LoginView
      */
-    public LoginView() {
+    private MainFrame mainFrame; 
+    // Constructor que inicializa la vista y permite la navegación entre pantallas
+    // a través del MainFrame usando CardLayout.
+    public LoginView(MainFrame mainFrame) {
+        this.mainFrame = mainFrame; 
         initComponents();
     }
 
@@ -41,10 +45,12 @@ public class LoginView extends javax.swing.JPanel {
         btnIniciarSesionLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnIniciarSesionLogin.setText("Iniciar Sesión");
         btnIniciarSesionLogin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnIniciarSesionLogin.addActionListener(this::btnIniciarSesionLoginActionPerformed);
 
         btnRegistrarseLogin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRegistrarseLogin.setText("Registrarse");
         btnRegistrarseLogin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrarseLogin.addActionListener(this::btnRegistrarseLoginActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,6 +99,14 @@ public class LoginView extends javax.swing.JPanel {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnIniciarSesionLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionLoginActionPerformed
+        mainFrame.mostrarVista("INICIAR");
+    }//GEN-LAST:event_btnIniciarSesionLoginActionPerformed
+
+    private void btnRegistrarseLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseLoginActionPerformed
+        mainFrame.mostrarVista("CREAR");
+    }//GEN-LAST:event_btnRegistrarseLoginActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

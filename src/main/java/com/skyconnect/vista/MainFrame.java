@@ -19,12 +19,16 @@ public class MainFrame extends javax.swing.JFrame {
     private InicioView inicioView;
     private LoginView loginView;
     private BuscarVueloView buscarVueloView;
+    private VueloIDAView vueloIDAView; 
+    private VueloIDAVUELTAView vueloIDAVUELTAView; 
     private ClaseVueloView claseVueloView;
     private AsientosView asientosView;
     private EquipajeExtraView equipajeExtraView;
     private IniciarSesionView iniciarSesionView;
     private CreacionUsuarioView creacionUsuarioView;
     private PagoView pagoView;
+    private TarjetaView tarjetaView; 
+    private PayPalView payPalView; 
     /**
      * Creates new form MainFrame
      */
@@ -37,19 +41,25 @@ public class MainFrame extends javax.swing.JFrame {
     cardLayout = (CardLayout) PanelContenedor.getLayout();
     
     // Crear vistas (UNA SOLA VEZ)
-        inicioView = new InicioView();
-        buscarVueloView = new BuscarVueloView();
-        claseVueloView = new ClaseVueloView();
-        asientosView = new AsientosView();
-        equipajeExtraView = new EquipajeExtraView();
-        loginView = new LoginView();
-        iniciarSesionView = new IniciarSesionView();
-        creacionUsuarioView = new CreacionUsuarioView();
-        pagoView = new PagoView();
+        inicioView = new InicioView(this);
+        buscarVueloView = new BuscarVueloView(this);
+        vueloIDAView = new VueloIDAView(this);
+        vueloIDAVUELTAView = new VueloIDAVUELTAView(this);
+        claseVueloView = new ClaseVueloView(this);
+        asientosView = new AsientosView(this);
+        equipajeExtraView = new EquipajeExtraView(this);
+        loginView = new LoginView(this);
+        iniciarSesionView = new IniciarSesionView(this);
+        creacionUsuarioView = new CreacionUsuarioView(this);
+        pagoView = new PagoView(this);
+        tarjetaView = new TarjetaView(this); 
+        payPalView = new PayPalView(this);
         
         // Agregar vistas al CardLayout
         PanelContenedor.add(inicioView, "INICIO");
         PanelContenedor.add(buscarVueloView, "BUSCAR");
+        PanelContenedor.add(vueloIDAView, "VUELOS IDA"); 
+        PanelContenedor.add(vueloIDAVUELTAView, "VUELOS IDA Y VUELTA"); 
         PanelContenedor.add(claseVueloView, "CLASE");
         PanelContenedor.add(asientosView, "ASIENTOS");
         PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
@@ -57,6 +67,8 @@ public class MainFrame extends javax.swing.JFrame {
         PanelContenedor.add(iniciarSesionView, "INICIAR");
         PanelContenedor.add(creacionUsuarioView, "CREAR");
         PanelContenedor.add(pagoView, "PAGO");
+        PanelContenedor.add(tarjetaView, "TARJETA"); 
+        PanelContenedor.add(payPalView, "PAYPAL"); 
         
         //Vista inicial 
         mostrarVista("INICIO");
