@@ -25,7 +25,7 @@ public class App {
             System.out.println("Vuelo cargado: " + c.getNumeroVuelo());
             System.out.println("Origen: " + c.getRuta().getAeroSalida().getNombre());
             System.out.println("Precio: $" + c.getPrecioEstimado());
-        /*
+        
         //Se inicializan las pestañas de las GUI creadas
         SwingUtilities.invokeLater(() -> {
         MainFrame mainFrame = new MainFrame();
@@ -33,10 +33,7 @@ public class App {
         mainFrame.setLocationRelativeTo(null); 
         mainFrame.setVisible(true);
         });
-        //Se despliega la vista
-        //MainFrame ventanaInicio = new MainFrame();
-        //ventanaInicio.setVisible(true);
         
-        */
+        
     }
 }
