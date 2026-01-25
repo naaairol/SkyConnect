@@ -10,12 +10,18 @@ public class App {
 
     public static void main(String[] args) {
         
-        
-        //En este punto se carga la informacion necesaria
+        //Arreglos para guardar aeropuertos y vuelos
         ArrayList<Aeropuerto> listaAeropuertos = new ArrayList<>();
-        listaAeropuertos = AeropuertoDAO.cargarAeropuertos("src/main/java/Resources/aeropuerto.txt");
-        System.out.println(listaAeropuertos);
+        ArrayList<Vuelo> listaVuelos = new ArrayList<>();
         
+        //Carga de datos de aeropuertos y vuelos desde archivos
+        AeropuertoDAO aeropuertoDAO = new AeropuertoDAO();
+        VueloDAO vueloDAO = new VueloDAO();
+        
+        listaAeropuertos = aeropuertoDAO.cargarAeropuertos("src/main/java/Resources/aeropuerto.txt");
+        listaVuelos = vueloDAO.cargarVuelos("src/main/java/Resources/vuelos.txt", listaAeropuertos);
+        
+        /*
         //Se inicializan las pestañas de las GUI creadas
         SwingUtilities.invokeLater(() -> {
         MainFrame mainFrame = new MainFrame();
@@ -27,6 +33,6 @@ public class App {
         //MainFrame ventanaInicio = new MainFrame();
         //ventanaInicio.setVisible(true);
         
-        
+        */
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class AeropuertoDAO {
 
-    public static ArrayList<Aeropuerto> cargarAeropuertos(String rutaArchivo) {
+    public ArrayList<Aeropuerto> cargarAeropuertos(String rutaArchivo) {
         ArrayList<Aeropuerto> lista = new ArrayList<>();
         
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {

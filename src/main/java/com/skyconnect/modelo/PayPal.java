@@ -25,7 +25,7 @@ public class PayPal implements MetodoPago {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
-    
+
     
     @Override
     public void realizarPago(){
