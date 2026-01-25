@@ -13,12 +13,16 @@ public class BuscarVueloView extends javax.swing.JPanel {
     /**
      * Creates new form BuscarVueloView
      */
+    private javax.swing.ButtonGroup grupoTipoVuelo;
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
     public BuscarVueloView(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         initComponents();
+        grupoTipoVuelo = new javax.swing.ButtonGroup();
+        grupoTipoVuelo.add(radBtnIda);
+        grupoTipoVuelo.add(radBtnIdaVuelta);
     }
 
     /**
@@ -282,7 +286,16 @@ public class BuscarVueloView extends javax.swing.JPanel {
     }//GEN-LAST:event_cmbxOrigenActionPerformed
 
     private void jbtnSiguienteBuscarVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteBuscarVueloActionPerformed
-       
+        // Verifica que el usuario haya seleccionado un tipo de vuelo antes de continuar
+       if (radBtnIda.isSelected()) {
+       mainFrame.mostrarVista("VUELOS IDA");
+       return;
+       }
+
+        if (radBtnIdaVuelta.isSelected()) {
+        mainFrame.mostrarVista("VUELOS IDA Y VUELTA");
+        return;
+    }       
     }//GEN-LAST:event_jbtnSiguienteBuscarVueloActionPerformed
 
 
