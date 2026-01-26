@@ -20,7 +20,8 @@ public class MainFrame extends javax.swing.JFrame {
     private LoginView loginView;
     private BuscarVueloView buscarVueloView;
     private VueloIDAView vueloIDAView; 
-    private VueloIDAVUELTAView vueloIDAVUELTAView; 
+    private VueloIDAVUELTAView vueloIDAVUELTAView;
+    private VueloIVUELTAView vueloIVUELTAView; 
     private ClaseVueloView claseVueloView;
     private AsientosView asientosView;
     private EquipajeExtraView equipajeExtraView;
@@ -45,6 +46,7 @@ public class MainFrame extends javax.swing.JFrame {
         buscarVueloView = new BuscarVueloView(this);
         vueloIDAView = new VueloIDAView(this);
         vueloIDAVUELTAView = new VueloIDAVUELTAView(this);
+        vueloIVUELTAView = new VueloIVUELTAView(this);
         claseVueloView = new ClaseVueloView(this);
         asientosView = new AsientosView(this);
         equipajeExtraView = new EquipajeExtraView(this);
@@ -60,6 +62,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelContenedor.add(buscarVueloView, "BUSCAR");
         PanelContenedor.add(vueloIDAView, "VUELOS IDA"); 
         PanelContenedor.add(vueloIDAVUELTAView, "VUELOS IDA Y VUELTA"); 
+        PanelContenedor.add(vueloIVUELTAView, "VUELOS VUELTA"); 
         PanelContenedor.add(claseVueloView, "CLASE");
         PanelContenedor.add(asientosView, "ASIENTOS");
         PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
