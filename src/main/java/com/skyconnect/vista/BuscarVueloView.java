@@ -2,14 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.skyconnect.vista;
+package com.skyconnect.vista; 
 
-/**
- *
- * @author mateo
- */
+import com.skyconnect.controlador.ControladorAeropuerto;
+import com.skyconnect.modelo.Aeropuerto;
+
 public class BuscarVueloView extends javax.swing.JPanel {
-
+    private ControladorAeropuerto controladorAeropuerto;
     /**
      * Creates new form BuscarVueloView
      */
@@ -23,6 +22,28 @@ public class BuscarVueloView extends javax.swing.JPanel {
         grupoTipoVuelo = new javax.swing.ButtonGroup();
         grupoTipoVuelo.add(radBtnIda);
         grupoTipoVuelo.add(radBtnIdaVuelta);
+        
+        controladorAeropuerto = new ControladorAeropuerto();
+        cargarAeropuertos();
+        
+        //Deshabilita "Fecha de retorno" al escoger Solo IDA 
+        jdtFechaRetorno.setEnabled(false);
+    }
+    //Muestra los aeropuertos cargados
+    private void cargarAeropuertos() {
+        cmbxOrigen.removeAllItems();
+        cmbxDestino.removeAllItems();
+        //Controla el listado de Ciudades en el apartado de Destino
+        for (Aeropuerto a : controladorAeropuerto.getAeropuertos()) {
+        String ciudad = a.getCiudad().trim();
+
+            if ("Quito".equalsIgnoreCase(ciudad)) {
+                cmbxOrigen.addItem(ciudad);
+                } else {
+                cmbxDestino.addItem(ciudad);
+            }
+        }
+        cmbxOrigen.setEnabled(false);
     }
 
     /**
@@ -274,11 +295,12 @@ public class BuscarVueloView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void radBtnIdaVueltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnIdaVueltaActionPerformed
-        // TODO add your handling code here:
+        jdtFechaRetorno.setEnabled(true);
     }//GEN-LAST:event_radBtnIdaVueltaActionPerformed
 
     private void radBtnIdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnIdaActionPerformed
-        // TODO add your handling code here:
+        jdtFechaRetorno.setEnabled(false);
+        jdtFechaRetorno.setDate(null);
     }//GEN-LAST:event_radBtnIdaActionPerformed
 
     private void cmbxOrigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxOrigenActionPerformed

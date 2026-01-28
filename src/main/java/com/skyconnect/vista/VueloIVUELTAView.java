@@ -4,6 +4,9 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.modelo.Vuelo;
+import java.util.List;
+
 /**
  *
  * @author mateo
@@ -20,7 +23,46 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         this.mainFrame = mainFrame; 
         initComponents();
     }
+    
+    /**
+    * Muestra hasta 3 vuelos de vuelta en la interfaz.
+    * La vista solo se encarga de presentar los datos.
+    */
+    public void mostrarVuelosVuelta(List<Vuelo> vuelos) {
+        if (vuelos == null || vuelos.isEmpty()) {
+        return;
+            }
 
+        if (vuelos.size() > 0) {
+            cargarVuelo(vuelos.get(0), 
+                txtFDestinoV1, txtFFechaV1, txtFDuracionV1, txtFCostoV1);
+        }
+
+        if (vuelos.size() > 1) {
+            cargarVuelo(vuelos.get(1), 
+                txtFDestinoV2, txtFFechaV2, txtFDuracionV2, txtFCostoV2);
+        }
+
+        if (vuelos.size() > 2) {
+            cargarVuelo(vuelos.get(2), 
+                txtFDestinoV3, txtFFechaV3, txtFDuracionV3, txtFCostoV3);
+        }
+    }
+    /**
+ * Carga la información de un vuelo en los campos visuales.
+ */
+    private void cargarVuelo(
+           Vuelo v,
+           javax.swing.JTextField destino,
+           javax.swing.JTextField fecha,
+           javax.swing.JTextField duracion,
+           javax.swing.JTextField costo) {
+        destino.setText(v.getRuta().getAeroLlegada().getCiudad());
+        fecha.setText(v.getFechaSalida().toString());
+        duracion.setText(v.getDuracion().toString());
+        costo.setText(String.valueOf(v.getPrecioEstimado()));
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

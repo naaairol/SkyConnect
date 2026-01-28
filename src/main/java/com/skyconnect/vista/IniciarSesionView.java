@@ -4,12 +4,15 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorLogin;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jade
  */
 public class IniciarSesionView extends javax.swing.JPanel {
-
+    private ControladorLogin controladorLogin;
     /**
      * Creates new form IniciarSesionView
      */
@@ -19,6 +22,16 @@ public class IniciarSesionView extends javax.swing.JPanel {
     public IniciarSesionView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
         initComponents();
+        controladorLogin = new ControladorLogin();
+    }
+    
+    private void mostrarMensaje(String mensaje, int tipo) {
+    JOptionPane.showMessageDialog(
+        this,
+        mensaje,
+        "Información",
+        tipo
+        );
     }
 
     /**
@@ -114,7 +127,21 @@ public class IniciarSesionView extends javax.swing.JPanel {
     }//GEN-LAST:event_txtfUsuarioIniciarSesionActionPerformed
 
     private void btnIngresarUsuarioIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarUsuarioIniciarSesionActionPerformed
-        mainFrame.mostrarVista("ASIENTOS");
+        // Obtiene los datos ingresados por el usuario desde la vista
+        String usuario = txtfUsuarioIniciarSesion.getText().trim();
+        String clave = new String(jpasswordIngreseContraseñaIniciarS.getPassword());
+
+        // Valida que los campos no estén vacíos usando el controlador
+        if (!controladorLogin.validarCampos(usuario, clave)) {
+            mostrarMensaje("Debe completar todos los campos", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Verifica las credenciales mediante la lógica del controlador
+        if (!controladorLogin.autenticar(usuario, clave)) {
+            mostrarMensaje("Usuario o contraseña incorrectos", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
     }//GEN-LAST:event_btnIngresarUsuarioIniciarSesionActionPerformed
 
 
