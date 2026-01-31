@@ -7,7 +7,6 @@ package com.skyconnect.controlador;
 import com.skyconnect.modelo.Aeropuerto;
 import com.skyconnect.modelo.Vuelo;
 import com.skyconnect.modelo.VueloDAO;
-import com.skyconnect.vista.VueloIDAView;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,16 +25,5 @@ public class ControladorVuelo {
     public List<Vuelo> obtenerVuelos() {
         ArrayList<Aeropuerto> aeropuertos = controladorAeropuerto.getAeropuertos();
         return vueloDAO.cargarVuelos("database/vuelos.txt", aeropuertos);
-    }
-    // Envía a la vista la lista de vuelos obtenidos desde el modelo
-    public void mostrarVuelosIda(VueloIDAView vista) {
-    ArrayList<Aeropuerto> aeropuertos = controladorAeropuerto.getAeropuertos();
-
-    List<Vuelo> vuelos = vueloDAO.cargarVuelos(
-        "database/vuelos.txt",
-        aeropuertos
-    );
-
-    vista.mostrarVuelos(vuelos);
     }
 }

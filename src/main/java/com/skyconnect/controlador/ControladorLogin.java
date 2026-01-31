@@ -4,6 +4,8 @@
  */
 package com.skyconnect.controlador;
 
+import com.skyconnect.vista.MainFrame;
+
 /**
  *
  * @author mateo
@@ -13,13 +15,30 @@ public class ControladorLogin {
     * Controlador encargado de gestionar
     * el proceso de inicio de sesión y registro.
     */
+    private MainFrame mainFrame;
+
+    public ControladorLogin(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
+    }
+
+    public void irAIniciarSesion() {
+        mainFrame.mostrarVista("INICIAR");
+    }
+
+    public void irACrearUsuario() {
+        mainFrame.mostrarVista("CREAR");
+    }
     public boolean validarCampos(String usuario, String clave) {
-        return usuario != null && !usuario.isEmpty()
-            && clave != null && !clave.isEmpty();
+    return usuario != null && !usuario.isEmpty()
+        && clave != null && !clave.isEmpty();
     }
 
     public boolean autenticar(String usuario, String clave) {
-        // Lógica provisional (luego se conecta a UsuarioDAO)
-        return usuario.equals("admin") && clave.equals("1234");
+    // Simulación básica (luego irá BD)
+    return usuario.equals("admin@sky.com") && clave.equals("1234");
+    }
+
+    public void loginExitoso() {
+    mainFrame.mostrarVista("AsientosView");
     }
 }

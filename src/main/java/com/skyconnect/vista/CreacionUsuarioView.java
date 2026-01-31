@@ -4,11 +4,14 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorUsuario;
+
 /**
  *
  * @author Jade
  */
 public class CreacionUsuarioView extends javax.swing.JPanel {
+    private ControladorUsuario controlador; 
 
     /**
      * Creates new form CreacionUsuarioView
@@ -19,6 +22,7 @@ public class CreacionUsuarioView extends javax.swing.JPanel {
     public CreacionUsuarioView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
         initComponents();
+        controlador = new ControladorUsuario(mainFrame);
     }
 
     /**
@@ -144,7 +148,15 @@ public class CreacionUsuarioView extends javax.swing.JPanel {
     }//GEN-LAST:event_jpasswordCrearContraseñaActionPerformed
 
     private void btnRegistrarseCreacionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseCreacionUsuarioActionPerformed
-        // TODO add your handling code here:
+        // Esta vista captura los datos del usuario y delega el proceso de registro
+        // al ControladorUsuario, manteniendo la separación de responsabilidades del patrón MVC.
+
+        String nombre = txtfNombreCreacionUsuario.getText().trim();
+        String apellido = txtfApellidoCreacionUsuario.getText().trim();
+        String correo = txtfCorreoCreacionUsuario.getText().trim();
+        String clave = new String(jpasswordCrearContraseña.getPassword());
+
+        controlador.registrarUsuario(nombre, apellido, correo, clave);
     }//GEN-LAST:event_btnRegistrarseCreacionUsuarioActionPerformed
 
 

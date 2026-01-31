@@ -4,12 +4,14 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorLogin;
+
 /**
  *
  * @author mateo
  */
 public class LoginView extends javax.swing.JPanel {
-
+    private ControladorLogin controlador;
     /**
      * Creates new form LoginView
      */
@@ -18,6 +20,7 @@ public class LoginView extends javax.swing.JPanel {
     // a través del MainFrame usando CardLayout.
     public LoginView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
+        this.controlador = new ControladorLogin(mainFrame);
         initComponents();
     }
 
@@ -101,11 +104,11 @@ public class LoginView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionLoginActionPerformed
-        mainFrame.mostrarVista("INICIAR");
+        controlador.irAIniciarSesion();
     }//GEN-LAST:event_btnIniciarSesionLoginActionPerformed
 
     private void btnRegistrarseLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseLoginActionPerformed
-        mainFrame.mostrarVista("CREAR");
+        controlador.irACrearUsuario();
     }//GEN-LAST:event_btnRegistrarseLoginActionPerformed
 
 

@@ -22,6 +22,12 @@ public class VueloIDAView extends javax.swing.JPanel {
     public VueloIDAView(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         initComponents();
+        // Solicita los vuelos al controlador
+        ControladorVuelo controlador = new ControladorVuelo();
+        List<Vuelo> vuelos = controlador.obtenerVuelos();
+
+        // Muestra los vuelos en la vista
+        mostrarVuelos(vuelos);
     }
     
 

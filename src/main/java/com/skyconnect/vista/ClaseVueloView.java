@@ -4,11 +4,14 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorClaseVuelo;
+
 /**
  *
  * @author mateo
  */
 public class ClaseVueloView extends javax.swing.JPanel {
+    private ControladorClaseVuelo controlador; 
 
     /**
      * Creates new form ClaseVueloView
@@ -17,7 +20,8 @@ public class ClaseVueloView extends javax.swing.JPanel {
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
     public ClaseVueloView(MainFrame mainFrame) {
-        this.mainFrame = mainFrame; 
+        this.mainFrame = mainFrame;
+        this.controlador = new ControladorClaseVuelo(); // Controlador de la vista 
         initComponents();
     }
 
@@ -227,17 +231,29 @@ public class ClaseVueloView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInSesionActionPerformed
 
-    private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInSesion1ActionPerformed
-
     private void btnSeleccionarEconomiClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarEconomiClassActionPerformed
-        // TODO add your handling code here:
+       controlador.seleccionarClase("ECONOMICA");
+
+        if (controlador.usuarioEstaLogueado()) {
+        mainFrame.mostrarVista("AsientosView");
+        } else {
+        mainFrame.mostrarVista("LoginView");
+        }
     }//GEN-LAST:event_btnSeleccionarEconomiClassActionPerformed
 
     private void btnSeleccionarBusinessClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarBusinessClassActionPerformed
-        // TODO add your handling code here:
+        controlador.seleccionarClase("BUSINESS");
+
+        if (controlador.usuarioEstaLogueado()) {
+        mainFrame.mostrarVista("AsientosView");
+        } else {
+        mainFrame.mostrarVista("LoginView");
+      }
     }//GEN-LAST:event_btnSeleccionarBusinessClassActionPerformed
+
+    private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnInSesion1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

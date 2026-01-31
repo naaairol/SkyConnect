@@ -22,7 +22,7 @@ public class IniciarSesionView extends javax.swing.JPanel {
     public IniciarSesionView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
         initComponents();
-        controladorLogin = new ControladorLogin();
+        controladorLogin = new ControladorLogin(mainFrame);
     }
     
     private void mostrarMensaje(String mensaje, int tipo) {
@@ -131,17 +131,20 @@ public class IniciarSesionView extends javax.swing.JPanel {
         String usuario = txtfUsuarioIniciarSesion.getText().trim();
         String clave = new String(jpasswordIngreseContraseñaIniciarS.getPassword());
 
-        // Valida que los campos no estén vacíos usando el controlador
+        // Valida campos vacíos
         if (!controladorLogin.validarCampos(usuario, clave)) {
             mostrarMensaje("Debe completar todos los campos", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
-        // Verifica las credenciales mediante la lógica del controlador
+        // Verifica las credenciales ingresadas por el usuario.
+        // Si la autenticación falla, se muestra un mensaje de error y se detiene el flujo.
+        // Si es correcta, el controlador se encarga de redirigir a la siguiente vista.
         if (!controladorLogin.autenticar(usuario, clave)) {
-            mostrarMensaje("Usuario o contraseña incorrectos", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        mostrarMensaje("Usuario o contraseña incorrectos", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    controladorLogin.loginExitoso();
     }//GEN-LAST:event_btnIngresarUsuarioIniciarSesionActionPerformed
 
 

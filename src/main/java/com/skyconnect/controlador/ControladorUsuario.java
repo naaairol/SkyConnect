@@ -5,8 +5,14 @@
 package com.skyconnect.controlador;
 
 import com.skyconnect.modelo.Usuario;
+import com.skyconnect.vista.MainFrame;
 
 public class ControladorUsuario {
+    private MainFrame mainFrame; 
+    //Constructor
+    public ControladorUsuario(MainFrame mainFrame) {
+    this.mainFrame = mainFrame;
+}
     /**
      * Controlador que gestiona la autenticación
      * y registro de usuarios del sistema.
@@ -18,5 +24,11 @@ public class ControladorUsuario {
 
     public void registrarUsuario(Usuario usuario) {
         // Implementación futura
+    }
+    
+    public void registrarUsuario(String nombre, String apellido, String correo, String clave) {
+    // Aquí luego irá la lógica real de registro (validaciones, BD, etc.)
+    System.out.println("Usuario registrado:");
+    System.out.println(nombre + " " + apellido + " - " + correo);
     }
 }
