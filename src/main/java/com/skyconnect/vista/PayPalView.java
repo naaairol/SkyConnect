@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorPago;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author mateo
- */
 public class PayPalView extends javax.swing.JPanel {
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.

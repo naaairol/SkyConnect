@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorPago;
 
-/**
- *
- * @author mateo
- */
 public class PagoView extends javax.swing.JPanel {
     private ControladorPago controladorPago; 
     private MainFrame mainFrame; 
@@ -34,7 +26,6 @@ public class PagoView extends javax.swing.JPanel {
     txtFResumenAdicionales.setText(String.valueOf(controladorPago.getAdicionales()));
     txtFResumenDescuentos.setText(String.valueOf(controladorPago.getDescuentos()));
     txtFResumenTotalPagar.setText(String.valueOf(controladorPago.getTotal()));
-    txtFResumenMillasAcumuladas.setText(String.valueOf(controladorPago.getMillas()));
 }
 
     /**
@@ -73,8 +64,6 @@ public class PagoView extends javax.swing.JPanel {
         txtFResumenAdicionales = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtFResumenDescuentos = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        txtFResumenMillasAcumuladas = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jbtnPagarPayPal = new javax.swing.JButton();
         jbtnPagarTarjeta1 = new javax.swing.JButton();
@@ -164,12 +153,6 @@ public class PagoView extends javax.swing.JPanel {
         txtFResumenDescuentos.setEnabled(false);
         txtFResumenDescuentos.addActionListener(this::txtFResumenDescuentosActionPerformed);
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setText("Millas acumuladas: ");
-
-        txtFResumenMillasAcumuladas.setEnabled(false);
-        txtFResumenMillasAcumuladas.addActionListener(this::txtFResumenMillasAcumuladasActionPerformed);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -179,13 +162,9 @@ public class PagoView extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel14)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(296, 298, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFResumenMillasAcumuladas, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
@@ -265,15 +244,11 @@ public class PagoView extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFResumenDescuentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFResumenTotalPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFResumenMillasAcumuladas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Método de Pago", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18))); // NOI18N
@@ -405,15 +380,10 @@ public class PagoView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFResumenDescuentosActionPerformed
 
-    private void txtFResumenMillasAcumuladasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFResumenMillasAcumuladasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFResumenMillasAcumuladasActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -438,7 +408,6 @@ public class PagoView extends javax.swing.JPanel {
     private javax.swing.JTextField txtFResumenFecha;
     private javax.swing.JTextField txtFResumenHorario;
     private javax.swing.JTextField txtFResumenImpuestos;
-    private javax.swing.JTextField txtFResumenMillasAcumuladas;
     private javax.swing.JTextField txtFResumenNPasajeros;
     private javax.swing.JTextField txtFResumenOrigen;
     private javax.swing.JTextField txtFResumenPrecioBase;

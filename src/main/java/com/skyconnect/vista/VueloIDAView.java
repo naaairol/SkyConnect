@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorVuelo;
 import com.skyconnect.modelo.Vuelo;
 import java.util.List;
 
-/**
- *
- * @author mateo
- */
 public class VueloIDAView extends javax.swing.JPanel {
     /**
      * Creates new form VueloIDAView

@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorPago;
 
-/**
- *
- * @author mateo
- */
 public class TarjetaView extends javax.swing.JPanel {
 
     private MainFrame mainFrame; 

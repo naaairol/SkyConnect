@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorReserva;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author mateo
- */
 public class EquipajeExtraView extends javax.swing.JPanel {
     private final MainFrame mainFrame;
     private ControladorReserva controladorReserva;

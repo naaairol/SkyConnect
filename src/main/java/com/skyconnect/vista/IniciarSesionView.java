@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorLogin;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Jade
- */
 public class IniciarSesionView extends javax.swing.JPanel {
     private ControladorLogin controladorLogin;
     /**

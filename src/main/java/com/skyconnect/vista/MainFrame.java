@@ -1,18 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.skyconnect.vista;
 import com.skyconnect.controlador.ControladorPago;
 import com.skyconnect.controlador.ControladorReserva;
 import com.skyconnect.modelo.Reserva;
 import java.awt.CardLayout;
 
-
-/**
- *
- * @author mateo
- */
 public class MainFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainFrame.class.getName());
