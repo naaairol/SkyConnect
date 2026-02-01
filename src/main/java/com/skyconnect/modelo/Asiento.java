@@ -4,6 +4,6 @@ public class Asiento {
     
     private String zona;
     private String asiento;
-    private Clase clase;
+    private String tipoAsiento;
     
 }
