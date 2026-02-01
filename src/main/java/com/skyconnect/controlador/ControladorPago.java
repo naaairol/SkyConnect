@@ -7,10 +7,12 @@ import javax.swing.JOptionPane;
 public class ControladorPago {
 
     private Factura reserva;
+    private ControladorFactura controladorFactura; // Integrar ControladorFactura
 
     // Constructor
-    public ControladorPago(Factura reserva) {
+    public ControladorPago(Factura reserva, ControladorFactura controladorFactura) {
         this.reserva = reserva;
+        this.controladorFactura = controladorFactura;
     }
 
     // ============================
@@ -40,7 +42,8 @@ public class ControladorPago {
         // Aquí podrías agregar una validación real con PayPal, pero por ahora se simula el éxito
         JOptionPane.showMessageDialog(null, "Pago realizado con éxito con PayPal.", "Pago Aprobado", JOptionPane.INFORMATION_MESSAGE);
 
-        // Aquí puedes llamar a métodos adicionales como confirmar la reserva, generar boleto, etc.
+        // Después de procesar el pago, mostrar la factura
+        controladorFactura.mostrarFactura("PayPal");
     }
 
     // ============================
@@ -64,7 +67,7 @@ public class ControladorPago {
 
         JOptionPane.showMessageDialog(null, "Pago con tarjeta realizado con éxito", "Pago Aprobado", JOptionPane.INFORMATION_MESSAGE);
 
-        // Aquí puedes hacer las acciones adicionales como confirmar la reserva, generar el boleto, etc.
+        // Después de procesar el pago, mostrar la factura
+        controladorFactura.mostrarFactura("Tarjeta de Crédito/Débito");
     }
 }
-

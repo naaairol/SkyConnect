@@ -30,10 +30,10 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         txtFDestinoV1 = new javax.swing.JTextField();
         txtFFechaV1 = new javax.swing.JTextField();
         txtFDuracionV1 = new javax.swing.JTextField();
-        txtFCostoV1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        txtFCostoV1 = new javax.swing.JTextField();
         btnPredeterminadoGuayaquil1 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -63,30 +63,34 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 460, 60));
 
         btnPredeterminadoGuayaquil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPredeterminadoGuayaquil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnPredeterminadoGuayaquil.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 79, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel9.setText("Estimado IDA      ");
+        btnPredeterminadoGuayaquil.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 124, -1, -1));
 
         txtFDestinoV1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFDestinoV1.setEnabled(false);
+        btnPredeterminadoGuayaquil.add(txtFDestinoV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 283, 44));
 
         txtFFechaV1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFFechaV1.setEnabled(false);
         txtFFechaV1.addActionListener(this::txtFFechaV1ActionPerformed);
+        btnPredeterminadoGuayaquil.add(txtFFechaV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 283, 46));
 
         txtFDuracionV1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFDuracionV1.setEnabled(false);
         txtFDuracionV1.setName(""); // NOI18N
-
-        txtFCostoV1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        txtFCostoV1.setEnabled(false);
-        txtFCostoV1.addActionListener(this::txtFCostoV1ActionPerformed);
+        btnPredeterminadoGuayaquil.add(txtFDuracionV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 192, 45));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel1.setText("USD");
+        btnPredeterminadoGuayaquil.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 166, 56, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel2.setText("Duración:");
+        btnPredeterminadoGuayaquil.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -99,65 +103,18 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout btnPredeterminadoGuayaquilLayout = new javax.swing.GroupLayout(btnPredeterminadoGuayaquil);
-        btnPredeterminadoGuayaquil.setLayout(btnPredeterminadoGuayaquilLayout);
-        btnPredeterminadoGuayaquilLayout.setHorizontalGroup(
-            btnPredeterminadoGuayaquilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(btnPredeterminadoGuayaquilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtFDestinoV1)
-                    .addComponent(txtFFechaV1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtFDuracionV1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(btnPredeterminadoGuayaquilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtFCostoV1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel9))
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-        btnPredeterminadoGuayaquilLayout.setVerticalGroup(
-            btnPredeterminadoGuayaquilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                .addGroup(btnPredeterminadoGuayaquilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(jLabel4))
-                    .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(txtFDestinoV1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(btnPredeterminadoGuayaquilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(txtFFechaV1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(btnPredeterminadoGuayaquilLayout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel9)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(btnPredeterminadoGuayaquilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFDuracionV1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtFCostoV1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 11, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
+        btnPredeterminadoGuayaquil.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, 196));
 
-        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 690, 220));
+        txtFCostoV1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        txtFCostoV1.setEnabled(false);
+        txtFCostoV1.addActionListener(this::txtFCostoV1ActionPerformed);
+        btnPredeterminadoGuayaquil.add(txtFCostoV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 120, 45));
+
+        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 680, 210));
 
         btnPredeterminadoGuayaquil1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPredeterminadoGuayaquil1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnPredeterminadoGuayaquil1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 37, -1, -1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -170,104 +127,44 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        btnPredeterminadoGuayaquil1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, 196));
+
         txtFDestinoV2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFDestinoV2.setEnabled(false);
+        btnPredeterminadoGuayaquil1.add(txtFDestinoV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 18, 283, 50));
 
         txtFFechaV2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFFechaV2.setEnabled(false);
         txtFFechaV2.addActionListener(this::txtFFechaV2ActionPerformed);
+        btnPredeterminadoGuayaquil1.add(txtFFechaV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 283, 45));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel3.setText("Duración:");
+        btnPredeterminadoGuayaquil1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 151, -1, -1));
 
         txtFDuracionV2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFDuracionV2.setEnabled(false);
         txtFDuracionV2.setName(""); // NOI18N
+        btnPredeterminadoGuayaquil1.add(txtFDuracionV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 140, 188, 46));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setText("Estimado IDA      ");
+        btnPredeterminadoGuayaquil1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 107, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel5.setText("USD");
+        btnPredeterminadoGuayaquil1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 149, 45, 30));
 
         txtFCostoV2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFCostoV2.setEnabled(false);
         txtFCostoV2.addActionListener(this::txtFCostoV2ActionPerformed);
+        btnPredeterminadoGuayaquil1.add(txtFCostoV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 140, 112, 50));
 
-        javax.swing.GroupLayout btnPredeterminadoGuayaquil1Layout = new javax.swing.GroupLayout(btnPredeterminadoGuayaquil1);
-        btnPredeterminadoGuayaquil1.setLayout(btnPredeterminadoGuayaquil1Layout);
-        btnPredeterminadoGuayaquil1Layout.setHorizontalGroup(
-            btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtFFechaV2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                                .addComponent(txtFDestinoV2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 1, Short.MAX_VALUE))
-                            .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                            .addComponent(jLabel12)
-                            .addContainerGap())
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtFCostoV2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(16, 16, 16)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(47, 47, 47))))
-            .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                    .addGap(291, 291, 291)
-                    .addComponent(txtFDuracionV2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(214, Short.MAX_VALUE)))
-        );
-        btnPredeterminadoGuayaquil1Layout.setVerticalGroup(
-            btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFCostoV2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(19, 19, 19))
-                    .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                        .addComponent(txtFDestinoV2, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtFFechaV2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
-                    .addContainerGap(149, Short.MAX_VALUE)
-                    .addComponent(txtFDuracionV2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(23, 23, 23)))
-        );
-
-        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 690, 220));
+        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 680, 210));
 
         btnPredeterminadoGuayaquil2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPredeterminadoGuayaquil2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnPredeterminadoGuayaquil2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 73, -1, -1));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -277,105 +174,48 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 194, Short.MAX_VALUE)
         );
+
+        btnPredeterminadoGuayaquil2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 8, -1, -1));
 
         txtFDestinoV3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFDestinoV3.setEnabled(false);
+        btnPredeterminadoGuayaquil2.add(txtFDestinoV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 18, 277, 49));
 
         txtFFechaV3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFFechaV3.setEnabled(false);
         txtFFechaV3.addActionListener(this::txtFFechaV3ActionPerformed);
+        btnPredeterminadoGuayaquil2.add(txtFFechaV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 79, 277, 49));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel6.setText("Duración:");
+        btnPredeterminadoGuayaquil2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 152, -1, -1));
 
         txtFDuracionV3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFDuracionV3.setEnabled(false);
         txtFDuracionV3.setName(""); // NOI18N
+        btnPredeterminadoGuayaquil2.add(txtFDuracionV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 144, 183, 44));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel7.setText("USD");
+        btnPredeterminadoGuayaquil2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 150, 45, 30));
 
         txtFCostoV3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         txtFCostoV3.setEnabled(false);
         txtFCostoV3.addActionListener(this::txtFCostoV3ActionPerformed);
+        btnPredeterminadoGuayaquil2.add(txtFCostoV3, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 137, 119, 50));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel11.setText("Estimado IDA     ");
+        btnPredeterminadoGuayaquil2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 101, -1, -1));
 
-        javax.swing.GroupLayout btnPredeterminadoGuayaquil2Layout = new javax.swing.GroupLayout(btnPredeterminadoGuayaquil2);
-        btnPredeterminadoGuayaquil2.setLayout(btnPredeterminadoGuayaquil2Layout);
-        btnPredeterminadoGuayaquil2Layout.setHorizontalGroup(
-            btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addGap(42, 42, 42))
-            .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(jLabel18)
-                .addGap(110, 110, 110)
-                .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFDuracionV3, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtFCostoV3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15))
-                    .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                        .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtFFechaV3, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                            .addComponent(txtFDestinoV3))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(509, Short.MAX_VALUE)))
-        );
-        btnPredeterminadoGuayaquil2Layout.setVerticalGroup(
-            btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(txtFDestinoV3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
-                .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel11))
-                    .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFFechaV3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                        .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFCostoV3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                        .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtFDuracionV3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11))))
-            .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
-                    .addGap(7, 7, 7)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(8, 8, 8)))
-        );
-
-        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 570, 690, 230));
+        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 680, 210));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton1.setText("Escoga su vuelo de vuelta");
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 730, 300, 64));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 640, 300, 64));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

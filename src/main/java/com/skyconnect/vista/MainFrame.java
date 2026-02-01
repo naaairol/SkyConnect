@@ -1,4 +1,5 @@
 package com.skyconnect.vista;
+import com.skyconnect.controlador.ControladorFactura;
 import com.skyconnect.controlador.ControladorPago;
 import com.skyconnect.controlador.ControladorReserva;
 import com.skyconnect.modelo.Factura;
@@ -10,6 +11,7 @@ public class MainFrame extends javax.swing.JFrame {
     private CardLayout cardLayout;
     private ControladorReserva controladorReserva;
     private ControladorPago controladorPago;
+    private ControladorFactura controladorFactura;  // Definir ControladorFactura
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -25,7 +27,9 @@ public class MainFrame extends javax.swing.JFrame {
     private CreacionUsuarioView creacionUsuarioView;
     private PagoView pagoView;
     private TarjetaView tarjetaView; 
-    private PayPalView payPalView; 
+    private PayPalView payPalView;
+    private FacturaView facturaView; // Añadido para la vista de factura
+    
     /**
      * Creates new form MainFrame
      */
@@ -33,54 +37,68 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         inicializarVistas();
     }
+    
     private void inicializarVistas() {
 
-    cardLayout = (CardLayout) PanelContenedor.getLayout();
+        cardLayout = (CardLayout) PanelContenedor.getLayout();
 
-    //CONTROLADORES (UNA SOLA INSTANCIA)
-    controladorReserva = new ControladorReserva();
-    // Crear la reserva antes de instanciar el controladorPago
-    Factura reserva = controladorReserva.getReserva();  // Obtener la reserva de controladorReserva
-    controladorPago = new ControladorPago(reserva);
+        // CONTROLADORES (UNA SOLA INSTANCIA)
+        controladorReserva = new ControladorReserva();
+        
+        // Crear la reserva antes de instanciar el controladorPago
+        Factura reserva = controladorReserva.getReserva();  // Obtener la reserva de controladorReserva
+        
+        // Inicializamos el ControladorFactura
+        controladorFactura = new ControladorFactura(this, reserva);  // Ahora pasamos reserva al controlador
+        
+        // Inicializamos el ControladorPago con ControladorFactura
+        controladorPago = new ControladorPago(reserva, controladorFactura);  // Pasar la reserva y el controladorFactura
 
-    //VISTAS
-    inicioView = new InicioView(this);
-    buscarVueloView = new BuscarVueloView(this);
-    vueloIDAView = new VueloIDAView(this);
-    vueloIDAVUELTAView = new VueloIDAVUELTAView(this);
-    vueloIVUELTAView = new VueloIVUELTAView(this);
-    claseVueloView = new ClaseVueloView(this);
-    asientosView = new AsientosView(this, controladorReserva);
-    equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
-    loginView = new LoginView(this);
-    iniciarSesionView = new IniciarSesionView(this);
-    creacionUsuarioView = new CreacionUsuarioView(this);
-    pagoView = new PagoView(this, controladorPago);
-    tarjetaView = new TarjetaView(this, controladorPago);
-    payPalView = new PayPalView(this, controladorPago);
+        // VISTAS
+        inicioView = new InicioView(this);
+        buscarVueloView = new BuscarVueloView(this);
+        vueloIDAView = new VueloIDAView(this);
+        vueloIDAVUELTAView = new VueloIDAVUELTAView(this);
+        vueloIVUELTAView = new VueloIVUELTAView(this);
+        claseVueloView = new ClaseVueloView(this);
+        asientosView = new AsientosView(this, controladorReserva);
+        equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
+        loginView = new LoginView(this);
+        iniciarSesionView = new IniciarSesionView(this);
+        creacionUsuarioView = new CreacionUsuarioView(this);
+        pagoView = new PagoView(this, controladorPago);
+        tarjetaView = new TarjetaView(this, controladorPago);
+        payPalView = new PayPalView(this, controladorPago);
+        
+        // FacturaView: la vista de la factura
+        facturaView = new FacturaView(this, reserva, "Tarjeta de Crédito");
 
-    //CARD LAYOUT
-    PanelContenedor.add(inicioView, "INICIO");
-    PanelContenedor.add(buscarVueloView, "BUSCAR");
-    PanelContenedor.add(vueloIDAView, "VUELOS IDA");
-    PanelContenedor.add(vueloIDAVUELTAView, "VUELOS IDA Y VUELTA");
-    PanelContenedor.add(vueloIVUELTAView, "VUELOS VUELTA");
-    PanelContenedor.add(claseVueloView, "CLASE");
-    PanelContenedor.add(asientosView, "ASIENTOS");
-    PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
-    PanelContenedor.add(loginView, "LOGIN");
-    PanelContenedor.add(iniciarSesionView, "INICIAR");
-    PanelContenedor.add(creacionUsuarioView, "CREAR");
-    PanelContenedor.add(pagoView, "PAGO");
-    PanelContenedor.add(tarjetaView, "TARJETA");
-    PanelContenedor.add(payPalView, "PAYPAL");
+        // CARD LAYOUT
+        PanelContenedor.add(inicioView, "INICIO");
+        PanelContenedor.add(buscarVueloView, "BUSCAR");
+        PanelContenedor.add(vueloIDAView, "VUELOS IDA");
+        PanelContenedor.add(vueloIDAVUELTAView, "VUELOS IDA Y VUELTA");
+        PanelContenedor.add(vueloIVUELTAView, "VUELOS VUELTA");
+        PanelContenedor.add(claseVueloView, "CLASE");
+        PanelContenedor.add(asientosView, "ASIENTOS");
+        PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
+        PanelContenedor.add(loginView, "LOGIN");
+        PanelContenedor.add(iniciarSesionView, "INICIAR");
+        PanelContenedor.add(creacionUsuarioView, "CREAR");
+        PanelContenedor.add(pagoView, "PAGO");
+        PanelContenedor.add(tarjetaView, "TARJETA");
+        PanelContenedor.add(payPalView, "PAYPAL");
+        
+        // Agregar FacturaView al CardLayout
+        PanelContenedor.add(facturaView, "FACTURA");
+        
+        // Inicializamos la vista de inicio
+        mostrarVista("INICIO");
+    }
 
-    mostrarVista("INICIO");
-}
-    
-   public void mostrarVista(String nombreVista) {
-    cardLayout.show(PanelContenedor, nombreVista);
-}
+    public void mostrarVista(String nombreVista) {
+        cardLayout.show(PanelContenedor, nombreVista);
+    }
 
 
     /**
