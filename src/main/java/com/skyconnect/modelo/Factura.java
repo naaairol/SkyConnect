@@ -7,7 +7,7 @@ import java.util.List;
  * Modelo que representa una reserva de vuelo.
  * Mantiene estado y reglas del negocio.
  */
-public class Reserva {
+public class Factura {
 
     // ===================== DATOS DEL VUELO =====================
     private String origen;
@@ -33,7 +33,7 @@ public class Reserva {
     private final List<Equipaje> equipajesExtra = new ArrayList<>();
 
     // ===================== CONSTRUCTOR =====================
-    public Reserva(int maxAsientos) {
+    public Factura(int maxAsientos) {
         this.maxAsientos = maxAsientos;
     }
 
@@ -54,7 +54,7 @@ public class Reserva {
         return precioBase + impuestos + adicionales - descuentos;
     }
 
-    public int getMillas() { return millas; }
+
 
     public List<String> getAsientosSeleccionados() {
         return new ArrayList<>(asientosSeleccionados);
@@ -83,7 +83,9 @@ public class Reserva {
     public void setMillas(int millas) {
         this.millas = millas;
     }
-
+    
+    //mover a donde corresponda
+    
     // ===================== ASIENTOS =====================
     public boolean seleccionarAsiento(String codigo) {
         if (asientosSeleccionados.size() >= maxAsientos) return false;

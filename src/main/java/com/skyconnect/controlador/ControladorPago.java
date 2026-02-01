@@ -1,15 +1,15 @@
 package com.skyconnect.controlador;
 
-import com.skyconnect.modelo.Reserva;
+import com.skyconnect.modelo.Factura;
 import java.util.List;
 import javax.swing.JOptionPane;
 
 public class ControladorPago {
 
-    private Reserva reserva;
+    private Factura reserva;
 
     // Constructor
-    public ControladorPago(Reserva reserva) {
+    public ControladorPago(Factura reserva) {
         this.reserva = reserva;
     }
 
@@ -27,7 +27,6 @@ public class ControladorPago {
     public double getAdicionales() { return reserva.getAdicionales(); }
     public double getDescuentos() { return reserva.getDescuentos(); }
     public double getTotal() { return reserva.getTotal(); }
-    public int getMillas() { return reserva.getMillas(); }
 
     // ============================
     // Método para procesar pagos con PayPal

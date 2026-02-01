@@ -1,7 +1,7 @@
 package com.skyconnect.vista;
 import com.skyconnect.controlador.ControladorPago;
 import com.skyconnect.controlador.ControladorReserva;
-import com.skyconnect.modelo.Reserva;
+import com.skyconnect.modelo.Factura;
 import java.awt.CardLayout;
 
 public class MainFrame extends javax.swing.JFrame {
@@ -40,7 +40,7 @@ public class MainFrame extends javax.swing.JFrame {
     //CONTROLADORES (UNA SOLA INSTANCIA)
     controladorReserva = new ControladorReserva();
     // Crear la reserva antes de instanciar el controladorPago
-    Reserva reserva = controladorReserva.getReserva();  // Obtener la reserva de controladorReserva
+    Factura reserva = controladorReserva.getReserva();  // Obtener la reserva de controladorReserva
     controladorPago = new ControladorPago(reserva);
 
     //VISTAS

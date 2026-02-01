@@ -1,22 +1,22 @@
 package com.skyconnect.controlador;
 
 import com.skyconnect.modelo.Equipaje;
-import com.skyconnect.modelo.Reserva;
+import com.skyconnect.modelo.Factura;
 import java.util.List;
 
 public class ControladorReserva {
 
-    private Reserva reserva;
+    private Factura reserva;
     private int numeroBoletos;
 
     public ControladorReserva(int numeroBoletos) {
         this.numeroBoletos = numeroBoletos;
-        this.reserva = new Reserva(numeroBoletos);
+        this.reserva = new Factura(numeroBoletos);
     }
     //NUEVO CONSTRUCTOR POR DEFECTO (PARA MainFrame)
     public ControladorReserva() {
         this.numeroBoletos = 1; // valor por defecto
-        this.reserva = new Reserva(numeroBoletos);
+        this.reserva = new Factura(numeroBoletos);
     }
 
     // ================= ASIENTOS =================
@@ -42,7 +42,7 @@ public class ControladorReserva {
     reserva.agregarEquipajeExtra(equipaje);
 }
 
-    public Reserva getReserva() {
+    public Factura getReserva() {
         return this.reserva;
     }
 }
