@@ -15,6 +15,7 @@ public class App {
         mainFrame.setTitle("SkyConnect");
         mainFrame.setLocationRelativeTo(null); 
         mainFrame.setVisible(true);
+
         });
         
     }
