@@ -113,6 +113,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
         cmbxDestino.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cmbxDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una ciudad", "Guayaquil", "Cuenca", "Galápagos", "Bogotá", "Ciudad de Panamá", "Miami", "Madrid" }));
         cmbxDestino.setToolTipText("");
+        cmbxDestino.addActionListener(this::cmbxDestinoActionPerformed);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Fecha de Viaje:");
@@ -332,6 +333,10 @@ public class BuscarVueloView extends javax.swing.JPanel {
     private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnInSesion1ActionPerformed
+
+    private void cmbxDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxDestinoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbxDestinoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

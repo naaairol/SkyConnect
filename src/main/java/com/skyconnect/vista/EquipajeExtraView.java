@@ -4,23 +4,75 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorReserva;
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mateo
  */
 public class EquipajeExtraView extends javax.swing.JPanel {
-
-    /**
-     * Creates new form EquipajeExtraView
-     */
-    private MainFrame mainFrame; 
+    private final MainFrame mainFrame;
+    private ControladorReserva controladorReserva;
+    private ButtonGroup grupoTipoEquipaje;
+    
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public EquipajeExtraView(MainFrame mainFrame) {
-        this.mainFrame = mainFrame; 
+    public EquipajeExtraView(MainFrame mainFrame, ControladorReserva controladorReserva) {
+        this.mainFrame = mainFrame;
+        this.controladorReserva = controladorReserva;
         initComponents();
+        configurarGrupoRadio();
     }
+     // Agrupa los radio buttons
+    private void configurarGrupoRadio() {
+        grupoTipoEquipaje = new ButtonGroup();
+        grupoTipoEquipaje.add(jrdbEquipajeFacturadoExtra);
+        grupoTipoEquipaje.add(jrdbBolsoManoExtra);
+    }
+    // Botón SI: registrar y limpiar
+    // Botón NO: registrar y avanzar
+    //Envía los datos al controlador
+    // Envía los datos al controlador y maneja validaciones
+    private boolean registrarEquipaje() {
+    try {
+        String propietario = txtNombrePropietarioExtra.getText().trim();
+        double peso = Double.parseDouble(txtFPesoEquipajeExtra.getText());
 
+        String tipo;
+        if (jrdbEquipajeFacturadoExtra.isSelected()) {
+            tipo = "FACTURADO";
+        } else if (jrdbBolsoManoExtra.isSelected()) {
+            tipo = "MANO";
+        } else {
+            throw new IllegalArgumentException("Seleccione un tipo de equipaje");
+        }
+
+        // 👉 SOLO LLAMAS AL CONTROLADOR
+        controladorReserva.registrarEquipajeExtra(tipo, propietario, peso);
+
+        return true;
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this,
+                "Peso inválido",
+                "Error",
+                JOptionPane.WARNING_MESSAGE);
+    } catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this,
+                e.getMessage(),
+                "Error",
+                JOptionPane.WARNING_MESSAGE);
+    }
+    return false;
+}
+    // Limpia los campos del formulario
+    private void limpiarFormulario() {
+        txtNombrePropietarioExtra.setText("");
+        txtFPesoEquipajeExtra.setText("");
+        grupoTipoEquipaje.clearSelection();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -171,7 +223,9 @@ public class EquipajeExtraView extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNombrePropietarioExtraActionPerformed
 
     private void jbtNoRegistrarOtroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtNoRegistrarOtroEquipajeActionPerformed
-        // TODO add your handling code here:
+        if (registrarEquipaje()) {
+        mainFrame.mostrarVista("PagoView");
+        }
     }//GEN-LAST:event_jbtNoRegistrarOtroEquipajeActionPerformed
 
     private void jrdbBolsoManoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrdbBolsoManoExtraActionPerformed
@@ -179,7 +233,10 @@ public class EquipajeExtraView extends javax.swing.JPanel {
     }//GEN-LAST:event_jrdbBolsoManoExtraActionPerformed
 
     private void jbtnRegistrarOtroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarOtroEquipajeActionPerformed
-        // TODO add your handling code here:
+        if (registrarEquipaje()) {
+        JOptionPane.showMessageDialog(this, "Equipaje registrado ✔️");
+        limpiarFormulario();
+        }
     }//GEN-LAST:event_jbtnRegistrarOtroEquipajeActionPerformed
 
     private void txtFPesoEquipajeExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFPesoEquipajeExtraActionPerformed

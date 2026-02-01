@@ -3,24 +3,65 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.skyconnect.vista;
-
+import com.skyconnect.controlador.ControladorReserva;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JToggleButton;
+import javax.swing.JOptionPane;
 /**
  *
  * @author mateo
  */
 public class AsientosView extends javax.swing.JPanel {
-
-    /**
-     * Creates new form AsientosView
-     */
+    private ControladorReserva controladorReserva; 
     private MainFrame mainFrame; 
-    // Constructor que inicializa la vista y permite la navegación entre pantallas
-    // a través del MainFrame usando CardLayout.
-    public AsientosView(MainFrame mainFrame) {
-        this.mainFrame = mainFrame; 
+    private List<String> asientosSeleccionados = new ArrayList<>();
+    private List<JToggleButton> botonesAsientos = new ArrayList<>();
+    // Constructor de la vista de asientos e inicializa componentes, controlador y registra los botones.
+    public AsientosView(MainFrame mainFrame, ControladorReserva controladorReserva) {
+        this.mainFrame = mainFrame;
+        this.controladorReserva = controladorReserva;
         initComponents();
+        registrarBotonesAsientos();
+    }
+    //Registra dinámicamente los botones de asientos del panel.
+    private void registrarBotonesAsientos() {
+    for (java.awt.Component c : jpPanelAvion1.getComponents()) {
+        if (c instanceof JToggleButton) {
+            JToggleButton btn = (JToggleButton) c;
+            botonesAsientos.add(btn);
+            btn.addActionListener(e -> manejarSeleccionAsiento(btn));
+            }
+       }
+   }
+    //Maneja la selección y deselección de un asiento, validando el límite de asientos permitidos.
+    private void manejarSeleccionAsiento(JToggleButton btn) {
+    String asiento = btn.getText();
+
+    if (btn.isSelected()) {
+        if (asientosSeleccionados.size() >= controladorReserva.getNumeroBoletos()) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Solo puedes seleccionar " + controladorReserva.getNumeroBoletos() + " asientos",
+                "Límite alcanzado",
+                JOptionPane.WARNING_MESSAGE
+            );
+            btn.setSelected(false);
+            return;
+        }
+        asientosSeleccionados.add(asiento);
+    } else {
+        asientosSeleccionados.remove(asiento);
     }
 
+    actualizarCampoTexto();
+   }
+    //Actualiza el campo de texto con los asientos seleccionados.
+    private void actualizarCampoTexto() {
+        txtAsientosSeleccionados.setText(String.join(", ", asientosSeleccionados));
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1439,11 +1480,22 @@ public class AsientosView extends javax.swing.JPanel {
     }//GEN-LAST:event_jbtnPagarAsientosViewActionPerformed
 
     private void txtAsientosSeleccionadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAsientosSeleccionadosActionPerformed
-        // TODO add your handling code here:
+        if (asientosSeleccionados.size() != controladorReserva.getNumeroBoletos()) {
+        JOptionPane.showMessageDialog(
+            this,
+            "Debes seleccionar exactamente " + controladorReserva.getNumeroBoletos() + " asientos",
+            "Selección incompleta",
+            JOptionPane.ERROR_MESSAGE
+        );
+        return;
+    }
+
+    controladorReserva.setAsientosSeleccionados(asientosSeleccionados);
+    JOptionPane.showMessageDialog(this, "Asientos confirmados correctamente ✔️");
     }//GEN-LAST:event_txtAsientosSeleccionadosActionPerformed
 
     private void jbtnSeleccionarConfirmarAsientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSeleccionarConfirmarAsientosActionPerformed
-        // TODO add your handling code here:
+        mainFrame.mostrarVista("PagoView");
     }//GEN-LAST:event_jbtnSeleccionarConfirmarAsientosActionPerformed
 
 

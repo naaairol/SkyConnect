@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.skyconnect.vista;
+import com.skyconnect.controlador.ControladorPago;
+import com.skyconnect.controlador.ControladorReserva;
+import com.skyconnect.modelo.Reserva;
 import java.awt.CardLayout;
 
 
@@ -14,6 +17,8 @@ public class MainFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainFrame.class.getName());
     private CardLayout cardLayout;
+    private ControladorReserva controladorReserva;
+    private ControladorPago controladorPago;
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -40,41 +45,46 @@ public class MainFrame extends javax.swing.JFrame {
     private void inicializarVistas() {
 
     cardLayout = (CardLayout) PanelContenedor.getLayout();
-    
-    // Crear vistas (UNA SOLA VEZ)
-        inicioView = new InicioView(this);
-        buscarVueloView = new BuscarVueloView(this);
-        vueloIDAView = new VueloIDAView(this);
-        vueloIDAVUELTAView = new VueloIDAVUELTAView(this);
-        vueloIVUELTAView = new VueloIVUELTAView(this);
-        claseVueloView = new ClaseVueloView(this);
-        asientosView = new AsientosView(this);
-        equipajeExtraView = new EquipajeExtraView(this);
-        loginView = new LoginView(this);
-        iniciarSesionView = new IniciarSesionView(this);
-        creacionUsuarioView = new CreacionUsuarioView(this);
-        pagoView = new PagoView(this);
-        tarjetaView = new TarjetaView(this); 
-        payPalView = new PayPalView(this);
-        
-        // Agregar vistas al CardLayout
-        PanelContenedor.add(inicioView, "INICIO");
-        PanelContenedor.add(buscarVueloView, "BUSCAR");
-        PanelContenedor.add(vueloIDAView, "VUELOS IDA"); 
-        PanelContenedor.add(vueloIDAVUELTAView, "VUELOS IDA Y VUELTA"); 
-        PanelContenedor.add(vueloIVUELTAView, "VUELOS VUELTA"); 
-        PanelContenedor.add(claseVueloView, "CLASE");
-        PanelContenedor.add(asientosView, "ASIENTOS");
-        PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
-        PanelContenedor.add(loginView, "LOGIN");
-        PanelContenedor.add(iniciarSesionView, "INICIAR");
-        PanelContenedor.add(creacionUsuarioView, "CREAR");
-        PanelContenedor.add(pagoView, "PAGO");
-        PanelContenedor.add(tarjetaView, "TARJETA"); 
-        PanelContenedor.add(payPalView, "PAYPAL"); 
-        
-        //Vista inicial 
-        mostrarVista("INICIO");
+
+    //CONTROLADORES (UNA SOLA INSTANCIA)
+    controladorReserva = new ControladorReserva();
+    // Crear la reserva antes de instanciar el controladorPago
+    Reserva reserva = controladorReserva.getReserva();  // Obtener la reserva de controladorReserva
+    controladorPago = new ControladorPago(reserva);
+
+    //VISTAS
+    inicioView = new InicioView(this);
+    buscarVueloView = new BuscarVueloView(this);
+    vueloIDAView = new VueloIDAView(this);
+    vueloIDAVUELTAView = new VueloIDAVUELTAView(this);
+    vueloIVUELTAView = new VueloIVUELTAView(this);
+    claseVueloView = new ClaseVueloView(this);
+    asientosView = new AsientosView(this, controladorReserva);
+    equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
+    loginView = new LoginView(this);
+    iniciarSesionView = new IniciarSesionView(this);
+    creacionUsuarioView = new CreacionUsuarioView(this);
+    pagoView = new PagoView(this, controladorPago);
+    tarjetaView = new TarjetaView(this, controladorPago);
+    payPalView = new PayPalView(this, controladorPago);
+
+    //CARD LAYOUT
+    PanelContenedor.add(inicioView, "INICIO");
+    PanelContenedor.add(buscarVueloView, "BUSCAR");
+    PanelContenedor.add(vueloIDAView, "VUELOS IDA");
+    PanelContenedor.add(vueloIDAVUELTAView, "VUELOS IDA Y VUELTA");
+    PanelContenedor.add(vueloIVUELTAView, "VUELOS VUELTA");
+    PanelContenedor.add(claseVueloView, "CLASE");
+    PanelContenedor.add(asientosView, "ASIENTOS");
+    PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
+    PanelContenedor.add(loginView, "LOGIN");
+    PanelContenedor.add(iniciarSesionView, "INICIAR");
+    PanelContenedor.add(creacionUsuarioView, "CREAR");
+    PanelContenedor.add(pagoView, "PAGO");
+    PanelContenedor.add(tarjetaView, "TARJETA");
+    PanelContenedor.add(payPalView, "PAYPAL");
+
+    mostrarVista("INICIO");
 }
     
    public void mostrarVista(String nombreVista) {

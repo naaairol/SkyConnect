@@ -4,22 +4,38 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorPago;
+
 /**
  *
  * @author mateo
  */
 public class PagoView extends javax.swing.JPanel {
-
-    /**
-     * Creates new form PagoView
-     */
+    private ControladorPago controladorPago; 
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
-    // a través del MainFrame usando CardLayout.
-    public PagoView(MainFrame mainFrame) {
-        this.mainFrame = mainFrame; 
+    public PagoView(MainFrame mainFrame, ControladorPago controladorPago) {
+        this.mainFrame = mainFrame;
+        this.controladorPago = controladorPago;
         initComponents();
+        cargarResumen();
     }
+    //Imprime el resumen de compra 
+    private void cargarResumen() {
+    txtFResumenOrigen.setText(controladorPago.getOrigen());
+    txtFResumenDestino.setText(controladorPago.getDestino());
+    txtFResumenFecha.setText(controladorPago.getFecha());
+    txtFResumenHorario.setText(controladorPago.getHorario());
+
+    txtFResumenNPasajeros.setText(String.valueOf(controladorPago.getNumeroPasajeros()));
+    txtFResumenAsientos.setText(String.join(", ", controladorPago.getAsientos()));
+    txtFResumenPrecioBase.setText(String.valueOf(controladorPago.getPrecioBase()));
+    txtFResumenImpuestos.setText(String.valueOf(controladorPago.getImpuestos()));
+    txtFResumenAdicionales.setText(String.valueOf(controladorPago.getAdicionales()));
+    txtFResumenDescuentos.setText(String.valueOf(controladorPago.getDescuentos()));
+    txtFResumenTotalPagar.setText(String.valueOf(controladorPago.getTotal()));
+    txtFResumenMillasAcumuladas.setText(String.valueOf(controladorPago.getMillas()));
+}
 
     /**
      * This method is called from within the constructor to initialize the form.

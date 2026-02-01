@@ -4,23 +4,88 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorPago;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mateo
  */
 public class PayPalView extends javax.swing.JPanel {
-
-    /**
-     * Creates new form PayPalView
-     */
-    private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public PayPalView(MainFrame mainFrame) {
-        this.mainFrame = mainFrame; 
+     private MainFrame mainFrame;
+    private ControladorPago controladorPago; 
+    
+    // Constructor que inicializa la vista y permite la navegación entre pantallas
+    public PayPalView(MainFrame mainFrame, ControladorPago controladorPago) {
+        this.mainFrame = mainFrame;
+        this.controladorPago = controladorPago; 
         initComponents();
+        registrarEventos();
     }
 
+    // Registro de eventos de los botones
+    private void registrarEventos() {
+        jButton1.addActionListener(e -> procesarPago());
+        jbtnAceptarPagoPayPal.addActionListener(e -> procesarPagoConPayPal());
+        JbtnCancelarPagoPayPal.addActionListener(e -> cancelarPago());
+    }
+    /**
+     * Método para procesar el pago (general)
+     * Este método puede delegar el pago específico a través del controlador según el tipo de pago
+     */
+    private void procesarPago() {
+        // Aquí podemos verificar el tipo de pago seleccionado por el usuario
+        // Como solo tenemos la lógica de PayPal, procedemos con eso.
+        String correo = txtFIniciarSesionPayPal.getText().trim();
+        String contrasena = txtFContraseñaPayPal.getText().trim();
+
+        // Validación simple de los campos
+        if (correo.isEmpty() || contrasena.isEmpty()) {
+            mostrarMensajeError("Los campos de correo y contraseña son obligatorios.");
+            return;
+        }
+
+        // Delegar la lógica del pago al controlador de pago (si fuera necesario, puedes agregar un tipo de pago)
+        controladorPago.procesarPagoPayPal(correo, contrasena);
+
+        // Mostrar mensaje de éxito
+        mostrarMensajeExito("Pago realizado con éxito a través de PayPal.");
+    }
+
+    // Método que procesa el pago con PayPal (concretamente)
+    private void procesarPagoConPayPal() {
+        String correo = txtFIniciarSesionPayPal.getText().trim();
+        String contrasena = txtFContraseñaPayPal.getText().trim();
+
+        // Validación simple de los campos
+        if (correo.isEmpty() || contrasena.isEmpty()) {
+            mostrarMensajeError("Los campos de correo y contraseña son obligatorios.");
+            return;
+        }
+
+        // Delegamos la lógica del pago al controlador
+        controladorPago.procesarPagoPayPal(correo, contrasena);
+
+        // Mostrar mensaje de éxito
+        mostrarMensajeExito("Pago realizado con éxito a través de PayPal.");
+    }
+
+    // Método que cancela el pago y regresa a la vista anterior
+    private void cancelarPago() {
+        mainFrame.mostrarVista("PAGO");
+    }
+
+    // Método que muestra un mensaje de error
+    private void mostrarMensajeError(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    // Método que muestra un mensaje de éxito
+    private void mostrarMensajeExito(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje, "Éxito", JOptionPane.INFORMATION_MESSAGE);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

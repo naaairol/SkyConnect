@@ -4,21 +4,38 @@
  */
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorPago;
+
 /**
  *
  * @author mateo
  */
 public class TarjetaView extends javax.swing.JPanel {
 
-    /**
-     * Creates new form TarjetaView
-     */
     private MainFrame mainFrame; 
+    private ControladorPago controladorPago;
     // Constructor que inicializa la vista y permite la navegación entre pantallas
-    // a través del MainFrame usando CardLayout.
-    public TarjetaView(MainFrame mainFrame){
-        this.mainFrame = mainFrame; 
+    public TarjetaView(MainFrame mainFrame, ControladorPago controladorPago) {
+        this.mainFrame = mainFrame;
+        this.controladorPago = controladorPago;
         initComponents();
+        registrarEventos();
+    }
+    
+    private void registrarEventos() {
+        jbtnConfirmarPago.addActionListener(e -> enviarDatosPago());
+    }
+
+    private void enviarDatosPago() {
+        String numeroTarjeta = txtTarjetaMetodoPago2.getText().trim();
+        String fechaVencimiento = txtFechaMetodoPago2.getText().trim();
+        String cvv = txtCVVMetodoPago2.getText().trim();
+
+        controladorPago.procesarPagoTarjeta(
+            numeroTarjeta,
+            fechaVencimiento,
+            cvv
+        );
     }
 
     /**
