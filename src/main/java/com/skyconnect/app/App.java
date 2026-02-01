@@ -13,6 +13,7 @@ public class App {
         SwingUtilities.invokeLater(() -> {
         MainFrame mainFrame = new MainFrame();
         mainFrame.setTitle("SkyConnect");
+        mainFrame.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         mainFrame.setLocationRelativeTo(null); 
         mainFrame.setVisible(true);
 
