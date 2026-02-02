@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
 import com.skyconnect.modelo.Factura;
 import javax.swing.JTextArea;
 
 public class FacturaView extends javax.swing.JPanel {
-     private Factura factura; // El modelo Factura
-    private MainFrame mainFrame; 
+    private Factura factura; // El modelo Factura
+    private MainFrame mainFrame;
     private String metodoDePago; // Para almacenar el método de pago
 
     // Constructor que inicializa la vista con los datos de la factura.
@@ -17,7 +13,7 @@ public class FacturaView extends javax.swing.JPanel {
         this.mainFrame = mainFrame;
         this.factura = factura;
         this.metodoDePago = metodoDePago; // Guardamos el método de pago
-        initComponents();
+        initComponents();  // NetBeans genera este método, no lo modifiques
         mostrarFactura(); // Llamamos al método para mostrar la factura.
     }
 
@@ -49,17 +45,13 @@ public class FacturaView extends javax.swing.JPanel {
         facturaTexto.append("--------------------------------------------------\n");
 
         // Mostrar en el JTextArea
-        txtFactura.setText(facturaTexto.toString()); // Se coloca el texto generado en el JTextArea
+        txtFacturaFinal.setText(facturaTexto.toString());  // Usa solo txtFacturaFinal, el que fue generado en initComponents
     }
-    
+
     // Método para regresar a la vista anterior (ej. PagoView)
     private void regresar() {
         mainFrame.mostrarVista("PAGO"); // Redirige a la vista de pago
     }
-
-    // Esta es la parte que se usa para mostrar la factura en un JTextArea
-    private JTextArea txtFactura; // Aquí puedes usar un JTextArea en tu diseño GUI.
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,27 +63,30 @@ public class FacturaView extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        txtFacturaFinalMostrar = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtFacturaFinal = new javax.swing.JTextArea();
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Factura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 36))); // NOI18N
 
-        txtFacturaFinalMostrar.setEnabled(false);
-        txtFacturaFinalMostrar.addActionListener(this::txtFacturaFinalMostrarActionPerformed);
+        txtFacturaFinal.setColumns(20);
+        txtFacturaFinal.setRows(5);
+        jScrollPane1.setViewportView(txtFacturaFinal);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(txtFacturaFinalMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(txtFacturaFinalMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -99,7 +94,7 @@ public class FacturaView extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(461, 461, 461)
+                .addGap(489, 489, 489)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(612, Short.MAX_VALUE))
         );
@@ -129,13 +124,10 @@ public class FacturaView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFacturaFinalMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFacturaFinalMostrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFacturaFinalMostrarActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtFacturaFinalMostrar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtFacturaFinal;
     // End of variables declaration//GEN-END:variables
     }
