@@ -6,15 +6,15 @@ import java.util.Date;
 public class Vuelo {
     
     private String numeroVuelo;
-    private Date fechaSalida;
-    private Date fechaLlegada;
-    private Time horaSalida;
-    private Time horaLlegada;
-    private Time duracion;
+    private String fechaSalida;
+    private String fechaLlegada;
+    private String horaSalida;
+    private String horaLlegada;
+    private String duracion;
     private float precioEstimado;
     private Ruta ruta;
 
-    public Vuelo(String numeroVuelo, Date fechaSalida, Date fechaLlegada, Time horaSalida, Time horaLlegada, Time duracion, float precioEstimado, Ruta ruta) {
+    public Vuelo(String numeroVuelo, String fechaSalida, String fechaLlegada, String horaSalida, String horaLlegada, String duracion, float precioEstimado, Ruta ruta) {
         this.numeroVuelo = numeroVuelo;
         this.fechaSalida = fechaSalida;
         this.fechaLlegada = fechaLlegada;
@@ -33,43 +33,43 @@ public class Vuelo {
         this.numeroVuelo = numeroVuelo;
     }
 
-    public Date getFechaSalida() {
+    public String getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
-    public Date getFechaLlegada() {
+    public String getFechaLlegada() {
         return fechaLlegada;
     }
 
-    public void setFechaLlegada(Date fechaLlegada) {
+    public void setFechaLlegada(String fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
 
-    public Time getHoraSalida() {
+    public String getHoraSalida() {
         return horaSalida;
     }
 
-    public void setHoraSalida(Time horaSalida) {
+    public void setHoraSalida(String horaSalida) {
         this.horaSalida = horaSalida;
     }
 
-    public Time getHoraLlegada() {
+    public String getHoraLlegada() {
         return horaLlegada;
     }
 
-    public void setHoraLlegada(Time horaLlegada) {
+    public void setHoraLlegada(String horaLlegada) {
         this.horaLlegada = horaLlegada;
     }
 
-    public Time getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(Time duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 
