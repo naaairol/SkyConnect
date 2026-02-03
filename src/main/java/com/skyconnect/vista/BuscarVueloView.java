@@ -1,15 +1,41 @@
 package com.skyconnect.vista; 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import com.skyconnect.controlador.ControladorAeropuerto;
 import com.skyconnect.modelo.Aeropuerto;
 
+
 public class BuscarVueloView extends javax.swing.JPanel {
     private ControladorAeropuerto controladorAeropuerto;
+    private static String origen;
+    private static String destino;
+    private static String fechaViaje;
+    private static String fechaRetorno;
+
+    //Getters para utilizar más adelante en la búsqueda de vuelos
+    public static String getOrigenBuscado() {
+        return origen;
+    }
+
+    public static String getDestinoBuscado() {
+        return destino;
+    }
+
+    public static String getFechaViajeBuscado() {
+        return fechaViaje;
+    }
+
+    public static String getFechaRetornoBuscado() {
+        return fechaRetorno;
+    }
+    
     /**
      * Creates new form BuscarVueloView
      */
     private javax.swing.ButtonGroup grupoTipoVuelo;
-    private MainFrame mainFrame; 
+    private MainFrame mainFrame;
+    
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
     public BuscarVueloView(MainFrame mainFrame) {
@@ -25,7 +51,8 @@ public class BuscarVueloView extends javax.swing.JPanel {
         //Deshabilita "Fecha de retorno" al escoger Solo IDA 
         jdtFechaRetorno.setEnabled(false);
     }
-    //Muestra los aeropuertos cargados
+    
+    //Muestra los aeropuertos disponibles (objetos)
     private void cargarAeropuertos() {
         cmbxOrigen.removeAllItems();
         cmbxDestino.removeAllItems();
@@ -40,6 +67,21 @@ public class BuscarVueloView extends javax.swing.JPanel {
             }
         }
         cmbxOrigen.setEnabled(false);
+    }
+
+    public static String ciudadAIATA(String ciudad) {
+    if (ciudad == null) return null;
+
+    return switch (ciudad.trim()) {
+        case "Quito" -> "UIO";
+        case "Guayaquil" -> "GYE";
+        case "Galápagos" -> "GPS";
+        case "Bogotá" -> "BOG";
+        case "Ciudad de Panamá" -> "PTY";
+        case "Miami" -> "MIA";
+        case "Madrid" -> "MAD";
+        default -> null; // Si no encuentra la ciudad
+        };
     }
 
     /**
@@ -174,7 +216,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
         jbtnSiguienteBuscarVuelo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnSiguienteBuscarVuelo.setText("Siguiente");
         jbtnSiguienteBuscarVuelo.addActionListener(this::jbtnSiguienteBuscarVueloActionPerformed);
-        jPanel1.add(jbtnSiguienteBuscarVuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 700, 200, -1));
+        jPanel1.add(jbtnSiguienteBuscarVuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 700, 200, -1));
 
         btnInSesion1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnInSesion1.setText("Iniciar Sesion");
@@ -185,7 +227,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
         jLabel3.setText("Fecha de Retorno:");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
-        jLabel2.setText("Fecha de Viaje:");
+        jLabel2.setText("Fecha de Salida:");
 
         jdtFechaViaje.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
@@ -206,7 +248,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
                         .addComponent(jdtFechaViaje, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100)
                         .addComponent(jdtFechaRetorno, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +261,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jdtFechaViaje, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                     .addComponent(jdtFechaRetorno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 820, 170));
@@ -250,7 +292,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(radBtnIdaVuelta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(radBtnIda))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 600, 110));
@@ -286,7 +328,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
                         .addComponent(cmbxOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(340, 340, 340)
                         .addComponent(cmbxDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 140, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,7 +343,7 @@ public class BuscarVueloView extends javax.swing.JPanel {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cmbxOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbxDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 1360, 160));
@@ -333,20 +375,33 @@ public class BuscarVueloView extends javax.swing.JPanel {
     }//GEN-LAST:event_radBtnIdaActionPerformed
 
     private void cmbxOrigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxOrigenActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cmbxOrigenActionPerformed
 
     private void jbtnSiguienteBuscarVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteBuscarVueloActionPerformed
-        // Verifica que el usuario haya seleccionado un tipo de vuelo antes de continuar
-       if (radBtnIda.isSelected()) {
-       mainFrame.mostrarVista("VUELOS IDA");
-       return;
-       }
 
-        if (radBtnIdaVuelta.isSelected()) {
-        mainFrame.mostrarVista("VUELOS IDA Y VUELTA");
-        return;
-    }       
+        //Settear el valor de las variables escogidas por el usuario
+        origen = cmbxOrigen.getSelectedItem().toString();
+        destino = cmbxDestino.getSelectedItem().toString();
+
+        Date fechaViajeTemp = jdtFechaViaje.getDate();
+        if (fechaViajeTemp != null) {
+        SimpleDateFormat fFSalida = new SimpleDateFormat("yyyy-MM-dd");
+        fechaViaje = fFSalida.format(fechaViajeTemp);
+        }
+        
+        Date fechaRetornoTemp = jdtFechaRetorno.getDate();
+        if (fechaRetornoTemp != null) {
+        SimpleDateFormat fFRetorno = new SimpleDateFormat("yyyy-MM-dd");
+        fechaRetorno = fFRetorno.format(fechaRetornoTemp);
+        }
+
+        //Lanza ventana segun corresponda
+        if(radBtnIda.isSelected()){
+            mainFrame.mostrarVista("VUELOS IDA");
+        } else if(radBtnIdaVuelta.isSelected()){
+            mainFrame.mostrarVista("VUELOS IDA Y VUELTA");  
+        }
     }//GEN-LAST:event_jbtnSiguienteBuscarVueloActionPerformed
 
     private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed

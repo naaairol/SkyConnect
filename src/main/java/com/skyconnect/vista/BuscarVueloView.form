@@ -247,7 +247,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1290" y="700" width="200" height="-1"/>
+              <AbsoluteConstraints x="1230" y="700" width="200" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -291,7 +291,7 @@
                               <Component id="jdtFechaRetorno" min="-2" pref="280" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="68" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -308,7 +308,7 @@
                           <Component id="jdtFechaViaje" pref="49" max="32767" attributes="0"/>
                           <Component id="jdtFechaRetorno" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -327,7 +327,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="28" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Fecha de Viaje:"/>
+                <Property name="text" type="java.lang.String" value="Fecha de Salida:"/>
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="jdtFechaViaje">
@@ -373,7 +373,7 @@
                           <Component id="radBtnIdaVuelta" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="radBtnIda" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -426,7 +426,7 @@
                               <Component id="cmbxDestino" min="-2" pref="420" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="140" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -446,7 +446,7 @@
                           <Component id="cmbxOrigen" min="-2" pref="60" max="-2" attributes="0"/>
                           <Component id="cmbxDestino" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

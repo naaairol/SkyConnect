@@ -8,7 +8,6 @@ import com.skyconnect.modelo.Aeropuerto;
 import com.skyconnect.modelo.Vuelo;
 import com.skyconnect.modelo.VueloDAO;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ControladorVuelo { 
     private VueloDAO vueloDAO;
@@ -22,7 +21,7 @@ public class ControladorVuelo {
         controladorAeropuerto = new ControladorAeropuerto();
     }
 
-    public List<Vuelo> obtenerVuelos() {
+    public ArrayList<Vuelo> obtenerVuelos() {
         ArrayList<Aeropuerto> aeropuertos = controladorAeropuerto.getAeropuertos();
         return vueloDAO.cargarVuelos("database/vuelos.txt", aeropuertos);
     }

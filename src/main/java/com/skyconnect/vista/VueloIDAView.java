@@ -1,34 +1,65 @@
 package com.skyconnect.vista;
 
-import com.skyconnect.controlador.ControladorVuelo;
 import com.skyconnect.modelo.Vuelo;
-import java.util.List;
+import com.skyconnect.modelo.Ruta;
+import com.skyconnect.vista.BuscarVueloView;
+import com.skyconnect.controlador.ControladorVuelo;
+import java.util.ArrayList;
 
 public class VueloIDAView extends javax.swing.JPanel {
+    
+    boolean mismoOrigen;
+    boolean mismoDestino;
+    boolean mismaFecha;
+    
     /**
      * Creates new form VueloIDAView
      */
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
+    
+    //Busca hasta 3 vuelos para luego mostrarlos en los paneles de la vista
+    
     public VueloIDAView(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         initComponents();
+        
         // Solicita los vuelos al controlador
         ControladorVuelo controlador = new ControladorVuelo();
-        List<Vuelo> vuelos = controlador.obtenerVuelos();
-
+        ArrayList<Vuelo> vuelos = controlador.obtenerVuelos();
         // Muestra los vuelos en la vista
         mostrarVuelos(vuelos);
     }
     
-
-    //Muestra hasta 3 vuelos en los paneles de la vista.
-    public void mostrarVuelos(List<Vuelo> vuelos) {
+    public void mostrarVuelos(ArrayList<Vuelo> vuelos) {
+        //Settea los campos de vuelos como vacíos
         limpiarCampos();
 
-        for (int i = 0; i < vuelos.size() && i < 3; i++) {
-            Vuelo v = vuelos.get(i);
+        ArrayList<Vuelo> vuelosEncontrados = new ArrayList<>();
+
+        for (Vuelo v : vuelos) {
+
+            // Primero valida que la ruta de donde parte usuario
+            // sea la misma a donde va el vuelo
+            mismoOrigen = v.getRuta().getAeroSalida().getCodigoIATA().equalsIgnoreCase(
+                    BuscarVueloView.ciudadAIATA(BuscarVueloView.getOrigenBuscado()));
+ 
+            // Luego valida que la ruta a donde quiere ir usuario
+            // sea la misma a donde va el vuelo
+            mismoDestino = v.getRuta().getAeroLlegada().getCodigoIATA().equalsIgnoreCase(
+                    BuscarVueloView.ciudadAIATA(BuscarVueloView.getDestinoBuscado()));
+
+            mismaFecha = v.getFechaSalida().equalsIgnoreCase(BuscarVueloView.getFechaViajeBuscado());
+
+        // Si todo se cumpleee
+        if (mismoOrigen && mismoDestino && mismaFecha) {
+            vuelosEncontrados.add(v);
+        }
+    }
+        //Finalmente enlista los vuelos
+        for (int i = 0; i < vuelosEncontrados.size() && i < 3; i++) {
+            Vuelo v = vuelosEncontrados.get(i);
             switch (i) {
                 case 0 -> cargarVuelo1(v);
                 case 1 -> cargarVuelo2(v);
@@ -36,25 +67,26 @@ public class VueloIDAView extends javax.swing.JPanel {
             }
         }
     }
+    
     //Metodos para que aparezcan los vuelos predeterminados 
     private void cargarVuelo1(Vuelo v) {
     txtFDestino1.setText(v.getRuta().getAeroLlegada().getCiudad());
-    txtFFecha1.setText(v.getFechaSalida().toString());
-    txtFDuracion1.setText(v.getDuracion().toString());
+    txtFFecha1.setText(v.getFechaSalida());
+    txtFDuracion1.setText(v.getDuracion());
     txtFCosto1.setText(String.valueOf(v.getPrecioEstimado()));
     }
 
     private void cargarVuelo2(Vuelo v) {
     txtFDestino2.setText(v.getRuta().getAeroLlegada().getCiudad());
-    txtFFecha2.setText(v.getFechaSalida().toString());
-    txtFDuracion2.setText(v.getDuracion().toString());
+    txtFFecha2.setText(v.getFechaSalida());
+    txtFDuracion2.setText(v.getDuracion());
     txtFCosto2.setText(String.valueOf(v.getPrecioEstimado()));
     }
 
     private void cargarVuelo3(Vuelo v) {
     txtFDestino3.setText(v.getRuta().getAeroLlegada().getCiudad());
-    txtFFecha3.setText(v.getFechaSalida().toString());
-    txtFDuracion3.setText(v.getDuracion().toString());
+    txtFFecha3.setText(v.getFechaSalida());
+    txtFDuracion3.setText(v.getDuracion());
     txtFCosto3.setText(String.valueOf(v.getPrecioEstimado()));
     }
     // Limpia
@@ -118,6 +150,11 @@ public class VueloIDAView extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         txtFCosto3 = new javax.swing.JTextField();
 
+        jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jPanel1ComponentShown(evt);
+            }
+        });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 42)); // NOI18N
@@ -437,9 +474,8 @@ public class VueloIDAView extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnPredeterminadoVuelo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnPredeterminadoVuelo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPredeterminadoVuelo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnPredeterminadoVuelo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPredeterminadoVuelo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(524, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -466,7 +502,7 @@ public class VueloIDAView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -502,6 +538,10 @@ public class VueloIDAView extends javax.swing.JPanel {
     private void txtFDestino2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFDestino2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFDestino2ActionPerformed
+
+    private void jPanel1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentShown
+
+    }//GEN-LAST:event_jPanel1ComponentShown
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
