@@ -1,8 +1,5 @@
 package com.skyconnect.modelo;
 
-import java.sql.Time;
-import java.util.Date;
-
 public class Vuelo {
     
     private String numeroVuelo;
