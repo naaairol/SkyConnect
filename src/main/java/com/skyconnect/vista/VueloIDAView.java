@@ -1,65 +1,46 @@
 package com.skyconnect.vista;
 
 import com.skyconnect.modelo.Vuelo;
-import com.skyconnect.modelo.Ruta;
-import com.skyconnect.vista.BuscarVueloView;
 import com.skyconnect.controlador.ControladorVuelo;
+import com.skyconnect.controlador.ControladorBusqueda;
 import java.util.ArrayList;
 
 public class VueloIDAView extends javax.swing.JPanel {
     
-    boolean mismoOrigen;
-    boolean mismoDestino;
-    boolean mismaFecha;
+    private ControladorBusqueda controladorBusqueda;
     
     /**
      * Creates new form VueloIDAView
      */
     private MainFrame mainFrame; 
+    
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    
-    //Busca hasta 3 vuelos para luego mostrarlos en los paneles de la vista
-    
-    public VueloIDAView(MainFrame mainFrame) {
+    public VueloIDAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda) {
         this.mainFrame = mainFrame;
+        this.controladorBusqueda = controladorBusqueda;
         initComponents();
-        
-        // Solicita los vuelos al controlador
+    }
+    
+    public void cargarDatosYBuscar() {
+        //Crea un controlador para obtener el arreglo con todos los vuelos
         ControladorVuelo controlador = new ControladorVuelo();
         ArrayList<Vuelo> vuelos = controlador.obtenerVuelos();
-        // Muestra los vuelos en la vista
+        //Toma toda la lista de vuelos, pero solo devuelve y dibuja los que
+        //nos interesa, o sea los seleccionados por el usuario
         mostrarVuelos(vuelos);
     }
     
-    public void mostrarVuelos(ArrayList<Vuelo> vuelos) {
-        //Settea los campos de vuelos como vacíos
+    public void mostrarVuelos(ArrayList<Vuelo> todosLosVuelos) {
         limpiarCampos();
 
-        ArrayList<Vuelo> vuelosEncontrados = new ArrayList<>();
+        //Controlador toma todos los vuelos y devuelve los 
+        //que coinciden con lo que quiere el usuario
+        ArrayList<Vuelo> vuelosFiltrados = controladorBusqueda.buscarVuelosSoloIDA(todosLosVuelos);
 
-        for (Vuelo v : vuelos) {
-
-            // Primero valida que la ruta de donde parte usuario
-            // sea la misma a donde va el vuelo
-            mismoOrigen = v.getRuta().getAeroSalida().getCodigoIATA().equalsIgnoreCase(
-                    BuscarVueloView.ciudadAIATA(BuscarVueloView.getOrigenBuscado()));
- 
-            // Luego valida que la ruta a donde quiere ir usuario
-            // sea la misma a donde va el vuelo
-            mismoDestino = v.getRuta().getAeroLlegada().getCodigoIATA().equalsIgnoreCase(
-                    BuscarVueloView.ciudadAIATA(BuscarVueloView.getDestinoBuscado()));
-
-            mismaFecha = v.getFechaSalida().equalsIgnoreCase(BuscarVueloView.getFechaViajeBuscado());
-
-        // Si todo se cumpleee
-        if (mismoOrigen && mismoDestino && mismaFecha) {
-            vuelosEncontrados.add(v);
-        }
-    }
-        //Finalmente enlista los vuelos
-        for (int i = 0; i < vuelosEncontrados.size() && i < 3; i++) {
-            Vuelo v = vuelosEncontrados.get(i);
+        //La visa muestra los vuelos que son los que quiere el usuario
+        for (int i = 0; i < vuelosFiltrados.size() && i < 3; i++) {
+            Vuelo v = vuelosFiltrados.get(i);
             switch (i) {
                 case 0 -> cargarVuelo1(v);
                 case 1 -> cargarVuelo2(v);
@@ -68,7 +49,7 @@ public class VueloIDAView extends javax.swing.JPanel {
         }
     }
     
-    //Metodos para que aparezcan los vuelos predeterminados 
+    //Metodos para que aparezcan los vuelos
     private void cargarVuelo1(Vuelo v) {
     txtFDestino1.setText(v.getRuta().getAeroLlegada().getCiudad());
     txtFFecha1.setText(v.getFechaSalida());
@@ -89,6 +70,7 @@ public class VueloIDAView extends javax.swing.JPanel {
     txtFDuracion3.setText(v.getDuracion());
     txtFCosto3.setText(String.valueOf(v.getPrecioEstimado()));
     }
+    
     // Limpia
     private void limpiarCampos() {
     txtFDestino1.setText("");

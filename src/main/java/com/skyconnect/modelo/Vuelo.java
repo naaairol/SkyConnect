@@ -26,66 +26,35 @@ public class Vuelo {
         return numeroVuelo;
     }
 
-    public void setNumeroVuelo(String numeroVuelo) {
-        this.numeroVuelo = numeroVuelo;
-    }
-
     public String getFechaSalida() {
         return fechaSalida;
-    }
-
-    public void setFechaSalida(String fechaSalida) {
-        this.fechaSalida = fechaSalida;
     }
 
     public String getFechaLlegada() {
         return fechaLlegada;
     }
 
-    public void setFechaLlegada(String fechaLlegada) {
-        this.fechaLlegada = fechaLlegada;
-    }
-
     public String getHoraSalida() {
         return horaSalida;
-    }
-
-    public void setHoraSalida(String horaSalida) {
-        this.horaSalida = horaSalida;
     }
 
     public String getHoraLlegada() {
         return horaLlegada;
     }
 
-    public void setHoraLlegada(String horaLlegada) {
-        this.horaLlegada = horaLlegada;
-    }
-
     public String getDuracion() {
         return duracion;
-    }
-
-    public void setDuracion(String duracion) {
-        this.duracion = duracion;
     }
 
     public float getPrecioEstimado() {
         return precioEstimado;
     }
 
-    public void setPrecioEstimado(float precioEstimado) {
-        this.precioEstimado = precioEstimado;
-    }
-
     public Ruta getRuta() {
         return ruta;
     }
 
-    public void setRuta(Ruta ruta) {
-        this.ruta = ruta;
-    }
 
- 
     
+
 }

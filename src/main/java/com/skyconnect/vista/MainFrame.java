@@ -1,4 +1,5 @@
 package com.skyconnect.vista;
+import com.skyconnect.controlador.ControladorBusqueda;
 import com.skyconnect.controlador.ControladorFactura;
 import com.skyconnect.controlador.ControladorPago;
 import com.skyconnect.controlador.ControladorReserva;
@@ -11,7 +12,8 @@ public class MainFrame extends javax.swing.JFrame {
     private CardLayout cardLayout;
     private ControladorReserva controladorReserva;
     private ControladorPago controladorPago;
-    private ControladorFactura controladorFactura;  // Definir ControladorFactura
+    private ControladorFactura controladorFactura;
+    private ControladorBusqueda controladorBusqueda;
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -45,6 +47,9 @@ public class MainFrame extends javax.swing.JFrame {
         // CONTROLADORES (UNA SOLA INSTANCIA)
         controladorReserva = new ControladorReserva();
         
+        // Inicializamos el ControladorBusqueda
+        controladorBusqueda = new ControladorBusqueda();
+        
         // Crear la reserva antes de instanciar el controladorPago
         Factura reserva = controladorReserva.getReserva();  // Obtener la reserva de controladorReserva
         
@@ -56,9 +61,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         // VISTAS
         inicioView = new InicioView(this);
-        buscarVueloView = new BuscarVueloView(this);
-        vueloIDAView = new VueloIDAView(this);
-        vueloIDAVUELTAView = new VueloIDAVUELTAView(this);
+        buscarVueloView = new BuscarVueloView(this, controladorBusqueda);
+        vueloIDAView = new VueloIDAView(this, controladorBusqueda);
+        vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda);
         vueloIVUELTAView = new VueloIVUELTAView(this);
         claseVueloView = new ClaseVueloView(this);
         asientosView = new AsientosView(this, controladorReserva);
@@ -99,7 +104,19 @@ public class MainFrame extends javax.swing.JFrame {
     public void mostrarVista(String nombreVista) {
         cardLayout.show(PanelContenedor, nombreVista);
     }
+    
+    public VueloIDAView getVueloIDAView() {
+        return vueloIDAView;
+    }
 
+    public VueloIDAVUELTAView getVueloIDAVUELTAView() {
+        return vueloIDAVUELTAView;
+    }
+
+    // Para que todos usen el mismo controlador, es decir, los mismos datos
+    public ControladorBusqueda getControladorBusqueda() {
+        return controladorBusqueda;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

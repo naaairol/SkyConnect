@@ -1,15 +1,20 @@
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorBusqueda;
+
 public class VueloIDAVUELTAView extends javax.swing.JPanel {
 
+    ControladorBusqueda controladorBusqueda;
+    
     /**
      * Creates new form VueloIDAVUELTAView
      */
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public VueloIDAVUELTAView(MainFrame mainFrame) {
-        this.mainFrame = mainFrame; 
+    public VueloIDAVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda) {
+        this.mainFrame = mainFrame;
+        this.controladorBusqueda = controladorBusqueda;
         initComponents();
     }
 

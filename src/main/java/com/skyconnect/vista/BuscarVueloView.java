@@ -3,43 +3,34 @@ package com.skyconnect.vista;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.skyconnect.controlador.ControladorAeropuerto;
+import com.skyconnect.controlador.ControladorBusqueda;
 import com.skyconnect.modelo.Aeropuerto;
+import javax.swing.JOptionPane;
 
-
-public class BuscarVueloView extends javax.swing.JPanel {
-    private ControladorAeropuerto controladorAeropuerto;
-    private static String origen;
-    private static String destino;
-    private static String fechaViaje;
-    private static String fechaRetorno;
-
-    //Getters para utilizar más adelante en la búsqueda de vuelos
-    public static String getOrigenBuscado() {
-        return origen;
-    }
-
-    public static String getDestinoBuscado() {
-        return destino;
-    }
-
-    public static String getFechaViajeBuscado() {
-        return fechaViaje;
-    }
-
-    public static String getFechaRetornoBuscado() {
-        return fechaRetorno;
-    }
+    public class BuscarVueloView extends javax.swing.JPanel {
+        //Controladores necesarios en esta clase
+        private ControladorAeropuerto controladorAeropuerto;
+        private ControladorBusqueda controladorBusqueda;
+        private javax.swing.ButtonGroup grupoTipoVuelo;
+        private MainFrame mainFrame;
+    
+        private String origen;
+        private String destino;
+        private String fechaViaje;
+        private String fechaRetorno;
+    
     
     /**
      * Creates new form BuscarVueloView
+     * @param mainFrame
+     * @param controladorBusqueda
      */
-    private javax.swing.ButtonGroup grupoTipoVuelo;
-    private MainFrame mainFrame;
-    
+  
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public BuscarVueloView(MainFrame mainFrame) {
+    public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda) {
         this.mainFrame = mainFrame;
+        this.controladorBusqueda = controladorBusqueda;
         initComponents();
         grupoTipoVuelo = new javax.swing.ButtonGroup();
         grupoTipoVuelo.add(radBtnIda);
@@ -52,36 +43,17 @@ public class BuscarVueloView extends javax.swing.JPanel {
         jdtFechaRetorno.setEnabled(false);
     }
     
-    //Muestra los aeropuertos disponibles (objetos)
-    private void cargarAeropuertos() {
+    //Muestra los aeropuertos disponibles iterando en una lista
+    private void cargarAeropuertos(){
         cmbxOrigen.removeAllItems();
         cmbxDestino.removeAllItems();
-        //Controla el listado de Ciudades en el apartado de Destino
+        //Itera en el listado de aeropuertos y muestra la ciudad de los mismos
         for (Aeropuerto a : controladorAeropuerto.getAeropuertos()) {
         String ciudad = a.getCiudad().trim();
-
-            if ("Quito".equalsIgnoreCase(ciudad)) {
+        //Lista todos los aeropuertos para origen y destino
                 cmbxOrigen.addItem(ciudad);
-                } else {
                 cmbxDestino.addItem(ciudad);
-            }
         }
-        cmbxOrigen.setEnabled(false);
-    }
-
-    public static String ciudadAIATA(String ciudad) {
-    if (ciudad == null) return null;
-
-    return switch (ciudad.trim()) {
-        case "Quito" -> "UIO";
-        case "Guayaquil" -> "GYE";
-        case "Galápagos" -> "GPS";
-        case "Bogotá" -> "BOG";
-        case "Ciudad de Panamá" -> "PTY";
-        case "Miami" -> "MIA";
-        case "Madrid" -> "MAD";
-        default -> null; // Si no encuentra la ciudad
-        };
     }
 
     /**
@@ -379,29 +351,50 @@ public class BuscarVueloView extends javax.swing.JPanel {
     }//GEN-LAST:event_cmbxOrigenActionPerformed
 
     private void jbtnSiguienteBuscarVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteBuscarVueloActionPerformed
-
-        //Settear el valor de las variables escogidas por el usuario
-        origen = cmbxOrigen.getSelectedItem().toString();
-        destino = cmbxDestino.getSelectedItem().toString();
-
+        
+        //Obtener datos de los componentes
+        this.origen = cmbxOrigen.getSelectedItem().toString();
+        this.destino = cmbxDestino.getSelectedItem().toString();
+        
+        //Lógica de fechas a String
         Date fechaViajeTemp = jdtFechaViaje.getDate();
         if (fechaViajeTemp != null) {
         SimpleDateFormat fFSalida = new SimpleDateFormat("yyyy-MM-dd");
-        fechaViaje = fFSalida.format(fechaViajeTemp);
+        this.fechaViaje = fFSalida.format(fechaViajeTemp);
         }
-        
+
         Date fechaRetornoTemp = jdtFechaRetorno.getDate();
         if (fechaRetornoTemp != null) {
         SimpleDateFormat fFRetorno = new SimpleDateFormat("yyyy-MM-dd");
-        fechaRetorno = fFRetorno.format(fechaRetornoTemp);
+        this.fechaRetorno = fFRetorno.format(fechaRetornoTemp);
         }
 
-        //Lanza ventana segun corresponda
-        if(radBtnIda.isSelected()){
-            mainFrame.mostrarVista("VUELOS IDA");
-        } else if(radBtnIdaVuelta.isSelected()){
-            mainFrame.mostrarVista("VUELOS IDA Y VUELTA");  
-        }
+        //Cambiamos la vista según el tipo de vuelo seleccionado
+            if(radBtnIda.isSelected()){
+                //Pasa las preferencias del usuario a variables en el Controlador
+                controladorBusqueda.setCriteriosBusquedaIDA(origen, destino, fechaViaje);
+                //No vuelve a instanciar VueloIDAView, sino que obtiene la ventana creada antes
+                VueloIDAView vueloIDAView = mainFrame.getVueloIDAView();
+                //Con los datos obtenidos, vueloIDAView muestra los vuelos
+                vueloIDAView.cargarDatosYBuscar();
+                mainFrame.mostrarVista("VUELOS IDA");
+            } else if(radBtnIdaVuelta.isSelected()){
+                
+                /*
+                
+                PENSAR MEJOR TODO ESTO, HASTA MIENTRAS NO SE VA A MOSTRAR NINGUNA
+                VENTANA AL LANZAR SELECCIONANDO IDA Y VUELTA
+                
+                //Pasa las preferencias del usuario a variables en el Controlador
+                controladorBusqueda.setCriteriosBusquedaIDAVUELTA(origen, destino, fechaViaje, fechaRetorno);
+                //No vuelve a instanciar VueloIDAVUELTA, sino que obtiene la ventana creada antes
+                VueloIDAView vueloIDAView = mainFrame.getVueloIDAView();
+                //Con los datos obtenidos, vueloIDAView muestra los vuelos
+                vueloIDAView.cargarDatosYBuscar();
+                mainFrame.mostrarVista("VUELOS IDA");
+                mainFrame.mostrarVista("VUELOS IDA Y VUELTA");
+                */
+            }
     }//GEN-LAST:event_jbtnSiguienteBuscarVueloActionPerformed
 
     private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed
