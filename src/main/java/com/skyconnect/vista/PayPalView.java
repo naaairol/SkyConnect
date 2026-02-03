@@ -91,10 +91,10 @@ public class PayPalView extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        txtFContraseñaPayPal = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtFIniciarSesionPayPal = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        txtFContraseñaPayPal = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -111,9 +111,6 @@ public class PayPalView extends javax.swing.JPanel {
         jButton1.setText("Confirmar");
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 630, 240, -1));
 
-        txtFContraseñaPayPal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        txtFContraseñaPayPal.addActionListener(this::txtFContraseñaPayPalActionPerformed);
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Correo Electrónico ");
 
@@ -122,19 +119,21 @@ public class PayPalView extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel2.setText("Contraseña");
 
+        txtFContraseñaPayPal.addActionListener(this::txtFContraseñaPayPalActionPerformed);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtFContraseñaPayPal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFIniciarSesionPayPal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtFContraseñaPayPal, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFIniciarSesionPayPal, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)))
                 .addContainerGap(30, Short.MAX_VALUE))
@@ -148,9 +147,9 @@ public class PayPalView extends javax.swing.JPanel {
                 .addComponent(txtFIniciarSesionPayPal, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2)
-                .addGap(34, 34, 34)
-                .addComponent(txtFContraseñaPayPal, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(txtFContraseñaPayPal, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 560, 440));
@@ -229,10 +228,6 @@ public class PayPalView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFContraseñaPayPalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFContraseñaPayPalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFContraseñaPayPalActionPerformed
-
     private void JbtnCancelarPagoPayPalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbtnCancelarPagoPayPalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JbtnCancelarPagoPayPalActionPerformed
@@ -240,6 +235,10 @@ public class PayPalView extends javax.swing.JPanel {
     private void txtFPagoFinalPayPalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFPagoFinalPayPalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFPagoFinalPayPalActionPerformed
+
+    private void txtFContraseñaPayPalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFContraseñaPayPalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFContraseñaPayPalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -254,7 +253,7 @@ public class PayPalView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton jbtnAceptarPagoPayPal;
-    private javax.swing.JTextField txtFContraseñaPayPal;
+    private javax.swing.JPasswordField txtFContraseñaPayPal;
     private javax.swing.JTextField txtFIniciarSesionPayPal;
     private javax.swing.JTextField txtFPagoFinalPayPal;
     // End of variables declaration//GEN-END:variables

@@ -21,28 +21,28 @@ public class FacturaView extends javax.swing.JPanel {
     private void mostrarFactura() {
         // Formato de factura
         StringBuilder facturaTexto = new StringBuilder();
-        facturaTexto.append("********** FACTURA DE RESERVA DE VUELO **********\n");
-        facturaTexto.append("--------------------------------------------------\n");
+        facturaTexto.append("************* FACTURA DE RESERVA DE VUELO *************\n");
+        facturaTexto.append("-------------------------------------------------------\n");
         facturaTexto.append("Origen: " + factura.getOrigen() + "\n");
         facturaTexto.append("Destino: " + factura.getDestino() + "\n");
         facturaTexto.append("Fecha: " + factura.getFecha() + "\n");
         facturaTexto.append("Horario: " + factura.getHorario() + "\n");
         facturaTexto.append("N° Pasajeros: " + factura.getNumeroPasajeros() + "\n");
-        facturaTexto.append("--------------------------------------------------\n");
+        facturaTexto.append("-------------------------------------------------------\n");
         facturaTexto.append("Precio Base: $" + factura.getPrecioBase() + "\n");
         facturaTexto.append("Impuestos: $" + factura.getImpuestos() + "\n");
         facturaTexto.append("Adicionales: $" + factura.getAdicionales() + "\n");
         facturaTexto.append("Descuentos: $" + factura.getDescuentos() + "\n");
-        facturaTexto.append("--------------------------------------------------\n");
+        facturaTexto.append("-------------------------------------------------------\n");
         facturaTexto.append("Total: $" + factura.getTotal() + "\n");
-        facturaTexto.append("--------------------------------------------------\n");
+        facturaTexto.append("-------------------------------------------------------\n");
 
         // Método de pago
         facturaTexto.append("Método de Pago: " + metodoDePago + "\n");
 
         // Mensaje de agradecimiento
-        facturaTexto.append("\nGracias por preferirnos. ¡Esperamos verte pronto!\n");
-        facturaTexto.append("--------------------------------------------------\n");
+        facturaTexto.append("\nGracias por preferirnos. ¡UN BUEN VIAJE!\n");
+        facturaTexto.append("-------------------------------------------------------\n");
 
         // Mostrar en el JTextArea
         txtFacturaFinal.setText(facturaTexto.toString());  // Usa solo txtFacturaFinal, el que fue generado en initComponents
@@ -68,8 +68,11 @@ public class FacturaView extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Factura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 36))); // NOI18N
 
+        txtFacturaFinal.setEditable(false);
         txtFacturaFinal.setColumns(20);
+        txtFacturaFinal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtFacturaFinal.setRows(5);
+        txtFacturaFinal.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jScrollPane1.setViewportView(txtFacturaFinal);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

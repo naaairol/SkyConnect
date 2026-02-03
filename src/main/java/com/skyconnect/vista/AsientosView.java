@@ -1348,15 +1348,15 @@ public class AsientosView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jpPanelAvion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 76, 410, 630));
+        jPanel1.add(jpPanelAvion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 410, 640));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setText("Seleccione sus asientos ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 680, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 680, 50));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel4.setText("Ecuador $ (USD) ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 10, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
 
         jbtnSeleccionarConfirmarAsientos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnSeleccionarConfirmarAsientos.setText("Seleccionar");
@@ -1405,21 +1405,29 @@ public class AsientosView extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1670, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1800, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 907, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnPagarAsientosViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPagarAsientosViewActionPerformed
-        // TODO add your handling code here:
+        // Verificamos si el checkbox de agregar equipaje extra está marcado
+        if (jCheckBoxAgregarEquipajeExtra.isSelected()) {
+        // Si está seleccionado, redirigimos a EquipajeExtraView
+            mainFrame.mostrarVista("EQUIPAJE");  // Esto debería redirigir a la vista de equipaje
+        } else {
+        // Si no está seleccionado, redirigimos a PagoView
+            mainFrame.mostrarVista("PAGO");  // Esto redirige a la vista de pago
+        }
     }//GEN-LAST:event_jbtnPagarAsientosViewActionPerformed
 
     private void txtAsientosSeleccionadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAsientosSeleccionadosActionPerformed

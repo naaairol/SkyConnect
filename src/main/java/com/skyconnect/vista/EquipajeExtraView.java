@@ -1,6 +1,9 @@
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorReserva;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
@@ -28,6 +31,7 @@ public class EquipajeExtraView extends javax.swing.JPanel {
     //Envía los datos al controlador
     // Envía los datos al controlador y maneja validaciones
     private boolean registrarEquipaje() {
+    //Recoge la información del equipaje 
     try {
         String propietario = txtNombrePropietarioExtra.getText().trim();
         double peso = Double.parseDouble(txtFPesoEquipajeExtra.getText());
@@ -41,8 +45,10 @@ public class EquipajeExtraView extends javax.swing.JPanel {
             throw new IllegalArgumentException("Seleccione un tipo de equipaje");
         }
 
-        // 👉 SOLO LLAMAS AL CONTROLADOR
+        // Llamamos al controlador y guardamos los datos
         controladorReserva.registrarEquipajeExtra(tipo, propietario, peso);
+        guardarDatosEquipaje(propietario, peso, tipo);  // Guardamos en el archivo
+
 
         return true;
 
@@ -59,6 +65,15 @@ public class EquipajeExtraView extends javax.swing.JPanel {
     }
     return false;
 }
+    // Guardar los datos en un archivo de texto
+    private void guardarDatosEquipaje(String propietario, double peso, String tipo) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("equipajes.txt", true))) {
+            writer.write("Propietario: " + propietario + ", Peso: " + peso + " kg, Tipo: " + tipo);
+            writer.newLine();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar los datos", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     // Limpia los campos del formulario
     private void limpiarFormulario() {
         txtNombrePropietarioExtra.setText("");
@@ -85,6 +100,7 @@ public class EquipajeExtraView extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jbtnRegistrarOtroEquipaje = new javax.swing.JButton();
         jbtNoRegistrarOtroEquipaje = new javax.swing.JButton();
+        jbtnGuardarRegistroEquipaje = new javax.swing.JButton();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -119,6 +135,10 @@ public class EquipajeExtraView extends javax.swing.JPanel {
         jbtNoRegistrarOtroEquipaje.setText("No");
         jbtNoRegistrarOtroEquipaje.addActionListener(this::jbtNoRegistrarOtroEquipajeActionPerformed);
 
+        jbtnGuardarRegistroEquipaje.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jbtnGuardarRegistroEquipaje.setText("GUARDAR");
+        jbtnGuardarRegistroEquipaje.addActionListener(this::jbtnGuardarRegistroEquipajeActionPerformed);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -128,30 +148,33 @@ public class EquipajeExtraView extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(155, 155, 155)
-                                .addComponent(jbtnRegistrarOtroEquipaje, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
-                                .addComponent(jbtNoRegistrarOtroEquipaje, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(121, 121, 121))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(69, 69, 69)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombrePropietarioExtra)
-                                    .addComponent(txtFPesoEquipajeExtra)))))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombrePropietarioExtra)
+                            .addComponent(txtFPesoEquipajeExtra)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(jrdbEquipajeFacturadoExtra)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
                         .addComponent(jrdbBolsoManoExtra)))
                 .addGap(91, 91, 91))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(236, 236, 236)
                 .addComponent(jLabel3)
-                .addGap(239, 239, 239))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jbtnRegistrarOtroEquipaje, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(200, 200, 200)
+                        .addComponent(jbtNoRegistrarOtroEquipaje, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(195, 195, 195))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jbtnGuardarRegistroEquipaje, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(344, 344, 344))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,16 +191,18 @@ public class EquipajeExtraView extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(txtFPesoEquipajeExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(jbtnGuardarRegistroEquipaje, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbtnRegistrarOtroEquipaje)
-                    .addComponent(jbtNoRegistrarOtroEquipaje))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(jbtNoRegistrarOtroEquipaje)
+                    .addComponent(jbtnRegistrarOtroEquipaje))
+                .addGap(65, 65, 65))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 900, 540));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 900, 640));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -207,7 +232,7 @@ public class EquipajeExtraView extends javax.swing.JPanel {
 
     private void jbtNoRegistrarOtroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtNoRegistrarOtroEquipajeActionPerformed
         if (registrarEquipaje()) {
-        mainFrame.mostrarVista("PagoView");
+        mainFrame.mostrarVista("PAGO");
         }
     }//GEN-LAST:event_jbtNoRegistrarOtroEquipajeActionPerformed
 
@@ -217,14 +242,20 @@ public class EquipajeExtraView extends javax.swing.JPanel {
 
     private void jbtnRegistrarOtroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarOtroEquipajeActionPerformed
         if (registrarEquipaje()) {
-        JOptionPane.showMessageDialog(this, "Equipaje registrado ✔️");
-        limpiarFormulario();
+            limpiarFormulario(); // Limpiamos los campos para agregar otro equipaje
         }
     }//GEN-LAST:event_jbtnRegistrarOtroEquipajeActionPerformed
 
     private void txtFPesoEquipajeExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFPesoEquipajeExtraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFPesoEquipajeExtraActionPerformed
+
+    private void jbtnGuardarRegistroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarRegistroEquipajeActionPerformed
+        // Recoge la información del equipaje
+        if (registrarEquipaje()) {
+            JOptionPane.showMessageDialog(this, "Guardado con éxito ✔️");
+        }
+    }//GEN-LAST:event_jbtnGuardarRegistroEquipajeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -234,6 +265,7 @@ public class EquipajeExtraView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbtNoRegistrarOtroEquipaje;
+    private javax.swing.JButton jbtnGuardarRegistroEquipaje;
     private javax.swing.JButton jbtnRegistrarOtroEquipaje;
     private javax.swing.JRadioButton jrdbBolsoManoExtra;
     private javax.swing.JRadioButton jrdbEquipajeFacturadoExtra;

@@ -1,0 +1,4 @@
+Propietario: Eduardo, Peso: 65.0 kg, Tipo: MANO
+Propietario: Eduardo, Peso: 65.0 kg, Tipo: MANO
+Propietario: Esteban, Peso: 50.0 kg, Tipo: MANO
+Propietario: Esteban, Peso: 50.0 kg, Tipo: MANO
