@@ -322,8 +322,12 @@ import javax.swing.JOptionPane;
             } else if(radBtnIdaVuelta.isSelected()){
                 //No vuelve a instanciar VueloIDAVUELTA, sino que obtiene la ventana creada antes
                 VueloIDAVUELTAView vueloIDAVUELTAView = mainFrame.getVueloIDAVUELTAView();
+                
+                
                 // Entregamos el controlador lleno de pasajeros a la siguiente vista
                 vueloIDAVUELTAView.setControladorPasajeros(this.controladorPasajeros);
+                
+                
                 //Con los datos obtenidos, vueloIDAView muestra los vuelos
                 vueloIDAVUELTAView.cargarDatosYBuscar();
                 mainFrame.mostrarVista("VUELOS IDA Y VUELTA");

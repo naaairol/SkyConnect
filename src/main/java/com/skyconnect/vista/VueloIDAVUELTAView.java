@@ -408,9 +408,11 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             //No vuelve a instanciar VueloIDAVUELTA, sino que obtiene la ventana creada antes
-            VueloIVUELTAView vueloVUELTAView = mainFrame.getVueloVUELTAView();
+            VueloIVUELTAView vueloIVUELTAView = mainFrame.getVueloVUELTAView();
+            
+            vueloIVUELTAView.setControladorPasajeros(this.controladorPasajeros);
             //Con los datos obtenidos, vueloIDAView muestra los vuelos
-            vueloVUELTAView.cargarDatosYBuscar();
+            vueloIVUELTAView.cargarDatosYBuscar();
             mainFrame.mostrarVista("VUELOS VUELTA");
     }//GEN-LAST:event_jButton1ActionPerformed
 
