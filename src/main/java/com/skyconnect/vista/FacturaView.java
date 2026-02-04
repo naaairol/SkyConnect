@@ -15,8 +15,14 @@ public class FacturaView extends javax.swing.JPanel {
         this.metodoDePago = metodoDePago; // Guardamos el método de pago
         initComponents();  // NetBeans genera este método, no lo modifiques
         mostrarFactura(); // Llamamos al método para mostrar la factura.
-    }
+    
+        java.net.URL imgURL = getClass().getResource("/imagenes/Factura.jpg");
 
+        if (imgURL != null) {
+            jLabelFactura.setIcon(new javax.swing.ImageIcon(imgURL));
+}
+
+    }
     // Método para mostrar los datos de la factura en un JTextArea.
     private void mostrarFactura() {
         // Formato de factura
@@ -65,14 +71,15 @@ public class FacturaView extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtFacturaFinal = new javax.swing.JTextArea();
+        jLabelFactura = new javax.swing.JLabel();
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Factura", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 36))); // NOI18N
+        jPanel2.setOpaque(false);
 
-        txtFacturaFinal.setEditable(false);
         txtFacturaFinal.setColumns(20);
-        txtFacturaFinal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtFacturaFinal.setRows(5);
-        txtFacturaFinal.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jScrollPane1.setViewportView(txtFacturaFinal);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -80,9 +87,9 @@ public class FacturaView extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(62, 62, 62)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 575, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,22 +99,11 @@ public class FacturaView extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(489, 489, 489)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(612, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(292, Short.MAX_VALUE))
-        );
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
+
+        jLabelFactura.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Factura.jpg")); // NOI18N
+        jLabelFactura.setText("jLabel1");
+        jPanel1.add(jLabelFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1690, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -128,6 +124,7 @@ public class FacturaView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabelFactura;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

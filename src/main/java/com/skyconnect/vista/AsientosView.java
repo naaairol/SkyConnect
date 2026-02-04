@@ -16,6 +16,10 @@ public class AsientosView extends javax.swing.JPanel {
         this.controladorReserva = controladorReserva;
         initComponents();
         registrarBotonesAsientos();
+        java.net.URL imgAsientosURL = getClass().getResource("/imagenes/AsientosView.jpg");
+        if (imgAsientosURL != null) {
+            jLabelAsientos.setIcon(new javax.swing.ImageIcon(imgAsientosURL));
+        }
     }
     //Registra dinámicamente los botones de asientos del panel.
     private void registrarBotonesAsientos() {
@@ -71,39 +75,39 @@ public class AsientosView extends javax.swing.JPanel {
         jpPanelAvion1 = new javax.swing.JPanel();
         jpPanelPasillo1 = new javax.swing.JPanel();
         jpPanelIzquierdoEconomicCl = new javax.swing.JPanel();
-        jToggleBtn3AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn3BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn3CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn4AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn4BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn4C = new javax.swing.JToggleButton();
-        jToggleBtn5AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn5BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn5CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn6AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn6BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn6CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn7AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn7BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn7CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn8AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn8BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn8CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn9AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn9BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn9CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn10AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn10BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn10CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn11AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn11BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn11CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn12AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn12BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn12CEconomic = new javax.swing.JToggleButton();
-        jToggleBtn13AEconomic = new javax.swing.JToggleButton();
-        jToggleBtn13BEconomic = new javax.swing.JToggleButton();
-        jToggleBtn13CEconomic = new javax.swing.JToggleButton();
+        jToggleButton55 = new javax.swing.JToggleButton();
+        jToggleButton56 = new javax.swing.JToggleButton();
+        jToggleButton57 = new javax.swing.JToggleButton();
+        jToggleButton58 = new javax.swing.JToggleButton();
+        jToggleButton59 = new javax.swing.JToggleButton();
+        jToggleButton60 = new javax.swing.JToggleButton();
+        jToggleButton61 = new javax.swing.JToggleButton();
+        jToggleButton62 = new javax.swing.JToggleButton();
+        jToggleButton63 = new javax.swing.JToggleButton();
+        jToggleButton64 = new javax.swing.JToggleButton();
+        jToggleButton65 = new javax.swing.JToggleButton();
+        jToggleButton66 = new javax.swing.JToggleButton();
+        jToggleButton67 = new javax.swing.JToggleButton();
+        jToggleButton68 = new javax.swing.JToggleButton();
+        jToggleButton69 = new javax.swing.JToggleButton();
+        jToggleButton70 = new javax.swing.JToggleButton();
+        jToggleButton71 = new javax.swing.JToggleButton();
+        jToggleButton72 = new javax.swing.JToggleButton();
+        jToggleButton91 = new javax.swing.JToggleButton();
+        jToggleButton92 = new javax.swing.JToggleButton();
+        jToggleButton93 = new javax.swing.JToggleButton();
+        jToggleButton94 = new javax.swing.JToggleButton();
+        jToggleButton95 = new javax.swing.JToggleButton();
+        jToggleButton96 = new javax.swing.JToggleButton();
+        jToggleButton100 = new javax.swing.JToggleButton();
+        jToggleButton101 = new javax.swing.JToggleButton();
+        jToggleButton102 = new javax.swing.JToggleButton();
+        jToggleButton103 = new javax.swing.JToggleButton();
+        jToggleButton104 = new javax.swing.JToggleButton();
+        jToggleButton105 = new javax.swing.JToggleButton();
+        jToggleButton106 = new javax.swing.JToggleButton();
+        jToggleButton107 = new javax.swing.JToggleButton();
+        jToggleButton108 = new javax.swing.JToggleButton();
         jToggleButton109 = new javax.swing.JToggleButton();
         jToggleButton110 = new javax.swing.JToggleButton();
         jToggleButton111 = new javax.swing.JToggleButton();
@@ -129,51 +133,51 @@ public class AsientosView extends javax.swing.JPanel {
         jToggleButton131 = new javax.swing.JToggleButton();
         jToggleButton132 = new javax.swing.JToggleButton();
         jpPanelDerechoBusinessCl = new javax.swing.JPanel();
-        jToggleBtn1HBusiness = new javax.swing.JToggleButton();
-        jToggleBtn1KBusiness = new javax.swing.JToggleButton();
-        jToggleBtn2HBusiness = new javax.swing.JToggleButton();
-        jToggleBtn2KBusiness = new javax.swing.JToggleButton();
+        jToggleButton97 = new javax.swing.JToggleButton();
+        jToggleButton98 = new javax.swing.JToggleButton();
+        jToggleButton133 = new javax.swing.JToggleButton();
+        jToggleButton134 = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
         jpPanelIzquierdoBussinesCl = new javax.swing.JPanel();
-        jToggleBtn1ABusiness = new javax.swing.JToggleButton();
-        jToggleBtn1CBusiness = new javax.swing.JToggleButton();
-        jToggleBtn2ABusiness = new javax.swing.JToggleButton();
-        jToggleBtn2CBusiness = new javax.swing.JToggleButton();
+        jToggleButton139 = new javax.swing.JToggleButton();
+        jToggleButton140 = new javax.swing.JToggleButton();
+        jToggleButton141 = new javax.swing.JToggleButton();
+        jToggleButton142 = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
         jpPanelDerechoEconomicCl = new javax.swing.JPanel();
-        jToggleBtn3HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn3JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn3KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn4HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn4JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn4KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn5HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn5JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn5KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn6HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn6JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn6KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn7HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn7JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn7KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn8HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn8JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn8KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn9HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn9JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn9KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn10HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn10JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn10KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn11HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn11JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn11KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn12HEconomic = new javax.swing.JToggleButton();
-        jToggleBtn12JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn12KEconomic = new javax.swing.JToggleButton();
-        jToggleBtn13H = new javax.swing.JToggleButton();
-        jToggleBtn13JEconomic = new javax.swing.JToggleButton();
-        jToggleBtn13KEconomic = new javax.swing.JToggleButton();
+        jToggleButton73 = new javax.swing.JToggleButton();
+        jToggleButton74 = new javax.swing.JToggleButton();
+        jToggleButton75 = new javax.swing.JToggleButton();
+        jToggleButton76 = new javax.swing.JToggleButton();
+        jToggleButton77 = new javax.swing.JToggleButton();
+        jToggleButton78 = new javax.swing.JToggleButton();
+        jToggleButton79 = new javax.swing.JToggleButton();
+        jToggleButton80 = new javax.swing.JToggleButton();
+        jToggleButton81 = new javax.swing.JToggleButton();
+        jToggleButton82 = new javax.swing.JToggleButton();
+        jToggleButton83 = new javax.swing.JToggleButton();
+        jToggleButton84 = new javax.swing.JToggleButton();
+        jToggleButton85 = new javax.swing.JToggleButton();
+        jToggleButton86 = new javax.swing.JToggleButton();
+        jToggleButton87 = new javax.swing.JToggleButton();
+        jToggleButton88 = new javax.swing.JToggleButton();
+        jToggleButton89 = new javax.swing.JToggleButton();
+        jToggleButton90 = new javax.swing.JToggleButton();
+        jToggleButton143 = new javax.swing.JToggleButton();
+        jToggleButton144 = new javax.swing.JToggleButton();
+        jToggleButton145 = new javax.swing.JToggleButton();
+        jToggleButton146 = new javax.swing.JToggleButton();
+        jToggleButton147 = new javax.swing.JToggleButton();
+        jToggleButton148 = new javax.swing.JToggleButton();
+        jToggleButton149 = new javax.swing.JToggleButton();
+        jToggleButton150 = new javax.swing.JToggleButton();
+        jToggleButton151 = new javax.swing.JToggleButton();
+        jToggleButton152 = new javax.swing.JToggleButton();
+        jToggleButton153 = new javax.swing.JToggleButton();
+        jToggleButton154 = new javax.swing.JToggleButton();
+        jToggleButton155 = new javax.swing.JToggleButton();
+        jToggleButton156 = new javax.swing.JToggleButton();
+        jToggleButton157 = new javax.swing.JToggleButton();
         jToggleButton158 = new javax.swing.JToggleButton();
         jToggleButton159 = new javax.swing.JToggleButton();
         jToggleButton160 = new javax.swing.JToggleButton();
@@ -232,17 +236,20 @@ public class AsientosView extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jCheckBoxAgregarEquipajeExtra = new javax.swing.JCheckBox();
+        jLabelAsientos = new javax.swing.JLabel();
 
         jLabel11.setText("2");
 
         label1.setText("label1");
+
+        setPreferredSize(new java.awt.Dimension(1800, 1000));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbtnPagarAsientosView.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnPagarAsientosView.setText("Pagar");
         jbtnPagarAsientosView.addActionListener(this::jbtnPagarAsientosViewActionPerformed);
-        jPanel1.add(jbtnPagarAsientosView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 680, 200, -1));
+        jPanel1.add(jbtnPagarAsientosView, new org.netbeans.lib.awtextra.AbsoluteConstraints(1450, 930, 200, -1));
 
         jpPanelAvion1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -261,106 +268,104 @@ public class AsientosView extends javax.swing.JPanel {
 
         jpPanelIzquierdoEconomicCl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jToggleBtn3AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn3AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton55.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton55.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn3BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn3BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton56.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton56.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn3CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn3CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton57.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton57.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn4AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn4AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton58.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton58.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn4BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn4BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn4BEconomic.addActionListener(this::jToggleBtn4BEconomicActionPerformed);
+        jToggleButton59.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton59.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn4C.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn4C.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton60.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton60.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn5AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn5AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton61.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton61.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn5BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn5BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton62.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton62.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn5CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn5CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton63.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton63.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn6AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn6AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton64.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton64.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn6BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn6BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton65.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton65.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn6CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn6CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton66.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton66.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn7AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn7AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn7AEconomic.addActionListener(this::jToggleBtn7AEconomicActionPerformed);
+        jToggleButton67.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton67.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn7BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn7BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton68.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton68.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn7CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn7CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton69.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton69.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn8AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn8AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton70.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton70.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn8BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn8BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton71.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton71.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn8CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn8CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton72.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton72.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn9AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn9AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton91.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton91.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn9BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn9BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton92.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton92.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn9CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn9CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton93.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton93.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn10AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn10AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton94.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton94.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn10BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn10BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton95.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton95.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn10CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn10CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton96.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton96.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn11AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn11AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton100.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton100.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn11BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn11BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton101.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton101.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn11CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn11CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton102.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton102.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn12AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn12AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton103.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton103.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn12BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn12BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton104.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton104.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn12CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn12CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton105.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton105.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn13AEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn13AEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton106.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton106.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn13BEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn13BEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton107.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton107.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn13CEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn13CEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton108.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton108.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jToggleButton109.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jToggleButton109.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -442,71 +447,71 @@ public class AsientosView extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn3AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton55, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn3BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton56, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn3CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton57, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn4AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton58, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn4BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton59, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn4C, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton60, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn5AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn5BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn5CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton63, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn6AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton64, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn6BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton65, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn6CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton66, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn7AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton67, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn7BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton68, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn7CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton69, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn8AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton70, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn8BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn8CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn9AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton91, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn9BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton92, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn9CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton93, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn10AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton94, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn10BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton95, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn10CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton96, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn11AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton100, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn11BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton101, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn11CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton102, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn12AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton103, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn12BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton104, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn12CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton105, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn13AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton106, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn13BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton107, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn13CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton108, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
                         .addComponent(jToggleButton109, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -562,59 +567,59 @@ public class AsientosView extends javax.swing.JPanel {
             .addGroup(jpPanelIzquierdoEconomicClLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn3BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn3CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn3AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton56, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton57, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton55, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn4BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn4C, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn4AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton59, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton60, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton58, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn5BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn5CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn5AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton62, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton63, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton61, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn6BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn6CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn6AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton65, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton66, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton64, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn7BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn7CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn7AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton68, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton69, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton67, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn8BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn8CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn8AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton71, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton72, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton70, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn9BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn9CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn9AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton92, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton93, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton91, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn10BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn10CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn10AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton95, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton96, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton94, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn11BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn11CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn11AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton101, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton102, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton100, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn12BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn12CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn12AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton104, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton105, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton103, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn13BEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn13CEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn13AEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton107, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton108, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton106, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelIzquierdoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToggleButton110, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -660,20 +665,17 @@ public class AsientosView extends javax.swing.JPanel {
 
         jpPanelDerechoBusinessCl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jToggleBtn1HBusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn1HBusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn1HBusiness.addActionListener(this::jToggleBtn1HBusinessActionPerformed);
+        jToggleButton97.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton97.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn1KBusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn1KBusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton98.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton98.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn2HBusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn2HBusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn2HBusiness.addActionListener(this::jToggleBtn2HBusinessActionPerformed);
+        jToggleButton133.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton133.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn2KBusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn2KBusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn2KBusiness.addActionListener(this::jToggleBtn2KBusinessActionPerformed);
+        jToggleButton134.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton134.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jpPanelDerechoBusinessClLayout = new javax.swing.GroupLayout(jpPanelDerechoBusinessCl);
         jpPanelDerechoBusinessCl.setLayout(jpPanelDerechoBusinessClLayout);
@@ -683,13 +685,13 @@ public class AsientosView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpPanelDerechoBusinessClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPanelDerechoBusinessClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn1HBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton97, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleBtn1KBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton98, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoBusinessClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn2HBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton133, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleBtn2KBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jToggleButton134, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jpPanelDerechoBusinessClLayout.setVerticalGroup(
@@ -697,12 +699,12 @@ public class AsientosView extends javax.swing.JPanel {
             .addGroup(jpPanelDerechoBusinessClLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPanelDerechoBusinessClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn1KBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn1HBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton98, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton97, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPanelDerechoBusinessClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn2KBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn2HBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton134, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton133, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -710,18 +712,17 @@ public class AsientosView extends javax.swing.JPanel {
 
         jpPanelIzquierdoBussinesCl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jToggleBtn1ABusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn1ABusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn1ABusiness.addActionListener(this::jToggleBtn1ABusinessActionPerformed);
+        jToggleButton139.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton139.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn1CBusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn1CBusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton140.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton140.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn2ABusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn2ABusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton141.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton141.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn2CBusiness.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn2CBusiness.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton142.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton142.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jpPanelIzquierdoBussinesClLayout = new javax.swing.GroupLayout(jpPanelIzquierdoBussinesCl);
         jpPanelIzquierdoBussinesCl.setLayout(jpPanelIzquierdoBussinesClLayout);
@@ -731,13 +732,13 @@ public class AsientosView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jpPanelIzquierdoBussinesClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPanelIzquierdoBussinesClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn1ABusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton139, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleBtn1CBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton140, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelIzquierdoBussinesClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn2ABusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton141, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleBtn2CBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jToggleButton142, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jpPanelIzquierdoBussinesClLayout.setVerticalGroup(
@@ -745,12 +746,12 @@ public class AsientosView extends javax.swing.JPanel {
             .addGroup(jpPanelIzquierdoBussinesClLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPanelIzquierdoBussinesClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn1CBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn1ABusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton140, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton139, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jpPanelIzquierdoBussinesClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn2CBusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn2ABusiness, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton142, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton141, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -758,106 +759,104 @@ public class AsientosView extends javax.swing.JPanel {
 
         jpPanelDerechoEconomicCl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jToggleBtn3HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn3HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton73.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton73.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn3JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn3JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton74.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton74.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn3KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn3KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton75.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton75.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn4HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn4HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton76.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton76.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn4JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn4JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton77.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton77.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn4KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn4KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton78.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton78.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn5HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn5HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn5HEconomic.addActionListener(this::jToggleBtn5HEconomicActionPerformed);
+        jToggleButton79.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton79.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn5JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn5JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton80.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton80.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn5KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn5KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton81.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton81.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn6HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn6HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton82.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton82.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn6JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn6JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton83.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton83.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn6KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn6KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton84.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton84.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn7HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn7HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton85.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton85.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn7JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn7JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton86.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton86.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn7KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn7KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton87.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton87.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn8HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn8HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton88.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton88.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn8JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn8JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton89.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton89.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn8KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn8KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton90.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton90.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn9HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn9HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton143.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton143.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn9JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn9JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton144.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton144.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn9KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn9KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton145.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton145.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn10HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn10HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton146.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton146.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn10JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn10JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton147.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton147.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn10KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn10KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton148.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton148.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn11HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn11HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jToggleBtn11HEconomic.addActionListener(this::jToggleBtn11HEconomicActionPerformed);
+        jToggleButton149.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton149.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn11JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn11JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton150.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton150.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn11KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn11KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton151.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton151.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn12HEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn12HEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton152.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton152.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn12JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn12JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton153.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton153.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn12KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn12KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton154.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton154.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn13H.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn13H.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton155.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton155.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn13JEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn13JEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton156.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton156.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jToggleBtn13KEconomic.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jToggleBtn13KEconomic.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jToggleButton157.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jToggleButton157.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jToggleButton158.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jToggleButton158.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -939,71 +938,71 @@ public class AsientosView extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn3HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton73, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn3JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton74, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn3KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton75, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn4HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton76, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn4JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton77, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn4KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton78, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn5HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton79, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn5JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton80, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn5KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton81, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn6HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton82, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn6JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton83, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn6KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton84, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn7HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton85, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn7JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton86, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn7KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton87, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn8HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton88, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn8JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton89, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn8KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton90, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn9HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton143, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn9JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton144, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn9KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton145, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn10HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton146, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn10JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton147, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn10KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton148, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn11HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton149, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn11JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton150, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn11KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton151, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn12HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton152, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn12JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton153, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn12KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton154, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
-                        .addComponent(jToggleBtn13H, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton155, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn13JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jToggleButton156, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleBtn13KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jToggleButton157, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
                         .addComponent(jToggleButton158, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1059,59 +1058,59 @@ public class AsientosView extends javax.swing.JPanel {
             .addGroup(jpPanelDerechoEconomicClLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn3JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn3KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn3HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton74, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton75, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton73, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn4JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn4KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn4HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton77, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton78, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton76, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn5JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn5KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn5HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton80, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton81, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton79, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn6JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn6KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn6HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton83, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton84, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton82, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn7JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn7KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn7HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton86, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton87, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton85, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn8JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn8KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn8HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton89, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton90, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton88, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn9JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn9KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn9HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton144, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton145, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton143, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn10JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn10KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn10HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton147, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton148, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton146, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn11JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn11KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn11HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton150, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton151, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton149, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn12JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn12KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn12HEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton153, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton154, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton152, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleBtn13JEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn13KEconomic, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleBtn13H, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jToggleButton156, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton157, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton155, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpPanelDerechoEconomicClLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToggleButton159, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1356,86 +1355,59 @@ public class AsientosView extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jpPanelAvion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 410, 640));
+        jPanel1.add(jpPanelAvion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 410, 630));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Seleccione sus asientos ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 680, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 680, 50));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel4.setText("Ecuador $ (USD) ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 100, -1, -1));
 
         jbtnSeleccionarConfirmarAsientos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnSeleccionarConfirmarAsientos.setText("Seleccionar");
         jbtnSeleccionarConfirmarAsientos.addActionListener(this::jbtnSeleccionarConfirmarAsientosActionPerformed);
-        jPanel1.add(jbtnSeleccionarConfirmarAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 150, 230, 30));
+        jPanel1.add(jbtnSeleccionarConfirmarAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 220, 230, 30));
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtAsientosSeleccionados.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtAsientosSeleccionados.addActionListener(this::txtAsientosSeleccionadosActionPerformed);
+        jPanel2.add(txtAsientosSeleccionados, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 87, 413, 212));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Asientos seleccionados:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 43, 303, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtAsientosSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtAsientosSeleccionados, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 160, 470, 310));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 290, 470, 310));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("¿Desea agregar equipaje extra?");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 500, 410, 27));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 600, 410, 40));
 
         jCheckBoxAgregarEquipajeExtra.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jCheckBoxAgregarEquipajeExtra.setText("Si, agregar equipaje.");
         jCheckBoxAgregarEquipajeExtra.addActionListener(this::jCheckBoxAgregarEquipajeExtraActionPerformed);
-        jPanel1.add(jCheckBoxAgregarEquipajeExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 540, 320, -1));
+        jPanel1.add(jCheckBoxAgregarEquipajeExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 640, 320, -1));
+
+        jLabelAsientos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\AsientosView.jpg")); // NOI18N
+        jPanel1.add(jLabelAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1700, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1800, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnPagarAsientosViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPagarAsientosViewActionPerformed
-        // Verificamos si el checkbox de agregar equipaje extra está marcado
-        if (jCheckBoxAgregarEquipajeExtra.isSelected()) {
-        // Si está seleccionado, redirigimos a EquipajeExtraView
-            mainFrame.mostrarVista("EQUIPAJE");  // Esto debería redirigir a la vista de equipaje
-        } else {
-        // Si no está seleccionado, redirigimos a PagoView
-            mainFrame.mostrarVista("PAGO");  // Esto redirige a la vista de pago
-        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_jbtnPagarAsientosViewActionPerformed
 
     private void txtAsientosSeleccionadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAsientosSeleccionadosActionPerformed
@@ -1460,38 +1432,6 @@ public class AsientosView extends javax.swing.JPanel {
     private void jCheckBoxAgregarEquipajeExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxAgregarEquipajeExtraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxAgregarEquipajeExtraActionPerformed
-
-    private void jToggleBtn1HBusinessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn1HBusinessActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn1HBusinessActionPerformed
-
-    private void jToggleBtn1ABusinessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn1ABusinessActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn1ABusinessActionPerformed
-
-    private void jToggleBtn2HBusinessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn2HBusinessActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn2HBusinessActionPerformed
-
-    private void jToggleBtn2KBusinessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn2KBusinessActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn2KBusinessActionPerformed
-
-    private void jToggleBtn4BEconomicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn4BEconomicActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn4BEconomicActionPerformed
-
-    private void jToggleBtn5HEconomicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn5HEconomicActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn5HEconomicActionPerformed
-
-    private void jToggleBtn7AEconomicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn7AEconomicActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn7AEconomicActionPerformed
-
-    private void jToggleBtn11HEconomicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleBtn11HEconomicActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleBtn11HEconomicActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1528,82 +1468,18 @@ public class AsientosView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelAsientos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleBtn10AEconomic;
-    private javax.swing.JToggleButton jToggleBtn10BEconomic;
-    private javax.swing.JToggleButton jToggleBtn10CEconomic;
-    private javax.swing.JToggleButton jToggleBtn10HEconomic;
-    private javax.swing.JToggleButton jToggleBtn10JEconomic;
-    private javax.swing.JToggleButton jToggleBtn10KEconomic;
-    private javax.swing.JToggleButton jToggleBtn11AEconomic;
-    private javax.swing.JToggleButton jToggleBtn11BEconomic;
-    private javax.swing.JToggleButton jToggleBtn11CEconomic;
-    private javax.swing.JToggleButton jToggleBtn11HEconomic;
-    private javax.swing.JToggleButton jToggleBtn11JEconomic;
-    private javax.swing.JToggleButton jToggleBtn11KEconomic;
-    private javax.swing.JToggleButton jToggleBtn12AEconomic;
-    private javax.swing.JToggleButton jToggleBtn12BEconomic;
-    private javax.swing.JToggleButton jToggleBtn12CEconomic;
-    private javax.swing.JToggleButton jToggleBtn12HEconomic;
-    private javax.swing.JToggleButton jToggleBtn12JEconomic;
-    private javax.swing.JToggleButton jToggleBtn12KEconomic;
-    private javax.swing.JToggleButton jToggleBtn13AEconomic;
-    private javax.swing.JToggleButton jToggleBtn13BEconomic;
-    private javax.swing.JToggleButton jToggleBtn13CEconomic;
-    private javax.swing.JToggleButton jToggleBtn13H;
-    private javax.swing.JToggleButton jToggleBtn13JEconomic;
-    private javax.swing.JToggleButton jToggleBtn13KEconomic;
-    private javax.swing.JToggleButton jToggleBtn1ABusiness;
-    private javax.swing.JToggleButton jToggleBtn1CBusiness;
-    private javax.swing.JToggleButton jToggleBtn1HBusiness;
-    private javax.swing.JToggleButton jToggleBtn1KBusiness;
-    private javax.swing.JToggleButton jToggleBtn2ABusiness;
-    private javax.swing.JToggleButton jToggleBtn2CBusiness;
-    private javax.swing.JToggleButton jToggleBtn2HBusiness;
-    private javax.swing.JToggleButton jToggleBtn2KBusiness;
-    private javax.swing.JToggleButton jToggleBtn3AEconomic;
-    private javax.swing.JToggleButton jToggleBtn3BEconomic;
-    private javax.swing.JToggleButton jToggleBtn3CEconomic;
-    private javax.swing.JToggleButton jToggleBtn3HEconomic;
-    private javax.swing.JToggleButton jToggleBtn3JEconomic;
-    private javax.swing.JToggleButton jToggleBtn3KEconomic;
-    private javax.swing.JToggleButton jToggleBtn4AEconomic;
-    private javax.swing.JToggleButton jToggleBtn4BEconomic;
-    private javax.swing.JToggleButton jToggleBtn4C;
-    private javax.swing.JToggleButton jToggleBtn4HEconomic;
-    private javax.swing.JToggleButton jToggleBtn4JEconomic;
-    private javax.swing.JToggleButton jToggleBtn4KEconomic;
-    private javax.swing.JToggleButton jToggleBtn5AEconomic;
-    private javax.swing.JToggleButton jToggleBtn5BEconomic;
-    private javax.swing.JToggleButton jToggleBtn5CEconomic;
-    private javax.swing.JToggleButton jToggleBtn5HEconomic;
-    private javax.swing.JToggleButton jToggleBtn5JEconomic;
-    private javax.swing.JToggleButton jToggleBtn5KEconomic;
-    private javax.swing.JToggleButton jToggleBtn6AEconomic;
-    private javax.swing.JToggleButton jToggleBtn6BEconomic;
-    private javax.swing.JToggleButton jToggleBtn6CEconomic;
-    private javax.swing.JToggleButton jToggleBtn6HEconomic;
-    private javax.swing.JToggleButton jToggleBtn6JEconomic;
-    private javax.swing.JToggleButton jToggleBtn6KEconomic;
-    private javax.swing.JToggleButton jToggleBtn7AEconomic;
-    private javax.swing.JToggleButton jToggleBtn7BEconomic;
-    private javax.swing.JToggleButton jToggleBtn7CEconomic;
-    private javax.swing.JToggleButton jToggleBtn7HEconomic;
-    private javax.swing.JToggleButton jToggleBtn7JEconomic;
-    private javax.swing.JToggleButton jToggleBtn7KEconomic;
-    private javax.swing.JToggleButton jToggleBtn8AEconomic;
-    private javax.swing.JToggleButton jToggleBtn8BEconomic;
-    private javax.swing.JToggleButton jToggleBtn8CEconomic;
-    private javax.swing.JToggleButton jToggleBtn8HEconomic;
-    private javax.swing.JToggleButton jToggleBtn8JEconomic;
-    private javax.swing.JToggleButton jToggleBtn8KEconomic;
-    private javax.swing.JToggleButton jToggleBtn9AEconomic;
-    private javax.swing.JToggleButton jToggleBtn9BEconomic;
-    private javax.swing.JToggleButton jToggleBtn9CEconomic;
-    private javax.swing.JToggleButton jToggleBtn9HEconomic;
-    private javax.swing.JToggleButton jToggleBtn9JEconomic;
-    private javax.swing.JToggleButton jToggleBtn9KEconomic;
+    private javax.swing.JToggleButton jToggleButton100;
+    private javax.swing.JToggleButton jToggleButton101;
+    private javax.swing.JToggleButton jToggleButton102;
+    private javax.swing.JToggleButton jToggleButton103;
+    private javax.swing.JToggleButton jToggleButton104;
+    private javax.swing.JToggleButton jToggleButton105;
+    private javax.swing.JToggleButton jToggleButton106;
+    private javax.swing.JToggleButton jToggleButton107;
+    private javax.swing.JToggleButton jToggleButton108;
     private javax.swing.JToggleButton jToggleButton109;
     private javax.swing.JToggleButton jToggleButton110;
     private javax.swing.JToggleButton jToggleButton111;
@@ -1628,6 +1504,27 @@ public class AsientosView extends javax.swing.JPanel {
     private javax.swing.JToggleButton jToggleButton130;
     private javax.swing.JToggleButton jToggleButton131;
     private javax.swing.JToggleButton jToggleButton132;
+    private javax.swing.JToggleButton jToggleButton133;
+    private javax.swing.JToggleButton jToggleButton134;
+    private javax.swing.JToggleButton jToggleButton139;
+    private javax.swing.JToggleButton jToggleButton140;
+    private javax.swing.JToggleButton jToggleButton141;
+    private javax.swing.JToggleButton jToggleButton142;
+    private javax.swing.JToggleButton jToggleButton143;
+    private javax.swing.JToggleButton jToggleButton144;
+    private javax.swing.JToggleButton jToggleButton145;
+    private javax.swing.JToggleButton jToggleButton146;
+    private javax.swing.JToggleButton jToggleButton147;
+    private javax.swing.JToggleButton jToggleButton148;
+    private javax.swing.JToggleButton jToggleButton149;
+    private javax.swing.JToggleButton jToggleButton150;
+    private javax.swing.JToggleButton jToggleButton151;
+    private javax.swing.JToggleButton jToggleButton152;
+    private javax.swing.JToggleButton jToggleButton153;
+    private javax.swing.JToggleButton jToggleButton154;
+    private javax.swing.JToggleButton jToggleButton155;
+    private javax.swing.JToggleButton jToggleButton156;
+    private javax.swing.JToggleButton jToggleButton157;
     private javax.swing.JToggleButton jToggleButton158;
     private javax.swing.JToggleButton jToggleButton159;
     private javax.swing.JToggleButton jToggleButton160;
@@ -1652,6 +1549,50 @@ public class AsientosView extends javax.swing.JPanel {
     private javax.swing.JToggleButton jToggleButton179;
     private javax.swing.JToggleButton jToggleButton180;
     private javax.swing.JToggleButton jToggleButton181;
+    private javax.swing.JToggleButton jToggleButton55;
+    private javax.swing.JToggleButton jToggleButton56;
+    private javax.swing.JToggleButton jToggleButton57;
+    private javax.swing.JToggleButton jToggleButton58;
+    private javax.swing.JToggleButton jToggleButton59;
+    private javax.swing.JToggleButton jToggleButton60;
+    private javax.swing.JToggleButton jToggleButton61;
+    private javax.swing.JToggleButton jToggleButton62;
+    private javax.swing.JToggleButton jToggleButton63;
+    private javax.swing.JToggleButton jToggleButton64;
+    private javax.swing.JToggleButton jToggleButton65;
+    private javax.swing.JToggleButton jToggleButton66;
+    private javax.swing.JToggleButton jToggleButton67;
+    private javax.swing.JToggleButton jToggleButton68;
+    private javax.swing.JToggleButton jToggleButton69;
+    private javax.swing.JToggleButton jToggleButton70;
+    private javax.swing.JToggleButton jToggleButton71;
+    private javax.swing.JToggleButton jToggleButton72;
+    private javax.swing.JToggleButton jToggleButton73;
+    private javax.swing.JToggleButton jToggleButton74;
+    private javax.swing.JToggleButton jToggleButton75;
+    private javax.swing.JToggleButton jToggleButton76;
+    private javax.swing.JToggleButton jToggleButton77;
+    private javax.swing.JToggleButton jToggleButton78;
+    private javax.swing.JToggleButton jToggleButton79;
+    private javax.swing.JToggleButton jToggleButton80;
+    private javax.swing.JToggleButton jToggleButton81;
+    private javax.swing.JToggleButton jToggleButton82;
+    private javax.swing.JToggleButton jToggleButton83;
+    private javax.swing.JToggleButton jToggleButton84;
+    private javax.swing.JToggleButton jToggleButton85;
+    private javax.swing.JToggleButton jToggleButton86;
+    private javax.swing.JToggleButton jToggleButton87;
+    private javax.swing.JToggleButton jToggleButton88;
+    private javax.swing.JToggleButton jToggleButton89;
+    private javax.swing.JToggleButton jToggleButton90;
+    private javax.swing.JToggleButton jToggleButton91;
+    private javax.swing.JToggleButton jToggleButton92;
+    private javax.swing.JToggleButton jToggleButton93;
+    private javax.swing.JToggleButton jToggleButton94;
+    private javax.swing.JToggleButton jToggleButton95;
+    private javax.swing.JToggleButton jToggleButton96;
+    private javax.swing.JToggleButton jToggleButton97;
+    private javax.swing.JToggleButton jToggleButton98;
     private javax.swing.JButton jbtnPagarAsientosView;
     private javax.swing.JButton jbtnSeleccionarConfirmarAsientos;
     private javax.swing.JPanel jpPanelAvion1;

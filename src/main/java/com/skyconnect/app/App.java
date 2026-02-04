@@ -1,7 +1,9 @@
 package com.skyconnect.app;
 
 import com.skyconnect.vista.*;
+import java.awt.GridBagLayout;
 import javax.swing.SwingUtilities;
+
 
 public class App {
 
@@ -13,6 +15,7 @@ public class App {
         SwingUtilities.invokeLater(() -> {
         MainFrame mainFrame = new MainFrame();
         mainFrame.setTitle("SkyConnect");
+        mainFrame.getContentPane().setLayout(new GridBagLayout());
         mainFrame.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         mainFrame.setLocationRelativeTo(null); 
         mainFrame.setVisible(true);

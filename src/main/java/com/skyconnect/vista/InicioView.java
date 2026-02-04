@@ -11,6 +11,11 @@ public class InicioView extends javax.swing.JPanel {
     public InicioView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
         initComponents();
+        java.net.URL imgURL = getClass().getResource("/imagenes/Inicio.jpg");
+
+        if (imgURL != null) {
+            jLabelInicio.setIcon(new javax.swing.ImageIcon(imgURL));
+    }
     }
 
     /**
@@ -24,7 +29,6 @@ public class InicioView extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jbtnExplorarVuelos = new javax.swing.JButton();
         btnPredeterminadoGuayaquil = new javax.swing.JPanel();
@@ -49,24 +53,22 @@ public class InicioView extends javax.swing.JPanel {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         btnInSesion2 = new javax.swing.JButton();
+        jLabelInicio = new javax.swing.JLabel();
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Ecuador $ (USD) ");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 380, 140));
-
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("Ecuador $ (USD) ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 30, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 90, -1, -1));
 
         jbtnExplorarVuelos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnExplorarVuelos.setText("Explorar Vuelos");
         jbtnExplorarVuelos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnExplorarVuelos.addActionListener(this::jbtnExplorarVuelosActionPerformed);
-        jPanel1.add(jbtnExplorarVuelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 720, 270, -1));
+        jPanel1.add(jbtnExplorarVuelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 910, 270, -1));
 
         btnPredeterminadoGuayaquil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -125,7 +127,7 @@ public class InicioView extends javax.swing.JPanel {
                         .addContainerGap(12, Short.MAX_VALUE))))
         );
 
-        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 90, -1, -1));
+        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, -1, -1));
 
         btnPredeterminadoGuayaquil1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -187,7 +189,7 @@ public class InicioView extends javax.swing.JPanel {
                 .addGap(23, 23, 23))
         );
 
-        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, -1, -1));
+        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 480, -1, -1));
 
         btnPredeterminadoGuayaquil2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -246,27 +248,25 @@ public class InicioView extends javax.swing.JPanel {
                 .addGap(23, 23, 23))
         );
 
-        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, -1, -1));
+        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 740, -1, -1));
 
         btnInSesion2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnInSesion2.setText("Iniciar Sesion");
         btnInSesion2.addActionListener(this::btnInSesion2ActionPerformed);
-        jPanel1.add(btnInSesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 30, -1, -1));
+        jPanel1.add(btnInSesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 90, -1, -1));
+        jPanel1.add(jLabelInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1700, 1010));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1658, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1800, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -285,7 +285,6 @@ public class InicioView extends javax.swing.JPanel {
     private javax.swing.JPanel btnPredeterminadoGuayaquil;
     private javax.swing.JPanel btnPredeterminadoGuayaquil1;
     private javax.swing.JPanel btnPredeterminadoGuayaquil2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -306,6 +305,7 @@ public class InicioView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelInicio;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnExplorarVuelos;
     // End of variables declaration//GEN-END:variables

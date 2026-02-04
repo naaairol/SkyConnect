@@ -15,8 +15,13 @@ public class IniciarSesionView extends javax.swing.JPanel {
         this.mainFrame = mainFrame; 
         initComponents();
         controladorLogin = new ControladorLogin(mainFrame);
+        java.net.URL imgURL = getClass().getResource("/imagenes/CreacionUsuario.jpg");
+
+        if (imgURL != null) {
+            jLabelIniciarSesion.setIcon(new javax.swing.ImageIcon(imgURL));
     }
-    
+
+    }
     private void mostrarMensaje(String mensaje, int tipo) {
     JOptionPane.showMessageDialog(
         this,
@@ -40,6 +45,7 @@ public class IniciarSesionView extends javax.swing.JPanel {
         txtfUsuarioIniciarSesion = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jpasswordIngreseContraseñaIniciarS = new javax.swing.JPasswordField();
+        jLabelIniciarSesion = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -51,10 +57,14 @@ public class IniciarSesionView extends javax.swing.JPanel {
                 btnIngresarUsuarioIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIngresarUsuarioIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 640, 270, 42));
+        jPanel1.add(btnIngresarUsuarioIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 740, 270, 42));
+
+        jPanel2.setOpaque(false);
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel3.setText("Correo electrónico:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 172, -1, -1));
 
         txtfUsuarioIniciarSesion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtfUsuarioIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -62,9 +72,11 @@ public class IniciarSesionView extends javax.swing.JPanel {
                 txtfUsuarioIniciarSesionActionPerformed(evt);
             }
         });
+        jPanel2.add(txtfUsuarioIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 228, 474, 60));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel4.setText("Contraseña:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 344, -1, -1));
 
         jpasswordIngreseContraseñaIniciarS.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jpasswordIngreseContraseñaIniciarS.addActionListener(new java.awt.event.ActionListener() {
@@ -72,48 +84,20 @@ public class IniciarSesionView extends javax.swing.JPanel {
                 jpasswordIngreseContraseñaIniciarSActionPerformed(evt);
             }
         });
+        jPanel2.add(jpasswordIngreseContraseñaIniciarS, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 388, 474, 62));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtfUsuarioIniciarSesion)
-                            .addComponent(jpasswordIngreseContraseñaIniciarS))
-                        .addGap(91, 91, 91))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(0, 315, Short.MAX_VALUE))))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(txtfUsuarioIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpasswordIngreseContraseñaIniciarS, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(160, Short.MAX_VALUE))
-        );
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 720, 610));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 720, 610));
+        jLabelIniciarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\CreacionUsuario.jpg")); // NOI18N
+        jLabelIniciarSesion.setText("jLabel1");
+        jPanel1.add(jLabelIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 990));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1670, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1706, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -158,6 +142,7 @@ public class IniciarSesionView extends javax.swing.JPanel {
     private javax.swing.JButton btnIngresarUsuarioIniciarSesion;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelIniciarSesion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jpasswordIngreseContraseñaIniciarS;

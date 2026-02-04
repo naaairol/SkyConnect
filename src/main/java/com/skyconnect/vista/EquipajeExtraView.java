@@ -19,6 +19,11 @@ public class EquipajeExtraView extends javax.swing.JPanel {
         this.controladorReserva = controladorReserva;
         initComponents();
         configurarGrupoRadio();
+        java.net.URL imgURL = getClass().getResource("/imagenes/EquipajeExtra.jpg");
+
+        if (imgURL != null) {
+            jLabelEquipaje.setIcon(new javax.swing.ImageIcon(imgURL));
+        }
     }
      // Agrupa los radio buttons
     private void configurarGrupoRadio() {
@@ -101,10 +106,12 @@ public class EquipajeExtraView extends javax.swing.JPanel {
         jbtnRegistrarOtroEquipaje = new javax.swing.JButton();
         jbtNoRegistrarOtroEquipaje = new javax.swing.JButton();
         jbtnGuardarRegistroEquipaje = new javax.swing.JButton();
+        jLabelEquipaje = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información del equipaje", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 48))); // NOI18N
+        jPanel2.setOpaque(false);
 
         jrdbEquipajeFacturadoExtra.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
         jrdbEquipajeFacturadoExtra.setText("Equipaje facturado ");
@@ -157,7 +164,7 @@ public class EquipajeExtraView extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(jrdbEquipajeFacturadoExtra)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jrdbBolsoManoExtra)))
                 .addGap(91, 91, 91))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -165,7 +172,7 @@ public class EquipajeExtraView extends javax.swing.JPanel {
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(208, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jbtnRegistrarOtroEquipaje, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,7 +209,11 @@ public class EquipajeExtraView extends javax.swing.JPanel {
                 .addGap(65, 65, 65))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 900, 640));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 900, 640));
+
+        jLabelEquipaje.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\EquipajeExtra.jpg")); // NOI18N
+        jLabelEquipaje.setText("jLabel4");
+        jPanel1.add(jLabelEquipaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -210,35 +221,30 @@ public class EquipajeExtraView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1670, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jrdbEquipajeFacturadoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrdbEquipajeFacturadoExtraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jrdbEquipajeFacturadoExtraActionPerformed
-
-    private void txtNombrePropietarioExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePropietarioExtraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombrePropietarioExtraActionPerformed
+    private void jbtnGuardarRegistroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarRegistroEquipajeActionPerformed
+        // Recoge la información del equipaje
+        if (registrarEquipaje()) {
+            JOptionPane.showMessageDialog(this, "Guardado con éxito ✔️");
+        }
+    }//GEN-LAST:event_jbtnGuardarRegistroEquipajeActionPerformed
 
     private void jbtNoRegistrarOtroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtNoRegistrarOtroEquipajeActionPerformed
         if (registrarEquipaje()) {
-        mainFrame.mostrarVista("PAGO");
+            mainFrame.mostrarVista("PAGO");
         }
     }//GEN-LAST:event_jbtNoRegistrarOtroEquipajeActionPerformed
-
-    private void jrdbBolsoManoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrdbBolsoManoExtraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jrdbBolsoManoExtraActionPerformed
 
     private void jbtnRegistrarOtroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarOtroEquipajeActionPerformed
         if (registrarEquipaje()) {
@@ -250,18 +256,24 @@ public class EquipajeExtraView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFPesoEquipajeExtraActionPerformed
 
-    private void jbtnGuardarRegistroEquipajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarRegistroEquipajeActionPerformed
-        // Recoge la información del equipaje
-        if (registrarEquipaje()) {
-            JOptionPane.showMessageDialog(this, "Guardado con éxito ✔️");
-        }
-    }//GEN-LAST:event_jbtnGuardarRegistroEquipajeActionPerformed
+    private void txtNombrePropietarioExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePropietarioExtraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePropietarioExtraActionPerformed
+
+    private void jrdbBolsoManoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrdbBolsoManoExtraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrdbBolsoManoExtraActionPerformed
+
+    private void jrdbEquipajeFacturadoExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrdbEquipajeFacturadoExtraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrdbEquipajeFacturadoExtraActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelEquipaje;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbtNoRegistrarOtroEquipaje;

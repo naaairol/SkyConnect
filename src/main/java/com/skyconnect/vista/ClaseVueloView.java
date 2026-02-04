@@ -15,8 +15,13 @@ public class ClaseVueloView extends javax.swing.JPanel {
         this.mainFrame = mainFrame;
         this.controlador = new ControladorClaseVuelo(); // Controlador de la vista 
         initComponents();
-    }
+        java.net.URL imgURL = getClass().getResource("/imagenes/ClaseVuelo.jpg");
 
+        if (imgURL != null) {
+           
+            jLabelClase.setIcon(new javax.swing.ImageIcon(imgURL));
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,9 +45,9 @@ public class ClaseVueloView extends javax.swing.JPanel {
         btnSeleccionarBusinessClass = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnInSesion1 = new javax.swing.JButton();
+        jLabelClase = new javax.swing.JLabel();
 
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -55,11 +60,14 @@ public class ClaseVueloView extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setOpaque(false);
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Yu Gothic", 1, 28)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Yu Gothic", 1, 36)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Economic Class");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 506, 63));
 
         btnSeleccionarEconomiClass.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         btnSeleccionarEconomiClass.setText("Seleccionar");
@@ -67,49 +75,27 @@ public class ClaseVueloView extends javax.swing.JPanel {
         btnSeleccionarEconomiClass.setHideActionText(true);
         btnSeleccionarEconomiClass.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSeleccionarEconomiClass.addActionListener(this::btnSeleccionarEconomiClassActionPerformed);
+        jPanel4.add(btnSeleccionarEconomiClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 640, 174, 38));
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setText(" Incluye: \n\n- 1 artículo personal (bolso o mochila)\n\n- Equipaje de mano (10 kg)\n\n- Asiento estándar\n\n- Check-in en el aeropuerto ");
+        jTextArea1.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jTextArea1.setOpaque(false);
         jScrollPane1.setViewportView(jTextArea1);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSeleccionarEconomiClass, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(btnSeleccionarEconomiClass, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, 315));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 520, 540));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 520, 730));
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel6.setOpaque(false);
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Yu Gothic", 1, 28)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Yu Gothic", 1, 36)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Business Class");
+        jPanel6.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 506, 63));
 
         btnSeleccionarBusinessClass.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         btnSeleccionarBusinessClass.setText("Seleccionar");
@@ -117,6 +103,7 @@ public class ClaseVueloView extends javax.swing.JPanel {
         btnSeleccionarBusinessClass.setHideActionText(true);
         btnSeleccionarBusinessClass.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSeleccionarBusinessClass.addActionListener(this::btnSeleccionarBusinessClassActionPerformed);
+        jPanel6.add(btnSeleccionarBusinessClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 640, 168, 38));
 
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -124,62 +111,34 @@ public class ClaseVueloView extends javax.swing.JPanel {
         jTextArea2.setText("Incluye:\n\n- 1 artículo personal\n\n- Equipaje de mano (14 kg)\n\n- Equipaje de bodega (23 kg)\n\n- Asiento reclinable\n\n- Selección de asiento\n\n- Menú a bordo\n\n- Flexibilidad de horario");
         jScrollPane2.setViewportView(jTextArea2);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSeleccionarBusinessClass, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btnSeleccionarBusinessClass, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 360, 322));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 190, 520, 540));
-
-        jLabel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 20, 410, 150));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 210, 510, 730));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Ecuador $ (USD) ");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 40, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 100, -1, -1));
 
         btnInSesion1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnInSesion1.setText("Iniciar Sesion");
         btnInSesion1.addActionListener(this::btnInSesion1ActionPerformed);
-        jPanel1.add(btnInSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 40, 200, -1));
+        jPanel1.add(btnInSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 100, 200, -1));
+
+        jLabelClase.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\ClaseVuelo.jpg")); // NOI18N
+        jLabelClase.setText("jLabel7");
+        jPanel1.add(jLabelClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1682, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -222,8 +181,8 @@ public class ClaseVueloView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabelClase;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
