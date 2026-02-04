@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.skyconnect.controlador.ControladorAeropuerto;
 import com.skyconnect.controlador.ControladorBusqueda;
-import com.skyconnect.controlador.ControladorPasajeros;
+import com.skyconnect.controlador.ControladorPasajero;
 import com.skyconnect.modelo.Aeropuerto;
 import javax.swing.JOptionPane;
 
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
         //Controladores necesarios en esta clase
         private ControladorAeropuerto controladorAeropuerto;
         private ControladorBusqueda controladorBusqueda;
-        private ControladorPasajeros controladorPasajeros;
+        private ControladorPasajero controladorPasajeros;
         private javax.swing.ButtonGroup grupoTipoVuelo;
         private MainFrame mainFrame;
     
@@ -26,14 +26,15 @@ import javax.swing.JOptionPane;
      * Creates new form BuscarVueloView
      * @param mainFrame
      * @param controladorBusqueda
+     * @param controladorPasajero
      */
   
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda) {
+    public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorPasajero controladorPasajero) {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
-        this.controladorPasajeros = new ControladorPasajeros();
+        this.controladorPasajeros = new ControladorPasajero();
         
         initComponents();
         jdtFechaRetorno.setEnabled(false);
@@ -87,13 +88,13 @@ import javax.swing.JOptionPane;
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jSpinner5 = new javax.swing.JSpinner();
+        jSpinnerTerceraEdad = new javax.swing.JSpinner();
         jLabel13 = new javax.swing.JLabel();
-        jSpinner6 = new javax.swing.JSpinner();
+        jSpinnerNinios = new javax.swing.JSpinner();
         jLabel14 = new javax.swing.JLabel();
-        jSpinner7 = new javax.swing.JSpinner();
+        jSpinnerAdultos = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
-        jSpinner4 = new javax.swing.JSpinner();
+        jSpinnerPDiscapacidad = new javax.swing.JSpinner();
         jbtnSiguienteBuscarVuelo = new javax.swing.JButton();
         btnInSesion1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -125,27 +126,35 @@ import javax.swing.JOptionPane;
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel11.setText("¿Quiénes Vuelan?");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel12.setText("Adultos (entre 12 a 64 años) : ");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 50, 302, -1));
-        jPanel2.add(jSpinner5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 79, 27));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 302, -1));
+
+        jSpinnerTerceraEdad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel2.add(jSpinnerTerceraEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 79, 27));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel13.setText("Niños (entre 3 a 11 años): ");
+        jLabel13.setText("Niños (entre 2 a 11 años): ");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 261, -1));
-        jPanel2.add(jSpinner6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 79, 27));
+
+        jSpinnerNinios.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel2.add(jSpinnerNinios, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 79, 27));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel14.setText("Tercera Edad (mayores a 65 años): ");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
-        jPanel2.add(jSpinner7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 79, 28));
+
+        jSpinnerAdultos.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel2.add(jSpinnerAdultos, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 79, 28));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel10.setText("Personas con discapacidad:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 304, -1));
-        jPanel2.add(jSpinner4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 79, 27));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 304, -1));
+
+        jSpinnerPDiscapacidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jPanel2.add(jSpinnerPDiscapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 79, 27));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 480, 470, 260));
 
@@ -270,10 +279,10 @@ import javax.swing.JOptionPane;
     private void jbtnSiguienteBuscarVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteBuscarVueloActionPerformed
         
         //Obtener datos de los spinners
-        int adultos = (int) jSpinner7.getValue();      // Adultos
-        int ninios = (int) jSpinner6.getValue();       // Niños
-        int terceraEdad = (int) jSpinner5.getValue();  // Tercera Edad
-        int discapacidad = (int) jSpinner4.getValue(); // Discapacidad
+        int adultos = (int) jSpinnerAdultos.getValue();      // Adultos
+        int ninios = (int) jSpinnerNinios.getValue();       // Niños
+        int terceraEdad = (int) jSpinnerTerceraEdad.getValue();  // Tercera Edad
+        int discapacidad = (int) jSpinnerPDiscapacidad.getValue(); // Discapacidad
 
         //Al menos debe viajar uno
         if ((adultos + ninios + terceraEdad + discapacidad) == 0) {
@@ -313,6 +322,8 @@ import javax.swing.JOptionPane;
             } else if(radBtnIdaVuelta.isSelected()){
                 //No vuelve a instanciar VueloIDAVUELTA, sino que obtiene la ventana creada antes
                 VueloIDAVUELTAView vueloIDAVUELTAView = mainFrame.getVueloIDAVUELTAView();
+                // Entregamos el controlador lleno de pasajeros a la siguiente vista
+                vueloIDAVUELTAView.setControladorPasajeros(this.controladorPasajeros);
                 //Con los datos obtenidos, vueloIDAView muestra los vuelos
                 vueloIDAVUELTAView.cargarDatosYBuscar();
                 mainFrame.mostrarVista("VUELOS IDA Y VUELTA");
@@ -354,10 +365,10 @@ import javax.swing.JOptionPane;
     private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JPopupMenu jPopupMenu4;
     private javax.swing.JPopupMenu jPopupMenu5;
-    private javax.swing.JSpinner jSpinner4;
-    private javax.swing.JSpinner jSpinner5;
-    private javax.swing.JSpinner jSpinner6;
-    private javax.swing.JSpinner jSpinner7;
+    private javax.swing.JSpinner jSpinnerAdultos;
+    private javax.swing.JSpinner jSpinnerNinios;
+    private javax.swing.JSpinner jSpinnerPDiscapacidad;
+    private javax.swing.JSpinner jSpinnerTerceraEdad;
     private javax.swing.JButton jbtnSiguienteBuscarVuelo;
     private com.toedter.calendar.JDateChooser jdtFechaRetorno;
     private com.toedter.calendar.JDateChooser jdtFechaViaje;

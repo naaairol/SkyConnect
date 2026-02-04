@@ -1,7 +1,7 @@
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorBusqueda;
-import com.skyconnect.controlador.ControladorPasajeros;
+import com.skyconnect.controlador.ControladorPasajero;
 import com.skyconnect.controlador.ControladorVuelo;
 import com.skyconnect.modelo.Pasajero;
 import com.skyconnect.modelo.Vuelo;
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class VueloIVUELTAView extends javax.swing.JPanel {
 
     private ControladorBusqueda controladorBusqueda;
-    private ControladorPasajeros controladorPasajeros;
+    private ControladorPasajero controladorPasajeros;
     private ArrayList<Vuelo> vuelosMostrados; // Para identificar qué vuelo se seleccionó
     
     /**
@@ -21,7 +21,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public VueloIVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda) {
+    public VueloIVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorPasajero controladorPasajero) {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         this.vuelosMostrados = new ArrayList<>();
@@ -34,7 +34,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         }
     }
     
-    public void setControladorPasajeros(ControladorPasajeros controlador) {
+    public void setControladorPasajeros(ControladorPasajero controlador) {
         this.controladorPasajeros = controlador;
     }
     
@@ -77,7 +77,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
 
             // RECORRER PASAJEROS Y ASIGNAR DESCUENTOS SEGÚN EL DESTINO
             for (Pasajero p : controladorPasajeros.getListaPasajeros()) {
-                ControladorPasajeros.asignarDescuento(p, vueloSeleccionado);
+                ControladorPasajero.asignarDescuento(p, vueloSeleccionado);
             }
 
             JOptionPane.showMessageDialog(this, "Vuelo seleccionado.");
@@ -153,7 +153,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        radBtnSeleccionar1 = new javax.swing.JRadioButton();
+        radBtnVuelo1 = new javax.swing.JRadioButton();
         btnPredeterminadoGuayaquil1 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -164,7 +164,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtFCostoV2 = new javax.swing.JTextField();
-        radBtnSeleccionar2 = new javax.swing.JRadioButton();
+        radBtnVuelo2 = new javax.swing.JRadioButton();
         btnPredeterminadoGuayaquil2 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -175,9 +175,9 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtFCostoV3 = new javax.swing.JTextField();
-        radBtnSeleccionar3 = new javax.swing.JRadioButton();
+        radBtnVuelo3 = new javax.swing.JRadioButton();
         jLabelVUELTA = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSiguiente = new javax.swing.JButton();
         txtObtenerNombreUsuario = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
 
@@ -241,10 +241,10 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
 
         btnPredeterminadoGuayaquil.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 1, -1, 200));
 
-        buttonGroup1.add(radBtnSeleccionar1);
-        radBtnSeleccionar1.setText("Seleccionar");
-        radBtnSeleccionar1.addActionListener(this::radBtnSeleccionar1ActionPerformed);
-        btnPredeterminadoGuayaquil.add(radBtnSeleccionar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+        buttonGroup1.add(radBtnVuelo1);
+        radBtnVuelo1.setText("Seleccionar");
+        radBtnVuelo1.addActionListener(this::radBtnVuelo1ActionPerformed);
+        btnPredeterminadoGuayaquil.add(radBtnVuelo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
 
         jPanel3.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 662, 210));
 
@@ -285,9 +285,9 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         txtFCostoV2.setEnabled(false);
         txtFCostoV2.addActionListener(this::txtFCostoV2ActionPerformed);
 
-        buttonGroup1.add(radBtnSeleccionar2);
-        radBtnSeleccionar2.setText("Seleccionar");
-        radBtnSeleccionar2.addActionListener(this::radBtnSeleccionar2ActionPerformed);
+        buttonGroup1.add(radBtnVuelo2);
+        radBtnVuelo2.setText("Seleccionar");
+        radBtnVuelo2.addActionListener(this::radBtnVuelo2ActionPerformed);
 
         javax.swing.GroupLayout btnPredeterminadoGuayaquil1Layout = new javax.swing.GroupLayout(btnPredeterminadoGuayaquil1);
         btnPredeterminadoGuayaquil1.setLayout(btnPredeterminadoGuayaquil1Layout);
@@ -317,7 +317,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel10)
-                                    .addComponent(radBtnSeleccionar2))))))
+                                    .addComponent(radBtnVuelo2))))))
                 .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(btnPredeterminadoGuayaquil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
@@ -345,7 +345,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
                                 .addComponent(txtFDuracionV2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(btnPredeterminadoGuayaquil1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(radBtnSeleccionar2)
+                        .addComponent(radBtnVuelo2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -400,9 +400,9 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         txtFCostoV3.setEnabled(false);
         txtFCostoV3.addActionListener(this::txtFCostoV3ActionPerformed);
 
-        buttonGroup1.add(radBtnSeleccionar3);
-        radBtnSeleccionar3.setText("Seleccionar");
-        radBtnSeleccionar3.addActionListener(this::radBtnSeleccionar3ActionPerformed);
+        buttonGroup1.add(radBtnVuelo3);
+        radBtnVuelo3.setText("Seleccionar");
+        radBtnVuelo3.addActionListener(this::radBtnVuelo3ActionPerformed);
 
         javax.swing.GroupLayout btnPredeterminadoGuayaquil2Layout = new javax.swing.GroupLayout(btnPredeterminadoGuayaquil2);
         btnPredeterminadoGuayaquil2.setLayout(btnPredeterminadoGuayaquil2Layout);
@@ -434,13 +434,13 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(radBtnSeleccionar3)
+                        .addComponent(radBtnVuelo3)
                         .addGap(15, 15, 15))))
             .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(485, Short.MAX_VALUE)))
+                    .addContainerGap(482, Short.MAX_VALUE)))
         );
         btnPredeterminadoGuayaquil2Layout.setVerticalGroup(
             btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -448,7 +448,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtFFechaV3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(radBtnSeleccionar3))
+                    .addComponent(radBtnVuelo3))
                 .addGap(10, 10, 10)
                 .addGroup(btnPredeterminadoGuayaquil2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(btnPredeterminadoGuayaquil2Layout.createSequentialGroup()
@@ -499,12 +499,13 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 1050, 980));
 
         jLabelVUELTA.setText("jLabel13");
-        jPanel1.add(jLabelVUELTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
+        jPanel1.add(jLabelVUELTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 990));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setText("Siguiente");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 900, 190, 40));
+        btnSiguiente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSiguiente.setText("Siguiente");
+        btnSiguiente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSiguiente.addActionListener(this::btnSiguienteActionPerformed);
+        jPanel1.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 900, 190, 40));
 
         txtObtenerNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtObtenerNombreUsuario.setEnabled(false);
@@ -520,15 +521,13 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1706, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -564,28 +563,33 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFDestinoV3ActionPerformed
 
-    private void radBtnSeleccionar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnSeleccionar1ActionPerformed
+    private void radBtnVuelo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnVuelo1ActionPerformed
         // TODO add your handling code here:
         seleccionarVuelo(0);
-    }//GEN-LAST:event_radBtnSeleccionar1ActionPerformed
+    }//GEN-LAST:event_radBtnVuelo1ActionPerformed
 
-    private void radBtnSeleccionar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnSeleccionar2ActionPerformed
+    private void radBtnVuelo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnVuelo2ActionPerformed
         // TODO add your handling code here:
         seleccionarVuelo(1);
-    }//GEN-LAST:event_radBtnSeleccionar2ActionPerformed
+    }//GEN-LAST:event_radBtnVuelo2ActionPerformed
 
-    private void radBtnSeleccionar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnSeleccionar3ActionPerformed
+    private void radBtnVuelo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnVuelo3ActionPerformed
         // TODO add your handling code here:
         seleccionarVuelo(2);
-    }//GEN-LAST:event_radBtnSeleccionar3ActionPerformed
+    }//GEN-LAST:event_radBtnVuelo3ActionPerformed
+
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
+        //Iniciar Sesión
+        mainFrame.mostrarVista("LOGIN");
+    }//GEN-LAST:event_btnSiguienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btnPredeterminadoGuayaquil;
     private javax.swing.JPanel btnPredeterminadoGuayaquil1;
     private javax.swing.JPanel btnPredeterminadoGuayaquil2;
+    private javax.swing.JButton btnSiguiente;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -607,9 +611,9 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JRadioButton radBtnSeleccionar1;
-    private javax.swing.JRadioButton radBtnSeleccionar2;
-    private javax.swing.JRadioButton radBtnSeleccionar3;
+    private javax.swing.JRadioButton radBtnVuelo1;
+    private javax.swing.JRadioButton radBtnVuelo2;
+    private javax.swing.JRadioButton radBtnVuelo3;
     private javax.swing.JTextField txtFCostoV1;
     private javax.swing.JTextField txtFCostoV2;
     private javax.swing.JTextField txtFCostoV3;

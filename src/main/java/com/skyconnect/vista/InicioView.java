@@ -68,7 +68,7 @@ public class InicioView extends javax.swing.JPanel {
         jbtnExplorarVuelos.setText("Explorar Vuelos");
         jbtnExplorarVuelos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnExplorarVuelos.addActionListener(this::jbtnExplorarVuelosActionPerformed);
-        jPanel1.add(jbtnExplorarVuelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 910, 270, -1));
+        jPanel1.add(jbtnExplorarVuelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 910, 270, -1));
 
         btnPredeterminadoGuayaquil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -260,15 +260,11 @@ public class InicioView extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 950, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1006, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

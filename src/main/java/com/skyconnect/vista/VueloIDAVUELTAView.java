@@ -1,7 +1,7 @@
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorBusqueda;
-import com.skyconnect.controlador.ControladorPasajeros;
+import com.skyconnect.controlador.ControladorPasajero;
 import com.skyconnect.controlador.ControladorVuelo;
 import com.skyconnect.modelo.Pasajero;
 import com.skyconnect.modelo.Vuelo;
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class VueloIDAVUELTAView extends javax.swing.JPanel {
 
     ControladorBusqueda controladorBusqueda;
-    private ControladorPasajeros controladorPasajeros;
+    private ControladorPasajero controladorPasajeros;
     private ArrayList<Vuelo> vuelosMostrados; // Para identificar qué vuelo se seleccionó
     /**
      * Creates new form VueloIDAVUELTAView
@@ -20,7 +20,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public VueloIDAVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda) {
+    public VueloIDAVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorPasajero controladorPasajero) {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         this.vuelosMostrados = new ArrayList<>();
@@ -33,7 +33,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         }
     }
     
-    public void setControladorPasajeros(ControladorPasajeros controlador) {
+    public void setControladorPasajeros(ControladorPasajero controlador) {
         this.controladorPasajeros = controlador;
     }
     
@@ -76,7 +76,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
 
             // RECORRER PASAJEROS Y ASIGNAR DESCUENTOS SEGÚN EL DESTINO
             for (Pasajero p : controladorPasajeros.getListaPasajeros()) {
-                ControladorPasajeros.asignarDescuento(p, vueloSeleccionado);
+                ControladorPasajero.asignarDescuento(p, vueloSeleccionado);
             }
 
             JOptionPane.showMessageDialog(this, "Vuelo seleccionado.");
@@ -149,7 +149,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         txtFCostoV1 = new javax.swing.JTextField();
-        radBtnSeleccionar1 = new javax.swing.JRadioButton();
+        radBtnVuelo1 = new javax.swing.JRadioButton();
         btnPredeterminadoGuayaquil1 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -160,7 +160,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtFCostoV2 = new javax.swing.JTextField();
-        radBtnSeleccionar2 = new javax.swing.JRadioButton();
+        radBtnVuelo2 = new javax.swing.JRadioButton();
         btnPredeterminadoGuayaquil2 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -171,7 +171,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         txtFCostoV3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        radBtnSeleccionar3 = new javax.swing.JRadioButton();
+        radBtnVuelo3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jLabelDAVUELTA = new javax.swing.JLabel();
         txtObtenerNombreUsuario = new javax.swing.JTextField();
@@ -231,10 +231,10 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         txtFCostoV1.addActionListener(this::txtFCostoV1ActionPerformed);
         btnPredeterminadoGuayaquil.add(txtFCostoV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 120, 45));
 
-        buttonGroup1.add(radBtnSeleccionar1);
-        radBtnSeleccionar1.setText("Seleccionar");
-        radBtnSeleccionar1.addActionListener(this::radBtnSeleccionar1ActionPerformed);
-        btnPredeterminadoGuayaquil.add(radBtnSeleccionar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
+        buttonGroup1.add(radBtnVuelo1);
+        radBtnVuelo1.setText("Seleccionar");
+        radBtnVuelo1.addActionListener(this::radBtnVuelo1ActionPerformed);
+        btnPredeterminadoGuayaquil.add(radBtnVuelo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
 
         jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 680, 210));
 
@@ -286,10 +286,10 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         txtFCostoV2.addActionListener(this::txtFCostoV2ActionPerformed);
         btnPredeterminadoGuayaquil1.add(txtFCostoV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 140, 112, 50));
 
-        buttonGroup1.add(radBtnSeleccionar2);
-        radBtnSeleccionar2.setText("Seleccionar");
-        radBtnSeleccionar2.addActionListener(this::radBtnSeleccionar2ActionPerformed);
-        btnPredeterminadoGuayaquil1.add(radBtnSeleccionar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
+        buttonGroup1.add(radBtnVuelo2);
+        radBtnVuelo2.setText("Seleccionar");
+        radBtnVuelo2.addActionListener(this::radBtnVuelo2ActionPerformed);
+        btnPredeterminadoGuayaquil1.add(radBtnVuelo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
 
         jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 680, 210));
 
@@ -341,10 +341,10 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         jLabel11.setText("Estimado IDA     ");
         btnPredeterminadoGuayaquil2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 101, -1, -1));
 
-        buttonGroup1.add(radBtnSeleccionar3);
-        radBtnSeleccionar3.setText("Seleccionar");
-        radBtnSeleccionar3.addActionListener(this::radBtnSeleccionar3ActionPerformed);
-        btnPredeterminadoGuayaquil2.add(radBtnSeleccionar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
+        buttonGroup1.add(radBtnVuelo3);
+        radBtnVuelo3.setText("Seleccionar");
+        radBtnVuelo3.addActionListener(this::radBtnVuelo3ActionPerformed);
+        btnPredeterminadoGuayaquil2.add(radBtnVuelo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
 
         jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 720, 680, 210));
 
@@ -414,20 +414,20 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
             mainFrame.mostrarVista("VUELOS VUELTA");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void radBtnSeleccionar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnSeleccionar1ActionPerformed
+    private void radBtnVuelo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnVuelo1ActionPerformed
         // TODO add your handling code here:
         seleccionarVuelo(0);
-    }//GEN-LAST:event_radBtnSeleccionar1ActionPerformed
+    }//GEN-LAST:event_radBtnVuelo1ActionPerformed
 
-    private void radBtnSeleccionar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnSeleccionar2ActionPerformed
+    private void radBtnVuelo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnVuelo2ActionPerformed
         // TODO add your handling code here:
         seleccionarVuelo(1);
-    }//GEN-LAST:event_radBtnSeleccionar2ActionPerformed
+    }//GEN-LAST:event_radBtnVuelo2ActionPerformed
 
-    private void radBtnSeleccionar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnSeleccionar3ActionPerformed
+    private void radBtnVuelo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radBtnVuelo3ActionPerformed
         // TODO add your handling code here:
         seleccionarVuelo(2);
-    }//GEN-LAST:event_radBtnSeleccionar3ActionPerformed
+    }//GEN-LAST:event_radBtnVuelo3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -455,9 +455,9 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton radBtnSeleccionar1;
-    private javax.swing.JRadioButton radBtnSeleccionar2;
-    private javax.swing.JRadioButton radBtnSeleccionar3;
+    private javax.swing.JRadioButton radBtnVuelo1;
+    private javax.swing.JRadioButton radBtnVuelo2;
+    private javax.swing.JRadioButton radBtnVuelo3;
     private javax.swing.JTextField txtFCostoV1;
     private javax.swing.JTextField txtFCostoV2;
     private javax.swing.JTextField txtFCostoV3;

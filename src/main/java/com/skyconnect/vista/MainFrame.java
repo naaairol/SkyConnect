@@ -2,6 +2,7 @@ package com.skyconnect.vista;
 import com.skyconnect.controlador.ControladorBusqueda;
 import com.skyconnect.controlador.ControladorFactura;
 import com.skyconnect.controlador.ControladorPago;
+import com.skyconnect.controlador.ControladorPasajero;
 import com.skyconnect.controlador.ControladorReserva;
 import com.skyconnect.modelo.Factura;
 import java.awt.CardLayout;
@@ -14,6 +15,7 @@ public class MainFrame extends javax.swing.JFrame {
     private ControladorPago controladorPago;
     private ControladorFactura controladorFactura;
     private ControladorBusqueda controladorBusqueda;
+    private ControladorPasajero controladorPasajero;
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -63,13 +65,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         // VISTAS
         inicioView = new InicioView(this);
-        buscarVueloView = new BuscarVueloView(this, controladorBusqueda);
+        buscarVueloView = new BuscarVueloView(this, controladorBusqueda, controladorPasajero);
         iniciarSesionView = new IniciarSesionView(this);
         creacionUsuarioView = new CreacionUsuarioView(this);
         registroPasajeroView = new RegistroPasajeroView(this); 
         vueloIDAView = new VueloIDAView(this, controladorBusqueda);
-        vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda);
-        vueloIVUELTAView = new VueloIVUELTAView(this, controladorBusqueda);
+        vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda, controladorPasajero);
+        vueloIVUELTAView = new VueloIVUELTAView(this, controladorBusqueda, controladorPasajero);
         claseVueloView = new ClaseVueloView(this);
         asientosView = new AsientosView(this, controladorReserva);
         equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
@@ -104,7 +106,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelContenedor.add(facturaView, "FACTURA");
         
         // Inicializamos la vista de inicio
-        mostrarVista("VUELOS IDA");
+        mostrarVista("INICIO");
     }
 
     //Getters para pedir las ventanas sin crear una nueva instancia
@@ -127,6 +129,11 @@ public class MainFrame extends javax.swing.JFrame {
     // Para que todos usen el mismo controlador, es decir, los mismos datos
     public ControladorBusqueda getControladorBusqueda() {
         return controladorBusqueda;
+    }
+    
+    // Para que todos usen el mismo controlador, es decir, los mismos datos
+    public ControladorPasajero getControladorPasajero() {
+        return controladorPasajero;
     }
 
     /**
