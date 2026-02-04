@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.skyconnect.controlador.ControladorAeropuerto;
 import com.skyconnect.controlador.ControladorBusqueda;
+import com.skyconnect.controlador.ControladorPasajeros;
 import com.skyconnect.modelo.Aeropuerto;
 import javax.swing.JOptionPane;
 
@@ -11,6 +12,7 @@ import javax.swing.JOptionPane;
         //Controladores necesarios en esta clase
         private ControladorAeropuerto controladorAeropuerto;
         private ControladorBusqueda controladorBusqueda;
+        private ControladorPasajeros controladorPasajeros;
         private javax.swing.ButtonGroup grupoTipoVuelo;
         private MainFrame mainFrame;
     
@@ -31,6 +33,7 @@ import javax.swing.JOptionPane;
     public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda) {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
+        this.controladorPasajeros = new ControladorPasajeros();
         initComponents();
         jdtFechaRetorno.setEnabled(false);
         java.net.URL imgURL = getClass().getResource("/imagenes/BuscarVueloView.jpg");
@@ -266,6 +269,18 @@ import javax.swing.JOptionPane;
 
     private void jbtnSiguienteBuscarVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteBuscarVueloActionPerformed
         
+        //Obtener datos de los spinners
+        int adultos = (int) jSpinner7.getValue();      // Adultos
+        int ninios = (int) jSpinner6.getValue();       // Niños
+        int terceraEdad = (int) jSpinner5.getValue();  // Tercera Edad
+        int discapacidad = (int) jSpinner4.getValue(); // Discapacidad
+
+        //Al menos debe viajar uno
+        if ((adultos + ninios + terceraEdad + discapacidad) == 0) {
+            JOptionPane.showMessageDialog(this, "Por favor, seleccione al menos un pasajero.", "Sin pasajeros", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         //Obtener datos de los componentes
         this.origen = cmbxOrigen.getSelectedItem().toString();
         this.destino = cmbxDestino.getSelectedItem().toString();
@@ -290,6 +305,8 @@ import javax.swing.JOptionPane;
             if(radBtnIda.isSelected()){
                 //No vuelve a instanciar VueloIDAView, sino que obtiene la ventana creada antes
                 VueloIDAView vueloIDAView = mainFrame.getVueloIDAView();
+                // Entregamos el controlador lleno de pasajeros a la siguiente vista
+                vueloIDAView.setControladorPasajeros(this.controladorPasajeros);
                 //Con los datos obtenidos, vueloIDAView muestra los vuelos
                 vueloIDAView.cargarDatosYBuscar();
                 mainFrame.mostrarVista("VUELOS IDA");

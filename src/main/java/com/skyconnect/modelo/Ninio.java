@@ -2,8 +2,8 @@ package com.skyconnect.modelo;
 
 public class Ninio extends Pasajero {
     
-    public Ninio(String nombre, String apellido, String cedula, String pasaporte, float descuento) {
-        super(nombre, apellido, cedula, pasaporte, descuento);
+    public Ninio(String nombre, String apellido, String cedula, String pasaporte) {
+        super(nombre, apellido, cedula, pasaporte, 0.0f);
     }
     
 }
