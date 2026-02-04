@@ -62,7 +62,7 @@ public class InicioView extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("Ecuador $ (USD) ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 90, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 100, -1, 40));
 
         jbtnExplorarVuelos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnExplorarVuelos.setText("Explorar Vuelos");
@@ -127,7 +127,7 @@ public class InicioView extends javax.swing.JPanel {
                         .addContainerGap(12, Short.MAX_VALUE))))
         );
 
-        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, -1, -1));
+        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, -1, -1));
 
         btnPredeterminadoGuayaquil1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -189,7 +189,7 @@ public class InicioView extends javax.swing.JPanel {
                 .addGap(23, 23, 23))
         );
 
-        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 480, -1, -1));
+        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, -1, -1));
 
         btnPredeterminadoGuayaquil2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -248,25 +248,29 @@ public class InicioView extends javax.swing.JPanel {
                 .addGap(23, 23, 23))
         );
 
-        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 740, -1, -1));
+        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 760, -1, -1));
 
         btnInSesion2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnInSesion2.setText("Iniciar Sesion");
         btnInSesion2.addActionListener(this::btnInSesion2ActionPerformed);
-        jPanel1.add(btnInSesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 90, -1, -1));
-        jPanel1.add(jLabelInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -10, 1700, 1010));
+        jPanel1.add(btnInSesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 100, -1, -1));
+
+        jLabelInicio.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Inicio.jpg")); // NOI18N
+        jPanel1.add(jLabelInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1010));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1800, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 994, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

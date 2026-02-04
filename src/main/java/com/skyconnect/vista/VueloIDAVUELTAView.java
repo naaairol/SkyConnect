@@ -20,8 +20,12 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         initComponents();
-    }
+        java.net.URL imgURL = getClass().getResource("/imagenes/Vuelo.jpg");
 
+        if (imgURL != null) {
+            jLabelDAVUELTA.setIcon(new javax.swing.ImageIcon(imgURL));
+    }
+    }
     public void cargarDatosYBuscar() {
         //Crea un controlador para obtener el arreglo con todos los vuelos
         ControladorVuelo controlador = new ControladorVuelo();
@@ -132,12 +136,13 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         txtFCostoV3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabelDAVUELTA = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel8.setText("Escoja su vuelo");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 460, 60));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 460, 60));
 
         btnPredeterminadoGuayaquil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPredeterminadoGuayaquil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -187,7 +192,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         txtFCostoV1.addActionListener(this::txtFCostoV1ActionPerformed);
         btnPredeterminadoGuayaquil.add(txtFCostoV1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 120, 45));
 
-        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 680, 210));
+        jPanel1.add(btnPredeterminadoGuayaquil, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 680, 210));
 
         btnPredeterminadoGuayaquil1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPredeterminadoGuayaquil1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -237,7 +242,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         txtFCostoV2.addActionListener(this::txtFCostoV2ActionPerformed);
         btnPredeterminadoGuayaquil1.add(txtFCostoV2, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 140, 112, 50));
 
-        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 680, 210));
+        jPanel1.add(btnPredeterminadoGuayaquil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 680, 210));
 
         btnPredeterminadoGuayaquil2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPredeterminadoGuayaquil2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -287,12 +292,16 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         jLabel11.setText("Estimado IDA     ");
         btnPredeterminadoGuayaquil2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 101, -1, -1));
 
-        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 680, 210));
+        jPanel1.add(btnPredeterminadoGuayaquil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 720, 680, 210));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jButton1.setText("Escoga su vuelo de vuelta");
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 640, 300, 64));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 910, 300, 64));
+
+        jLabelDAVUELTA.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Vuelo.jpg")); // NOI18N
+        jLabelDAVUELTA.setText("jLabel13");
+        jPanel1.add(jLabelDAVUELTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -300,14 +309,14 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 958, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -363,6 +372,7 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelDAVUELTA;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

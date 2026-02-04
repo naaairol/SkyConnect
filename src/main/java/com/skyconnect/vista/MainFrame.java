@@ -26,7 +26,7 @@ public class MainFrame extends javax.swing.JFrame {
     private ClaseVueloView claseVueloView;
     private AsientosView asientosView;
     private EquipajeExtraView equipajeExtraView;
-    private BoletoView boletoView; 
+    //private BoletoView boletoView; 
     private IniciarSesionView iniciarSesionView;
     private CreacionUsuarioView creacionUsuarioView;
     private PagoView pagoView;
@@ -73,7 +73,7 @@ public class MainFrame extends javax.swing.JFrame {
         claseVueloView = new ClaseVueloView(this);
         asientosView = new AsientosView(this, controladorReserva);
         equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
-        boletoView = new BoletoView(this);
+        //boletoView = new BoletoView(this);
         loginView = new LoginView(this);
         pagoView = new PagoView(this, controladorPago);
         tarjetaView = new TarjetaView(this, controladorPago);
@@ -94,7 +94,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelContenedor.add(claseVueloView, "CLASE");
         PanelContenedor.add(asientosView, "ASIENTOS");
         PanelContenedor.add(equipajeExtraView, "EQUIPAJE");
-        PanelContenedor.add(boletoView, "BOLETO");
+        //PanelContenedor.add(boletoView, "BOLETO");
         PanelContenedor.add(creacionUsuarioView, "CREAR");
         PanelContenedor.add(pagoView, "PAGO");
         PanelContenedor.add(tarjetaView, "TARJETA");

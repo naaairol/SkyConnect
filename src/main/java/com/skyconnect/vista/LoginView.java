@@ -14,8 +14,12 @@ public class LoginView extends javax.swing.JPanel {
         this.mainFrame = mainFrame; 
         this.controlador = new ControladorLogin(mainFrame);
         initComponents();
-    }
+        java.net.URL imgURL = getClass().getResource("/imagenes/CreacionUsuario.jpg");
 
+        if (imgURL != null) {
+            jLabelTienesCuenta.setIcon(new javax.swing.ImageIcon(imgURL));
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +35,7 @@ public class LoginView extends javax.swing.JPanel {
         btnIniciarSesionLogin = new javax.swing.JButton();
         btnRegistrarseLogin = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabelTienesCuenta = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(559, 559));
         setPreferredSize(new java.awt.Dimension(1650, 900));
@@ -39,7 +44,9 @@ public class LoginView extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         jLabel1.setText("¿YA TIENES UNA CUENTA?");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 230, -1, -1));
+
+        jPanel2.setOpaque(false);
 
         btnIniciarSesionLogin.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnIniciarSesionLogin.setText("Iniciar Sesión");
@@ -82,23 +89,21 @@ public class LoginView extends javax.swing.JPanel {
                 .addContainerGap(93, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 440, 450));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 440, 450));
+
+        jLabelTienesCuenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\CreacionUsuario.jpg")); // NOI18N
+        jLabelTienesCuenta.setText("jLabel3");
+        jPanel1.add(jLabelTienesCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 887, Short.MAX_VALUE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,6 +121,7 @@ public class LoginView extends javax.swing.JPanel {
     private javax.swing.JButton btnRegistrarseLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelTienesCuenta;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

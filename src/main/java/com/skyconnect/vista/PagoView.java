@@ -11,6 +11,12 @@ public class PagoView extends javax.swing.JPanel {
         this.controladorPago = controladorPago;
         initComponents();
         cargarResumen();
+        java.net.URL imgURL = getClass().getResource("/imagenes/pago.jpg");
+
+        if (imgURL != null) {
+            // Usamos el nombre que me indicaste: pago (suponiendo que es jLabelPago o pago)
+            jLabelPago.setIcon(new javax.swing.ImageIcon(imgURL));
+    }
     }
     //Imprime el resumen de compra 
     private void cargarResumen() {
@@ -67,6 +73,7 @@ public class PagoView extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jbtnPagarPayPal = new javax.swing.JButton();
         jbtnPagarTarjeta1 = new javax.swing.JButton();
+        jLabelPago = new javax.swing.JLabel();
 
         jTextField5.setEnabled(false);
         jTextField5.addActionListener(this::jTextField5ActionPerformed);
@@ -88,6 +95,7 @@ public class PagoView extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resumen de compra ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 36))); // NOI18N
+        jPanel2.setOpaque(false);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Orígen: ");
@@ -193,7 +201,7 @@ public class PagoView extends javax.swing.JPanel {
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFResumenDestino, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                            .addComponent(txtFResumenDestino, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
                             .addComponent(txtFResumenOrigen)
                             .addComponent(txtFResumenFecha)
                             .addComponent(txtFResumenNPasajeros)
@@ -262,16 +270,17 @@ public class PagoView extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFResumenDescuentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFResumenTotalPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 600, 640));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 600, 650));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Método de Pago", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 36))); // NOI18N
+        jPanel3.setOpaque(false);
 
         jbtnPagarPayPal.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jbtnPagarPayPal.setText("PayPal");
@@ -304,20 +313,23 @@ public class PagoView extends javax.swing.JPanel {
                 .addContainerGap(65, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 290, 480, 220));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, 480, 220));
+
+        jLabelPago.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Pago.jpg")); // NOI18N
+        jLabelPago.setText("jLabel10");
+        jPanel1.add(jLabelPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1585, Short.MAX_VALUE)
-                .addGap(71, 71, 71))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -395,6 +407,7 @@ public class PagoView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelPago;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

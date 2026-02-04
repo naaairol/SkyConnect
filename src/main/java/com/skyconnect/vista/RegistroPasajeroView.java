@@ -13,8 +13,12 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     public RegistroPasajeroView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
         initComponents();
-    }
+        java.net.URL imgURL = getClass().getResource("/imagenes/boleto.jpg");
 
+        if (imgURL != null) {
+            jLabelRegistro.setIcon(new javax.swing.ImageIcon(imgURL));
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,10 +40,12 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txtCIRegistroPasajero1 = new javax.swing.JTextField();
         jbtnSiguienteRegistroPasajero = new javax.swing.JButton();
+        jLabelRegistro = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro Información de Pasajeros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 48))); // NOI18N
+        jPanel2.setOpaque(false);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
@@ -70,7 +76,7 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         jbtnGuardarRegistroPasajero.setText("Guardar");
         jbtnGuardarRegistroPasajero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnGuardarRegistroPasajero.addActionListener(this::jbtnGuardarRegistroPasajeroActionPerformed);
-        jPanel2.add(jbtnGuardarRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, 170, 40));
+        jPanel2.add(jbtnGuardarRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, 170, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel4.setText("Cédula:");
@@ -80,28 +86,30 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         txtCIRegistroPasajero1.addActionListener(this::txtCIRegistroPasajero1ActionPerformed);
         jPanel2.add(txtCIRegistroPasajero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 320, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 820, 560));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 820, 560));
 
         jbtnSiguienteRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnSiguienteRegistroPasajero.setText("Siguiente");
         jbtnSiguienteRegistroPasajero.addActionListener(this::jbtnSiguienteRegistroPasajeroActionPerformed);
-        jPanel1.add(jbtnSiguienteRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 640, 220, 50));
+        jPanel1.add(jbtnSiguienteRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 910, 220, 50));
+
+        jLabelRegistro.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Boleto.jpg")); // NOI18N
+        jLabelRegistro.setText("jLabel5");
+        jPanel1.add(jLabelRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1810, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1020, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,6 +143,7 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelRegistro;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbtnGuardarRegistroPasajero;
