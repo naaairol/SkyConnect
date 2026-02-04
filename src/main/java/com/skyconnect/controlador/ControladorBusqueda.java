@@ -29,7 +29,7 @@ public class ControladorBusqueda {
     }
     
     // Recibe toda la lista de vuelos y devuelve solo los que coinciden
-    public ArrayList<Vuelo> buscarVuelosSoloIDA(ArrayList<Vuelo> todosLosVuelos) {
+    public ArrayList<Vuelo> buscarVuelosIDA(ArrayList<Vuelo> todosLosVuelos) {
         ArrayList<Vuelo> vuelosEncontrados = new ArrayList<>();
 
         for (Vuelo v : todosLosVuelos) {
@@ -50,19 +50,36 @@ public class ControladorBusqueda {
         return vuelosEncontrados;
     }
     
-    //Para que en vista se setten las variables de esta clase
-    public void setCriteriosBusquedaIDA(String origen, String destino, String fechaIda) {
-        this.origenBuscado = origen;
-        this.destinoBuscado = destino;
-        this.fechaIdaBuscado = fechaIda;
+    // Recibe toda la lista de vuelos y devuelve solo los que coinciden
+    public ArrayList<Vuelo> buscarVuelosVUELTA(ArrayList<Vuelo> todosLosVuelos) {
+        ArrayList<Vuelo> vuelosEncontrados = new ArrayList<>();
+
+        for (Vuelo v : todosLosVuelos) {
+            //Verifica los vuelos
+            boolean mismoOrigen = v.getRuta().getAeroSalida().getCodigoIATA().
+                    equalsIgnoreCase(ControladorBusqueda.ciudadAIATA(
+                            destinoBuscado));
+            boolean mismoDestino = v.getRuta().getAeroLlegada().getCodigoIATA().
+                    equalsIgnoreCase(ControladorBusqueda.ciudadAIATA(
+                            origenBuscado));
+            boolean mismaFecha = v.getFechaSalida().
+                    equalsIgnoreCase(fechaRetornoBuscado);
+            //Agrega a la lista solo los que coinciden
+            if (mismoOrigen && mismoDestino && mismaFecha) {
+                vuelosEncontrados.add(v);
+            }
+        }
+        return vuelosEncontrados;
     }
     
-    //Para que en vista se setten las variables, incluido la fecha de regreso
-    public void setCriteriosBusquedaIDAVUELTA(String origen, String destino, String fechaIda, String fechaVuelta){
+    
+    
+    //Para que en vista se setten las variables de esta clase
+    public void setCriteriosBusqueda(String origen, String destino, String fechaIda, String fechaRetornoBuscado) {
         this.origenBuscado = origen;
         this.destinoBuscado = destino;
         this.fechaIdaBuscado = fechaIda;
-        this.fechaRetornoBuscado = fechaVuelta;
+        this.fechaRetornoBuscado = fechaRetornoBuscado;
     }
     
 }
