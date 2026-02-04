@@ -4,14 +4,14 @@ import com.skyconnect.modelo.Vuelo;
 import com.skyconnect.modelo.Pasajero;
 import com.skyconnect.controlador.ControladorVuelo;
 import com.skyconnect.controlador.ControladorBusqueda;
-import com.skyconnect.controlador.ControladorPasajero;
+import com.skyconnect.controlador.ControladorDescuentos;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 public class VueloIDAView extends javax.swing.JPanel {
     
     private ControladorBusqueda controladorBusqueda;
-    private ControladorPasajero controladorPasajeros;
+    private ControladorDescuentos controladorPasajeros;
     private ArrayList<Vuelo> vuelosMostrados; // Para identificar qué vuelo se seleccionó
     private MainFrame mainFrame; 
    
@@ -30,7 +30,7 @@ public class VueloIDAView extends javax.swing.JPanel {
         }
     }
     
-    public void setControladorPasajeros(ControladorPasajero controlador) {
+    public void setControladorPasajeros(ControladorDescuentos controlador) {
         this.controladorPasajeros = controlador;
     }
     
@@ -74,7 +74,7 @@ public class VueloIDAView extends javax.swing.JPanel {
 
             // RECORRER PASAJEROS Y ASIGNAR DESCUENTOS SEGÚN EL DESTINO
             for (Pasajero p : controladorPasajeros.getListaPasajeros()) {
-                ControladorPasajero.asignarDescuento(p, vueloSeleccionado);
+                ControladorDescuentos.asignarDescuento(p, vueloSeleccionado);
             }
 
             JOptionPane.showMessageDialog(this, "Vuelo seleccionado.");

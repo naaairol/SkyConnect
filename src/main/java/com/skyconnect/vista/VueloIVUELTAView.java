@@ -1,7 +1,7 @@
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorBusqueda;
-import com.skyconnect.controlador.ControladorPasajero;
+import com.skyconnect.controlador.ControladorDescuentos;
 import com.skyconnect.controlador.ControladorVuelo;
 import com.skyconnect.modelo.Pasajero;
 import com.skyconnect.modelo.Vuelo;
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class VueloIVUELTAView extends javax.swing.JPanel {
 
     private ControladorBusqueda controladorBusqueda;
-    private ControladorPasajero controladorPasajeros;
+    private ControladorDescuentos controladorPasajeros;
     private ArrayList<Vuelo> vuelosMostrados; // Para identificar qué vuelo se seleccionó
     
     /**
@@ -21,7 +21,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public VueloIVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorPasajero controladorPasajero) {
+    public VueloIVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorDescuentos controladorPasajero) {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         this.vuelosMostrados = new ArrayList<>();
@@ -34,7 +34,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         }
     }
     
-    public void setControladorPasajeros(ControladorPasajero controlador) {
+    public void setControladorPasajeros(ControladorDescuentos controlador) {
         this.controladorPasajeros = controlador;
     }
     
@@ -77,7 +77,7 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
 
             // RECORRER PASAJEROS Y ASIGNAR DESCUENTOS SEGÚN EL DESTINO
             for (Pasajero p : controladorPasajeros.getListaPasajeros()) {
-                ControladorPasajero.asignarDescuento(p, vueloSeleccionado);
+                ControladorDescuentos.asignarDescuento(p, vueloSeleccionado);
             }
 
             JOptionPane.showMessageDialog(this, "Vuelo seleccionado.");

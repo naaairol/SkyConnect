@@ -2,7 +2,7 @@ package com.skyconnect.vista;
 import com.skyconnect.controlador.ControladorBusqueda;
 import com.skyconnect.controlador.ControladorFactura;
 import com.skyconnect.controlador.ControladorPago;
-import com.skyconnect.controlador.ControladorPasajero;
+import com.skyconnect.controlador.ControladorDescuentos;
 import com.skyconnect.controlador.ControladorReserva;
 import com.skyconnect.modelo.Factura;
 import java.awt.CardLayout;
@@ -15,7 +15,7 @@ public class MainFrame extends javax.swing.JFrame {
     private ControladorPago controladorPago;
     private ControladorFactura controladorFactura;
     private ControladorBusqueda controladorBusqueda;
-    private ControladorPasajero controladorPasajero;
+    private ControladorDescuentos controladorPasajero;
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -132,7 +132,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     // Para que todos usen el mismo controlador, es decir, los mismos datos
-    public ControladorPasajero getControladorPasajero() {
+    public ControladorDescuentos getControladorPasajero() {
         return controladorPasajero;
     }
 

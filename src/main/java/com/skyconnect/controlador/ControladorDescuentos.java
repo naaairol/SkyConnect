@@ -4,11 +4,11 @@ import com.skyconnect.modelo.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ControladorPasajero {
+public class ControladorDescuentos {
     
     private List<Pasajero> listaPasajeros;
 
-    public ControladorPasajero() {
+    public ControladorDescuentos() {
         this.listaPasajeros = new ArrayList<>();
     }
     

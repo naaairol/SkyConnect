@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.skyconnect.controlador.ControladorAeropuerto;
 import com.skyconnect.controlador.ControladorBusqueda;
-import com.skyconnect.controlador.ControladorPasajero;
+import com.skyconnect.controlador.ControladorDescuentos;
 import com.skyconnect.modelo.Aeropuerto;
 import javax.swing.JOptionPane;
 
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
         //Controladores necesarios en esta clase
         private ControladorAeropuerto controladorAeropuerto;
         private ControladorBusqueda controladorBusqueda;
-        private ControladorPasajero controladorPasajeros;
+        private ControladorDescuentos controladorPasajeros;
         private javax.swing.ButtonGroup grupoTipoVuelo;
         private MainFrame mainFrame;
     
@@ -31,10 +31,10 @@ import javax.swing.JOptionPane;
   
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorPasajero controladorPasajero) {
+    public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorDescuentos controladorPasajero) {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
-        this.controladorPasajeros = new ControladorPasajero();
+        this.controladorPasajeros = new ControladorDescuentos();
         
         initComponents();
         jdtFechaRetorno.setEnabled(false);
