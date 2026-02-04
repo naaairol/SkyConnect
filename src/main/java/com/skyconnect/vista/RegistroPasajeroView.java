@@ -9,11 +9,9 @@ package com.skyconnect.vista;
  * @author mateo
  */
 public class RegistroPasajeroView extends javax.swing.JPanel {
-
-    /**
-     * Creates new form RegistroPasajeroView
-     */
-    public RegistroPasajeroView() {
+    private MainFrame mainFrame; 
+    public RegistroPasajeroView(MainFrame mainFrame) {
+        this.mainFrame = mainFrame; 
         initComponents();
     }
 
@@ -31,38 +29,63 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtApellidoRegistroPasajero = new javax.swing.JTextField();
+        txtRegistroNombrePasajero = new javax.swing.JTextField();
+        txtPasaporteRegistroPasajero = new javax.swing.JTextField();
+        jbtnGuardarRegistroPasajero = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtCIRegistroPasajero1 = new javax.swing.JTextField();
+        jbtnSiguienteRegistroPasajero = new javax.swing.JButton();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro Información de Pasajeros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 24))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registro Información de Pasajeros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 48))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 77, 284, 43));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel1.setText("Nombre:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 210, 43));
 
-        jLabel2.setText("jLabel2");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 284, 50));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel2.setText("Apellido: ");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 210, 50));
 
-        jLabel3.setText("jLabel3");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 284, 43));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel3.setText("Pasaporte:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 290, 43));
 
-        jTextField1.setText("jTextField1");
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 149, 319, 50));
+        txtApellidoRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtApellidoRegistroPasajero.addActionListener(this::txtApellidoRegistroPasajeroActionPerformed);
+        jPanel2.add(txtApellidoRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 319, 50));
 
-        jTextField2.setText("jTextField1");
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(351, 87, 319, 43));
+        txtRegistroNombrePasajero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtRegistroNombrePasajero.addActionListener(this::txtRegistroNombrePasajeroActionPerformed);
+        jPanel2.add(txtRegistroNombrePasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 319, 50));
 
-        jTextField3.setText("jTextField3");
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 320, 50));
+        txtPasaporteRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtPasaporteRegistroPasajero.addActionListener(this::txtPasaporteRegistroPasajeroActionPerformed);
+        jPanel2.add(txtPasaporteRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 320, 50));
 
-        jButton1.setText("jButton1");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 170, 40));
+        jbtnGuardarRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jbtnGuardarRegistroPasajero.setText("Guardar");
+        jbtnGuardarRegistroPasajero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnGuardarRegistroPasajero.addActionListener(this::jbtnGuardarRegistroPasajeroActionPerformed);
+        jPanel2.add(jbtnGuardarRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, 170, 40));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 740, 600));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel4.setText("Cédula:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 290, 43));
+
+        txtCIRegistroPasajero1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCIRegistroPasajero1.addActionListener(this::txtCIRegistroPasajero1ActionPerformed);
+        jPanel2.add(txtCIRegistroPasajero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 320, 50));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 820, 560));
+
+        jbtnSiguienteRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jbtnSiguienteRegistroPasajero.setText("Siguiente");
+        jbtnSiguienteRegistroPasajero.addActionListener(this::jbtnSiguienteRegistroPasajeroActionPerformed);
+        jPanel1.add(jbtnSiguienteRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 640, 220, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -82,16 +105,43 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtCIRegistroPasajero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCIRegistroPasajero1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCIRegistroPasajero1ActionPerformed
+
+    private void jbtnGuardarRegistroPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarRegistroPasajeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnGuardarRegistroPasajeroActionPerformed
+
+    private void jbtnSiguienteRegistroPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteRegistroPasajeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnSiguienteRegistroPasajeroActionPerformed
+
+    private void txtRegistroNombrePasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegistroNombrePasajeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRegistroNombrePasajeroActionPerformed
+
+    private void txtApellidoRegistroPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoRegistroPasajeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidoRegistroPasajeroActionPerformed
+
+    private void txtPasaporteRegistroPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasaporteRegistroPasajeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasaporteRegistroPasajeroActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton jbtnGuardarRegistroPasajero;
+    private javax.swing.JButton jbtnSiguienteRegistroPasajero;
+    private javax.swing.JTextField txtApellidoRegistroPasajero;
+    private javax.swing.JTextField txtCIRegistroPasajero1;
+    private javax.swing.JTextField txtPasaporteRegistroPasajero;
+    private javax.swing.JTextField txtRegistroNombrePasajero;
     // End of variables declaration//GEN-END:variables
 }
