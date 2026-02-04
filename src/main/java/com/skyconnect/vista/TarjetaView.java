@@ -10,13 +10,14 @@ public class TarjetaView extends javax.swing.JPanel {
     public TarjetaView(MainFrame mainFrame, ControladorPago controladorPago) {
         this.mainFrame = mainFrame;
         this.controladorPago = controladorPago;
+        
         initComponents();
-        java.net.URL imgURL = getClass().getResource("/imagenes/Tarjeta.jpg");
-
-        if (imgURL != null) {
-            jLabelTarjeta.setIcon(new javax.swing.ImageIcon(imgURL));
         registrarEventos();
-    }
+        
+        java.net.URL imgURL = getClass().getResource("/imagenes/Tarjeta.jpg");
+        if (imgURL != null) {
+            jLabelTarjeta.setIcon(new javax.swing.ImageIcon(imgURL)); 
+        }
     }
     private void registrarEventos() {
         jbtnConfirmarPago.addActionListener(e -> enviarDatosPago());
@@ -126,7 +127,6 @@ public class TarjetaView extends javax.swing.JPanel {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 210, 860, 550));
 
-        jLabelTarjeta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Tarjeta.jpg")); // NOI18N
         jLabelTarjeta.setText("jLabel1");
         jPanel2.add(jLabelTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

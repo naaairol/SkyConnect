@@ -17,10 +17,11 @@ public class EquipajeExtraView extends javax.swing.JPanel {
     public EquipajeExtraView(MainFrame mainFrame, ControladorReserva controladorReserva) {
         this.mainFrame = mainFrame;
         this.controladorReserva = controladorReserva;
+        
         initComponents();
         configurarGrupoRadio();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/EquipajeExtra.jpg");
-
         if (imgURL != null) {
             jLabelEquipaje.setIcon(new javax.swing.ImageIcon(imgURL));
         }
@@ -211,7 +212,6 @@ public class EquipajeExtraView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 900, 640));
 
-        jLabelEquipaje.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\EquipajeExtra.jpg")); // NOI18N
         jLabelEquipaje.setText("jLabel4");
         jPanel1.add(jLabelEquipaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

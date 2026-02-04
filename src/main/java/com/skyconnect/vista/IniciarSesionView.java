@@ -13,15 +13,15 @@ public class IniciarSesionView extends javax.swing.JPanel {
     // a través del MainFrame usando CardLayout.
     public IniciarSesionView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
-        initComponents();
         controladorLogin = new ControladorLogin(mainFrame);
+        initComponents();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/CreacionUsuario.jpg");
-
         if (imgURL != null) {
             jLabelIniciarSesion.setIcon(new javax.swing.ImageIcon(imgURL));
+        }
     }
-
-    }
+    
     private void mostrarMensaje(String mensaje, int tipo) {
     JOptionPane.showMessageDialog(
         this,
@@ -88,7 +88,6 @@ public class IniciarSesionView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 720, 610));
 
-        jLabelIniciarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\CreacionUsuario.jpg")); // NOI18N
         jLabelIniciarSesion.setText("jLabel1");
         jPanel1.add(jLabelIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 990));
 

@@ -13,16 +13,15 @@ public class FacturaView extends javax.swing.JPanel {
         this.mainFrame = mainFrame;
         this.factura = factura;
         this.metodoDePago = metodoDePago; // Guardamos el método de pago
+        
         initComponents();  // NetBeans genera este método, no lo modifiques
         mostrarFactura(); // Llamamos al método para mostrar la factura.
     
         java.net.URL imgURL = getClass().getResource("/imagenes/Factura.jpg");
-
         if (imgURL != null) {
             jLabelFactura.setIcon(new javax.swing.ImageIcon(imgURL));
-}
-
-    }
+        }
+ }
     // Método para mostrar los datos de la factura en un JTextArea.
     private void mostrarFactura() {
         // Formato de factura
@@ -101,7 +100,6 @@ public class FacturaView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
-        jLabelFactura.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Factura.jpg")); // NOI18N
         jLabelFactura.setText("jLabel1");
         jPanel1.add(jLabelFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1690, 1000));
 

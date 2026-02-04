@@ -14,12 +14,14 @@ public class AsientosView extends javax.swing.JPanel {
     public AsientosView(MainFrame mainFrame, ControladorReserva controladorReserva) {
         this.mainFrame = mainFrame;
         this.controladorReserva = controladorReserva;
+        
         initComponents();
         registrarBotonesAsientos();
+        
         java.net.URL imgAsientosURL = getClass().getResource("/imagenes/AsientosView.jpg");
         if (imgAsientosURL != null) {
             jLabelAsientos.setIcon(new javax.swing.ImageIcon(imgAsientosURL));
-        }
+        }  
     }
     //Registra dinámicamente los botones de asientos del panel.
     private void registrarBotonesAsientos() {

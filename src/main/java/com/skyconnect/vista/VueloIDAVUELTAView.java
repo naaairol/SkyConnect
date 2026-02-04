@@ -24,9 +24,10 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         this.vuelosMostrados = new ArrayList<>();
+        
         initComponents();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/Vuelo.jpg");
-
         if (imgURL != null) {
             jLabelDAVUELTA.setIcon(new javax.swing.ImageIcon(imgURL));
         }
@@ -350,7 +351,6 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         jButton1.addActionListener(this::jButton1ActionPerformed);
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 910, 300, 64));
 
-        jLabelDAVUELTA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/imagenes/Vuelo.jpg"))); // NOI18N
         jLabelDAVUELTA.setText("jLabel13");
         jPanel1.add(jLabelDAVUELTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

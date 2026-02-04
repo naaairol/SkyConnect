@@ -12,12 +12,13 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     private MainFrame mainFrame; 
     public RegistroPasajeroView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
+        
         initComponents();
-        java.net.URL imgURL = getClass().getResource("/imagenes/boleto.jpg");
-
+        
+        java.net.URL imgURL = getClass().getResource("/imagenes/Boleto.jpg");
         if (imgURL != null) {
             jLabelRegistro.setIcon(new javax.swing.ImageIcon(imgURL));
-    }
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -93,7 +94,6 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         jbtnSiguienteRegistroPasajero.addActionListener(this::jbtnSiguienteRegistroPasajeroActionPerformed);
         jPanel1.add(jbtnSiguienteRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 910, 220, 50));
 
-        jLabelRegistro.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Boleto.jpg")); // NOI18N
         jLabelRegistro.setText("jLabel5");
         jPanel1.add(jLabelRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

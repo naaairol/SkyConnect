@@ -11,11 +11,11 @@ public class InicioView extends javax.swing.JPanel {
     public InicioView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
         initComponents();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/Inicio.jpg");
-
         if (imgURL != null) {
             jLabelInicio.setIcon(new javax.swing.ImageIcon(imgURL));
-    }
+        } 
     }
 
     /**

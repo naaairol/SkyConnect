@@ -21,9 +21,10 @@ public class VueloIDAView extends javax.swing.JPanel {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         this.vuelosMostrados = new ArrayList<>();
+        
         initComponents();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/Vuelo.jpg");
-
         if (imgURL != null) {
             jLabelIDA.setIcon(new javax.swing.ImageIcon(imgURL));
         }
@@ -522,7 +523,6 @@ public class VueloIDAView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 890, 860));
 
-        jLabelIDA.setIcon(new javax.swing.ImageIcon("C:\\Users\\vemom\\Documents\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Vuelo.jpg")); // NOI18N
         jLabelIDA.setText("jLabel13");
         jPanel1.add(jLabelIDA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

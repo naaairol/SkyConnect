@@ -9,14 +9,15 @@ public class PagoView extends javax.swing.JPanel {
     public PagoView(MainFrame mainFrame, ControladorPago controladorPago) {
         this.mainFrame = mainFrame;
         this.controladorPago = controladorPago;
+        
         initComponents();
         cargarResumen();
-        java.net.URL imgURL = getClass().getResource("/imagenes/pago.jpg");
-
+        
+        java.net.URL imgURL = getClass().getResource("/imagenes/Pago.jpg");
         if (imgURL != null) {
             // Usamos el nombre que me indicaste: pago (suponiendo que es jLabelPago o pago)
             jLabelPago.setIcon(new javax.swing.ImageIcon(imgURL));
-    }
+        }
     }
     //Imprime el resumen de compra 
     private void cargarResumen() {
@@ -315,7 +316,6 @@ public class PagoView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 380, 480, 220));
 
-        jLabelPago.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Pago.jpg")); // NOI18N
         jLabelPago.setText("jLabel10");
         jPanel1.add(jLabelPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

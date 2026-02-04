@@ -14,13 +14,13 @@ public class ClaseVueloView extends javax.swing.JPanel {
     public ClaseVueloView(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         this.controlador = new ControladorClaseVuelo(); // Controlador de la vista 
+        
         initComponents();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/ClaseVuelo.jpg");
-
         if (imgURL != null) {
-           
             jLabelClase.setIcon(new javax.swing.ImageIcon(imgURL));
-    }
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -124,7 +124,6 @@ public class ClaseVueloView extends javax.swing.JPanel {
         btnInSesion1.addActionListener(this::btnInSesion1ActionPerformed);
         jPanel1.add(btnInSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 100, 200, -1));
 
-        jLabelClase.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\ClaseVuelo.jpg")); // NOI18N
         jLabelClase.setText("jLabel7");
         jPanel1.add(jLabelClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

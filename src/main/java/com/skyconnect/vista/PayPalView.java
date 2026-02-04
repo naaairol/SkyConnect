@@ -13,13 +13,14 @@ public class PayPalView extends javax.swing.JPanel {
     public PayPalView(MainFrame mainFrame, ControladorPago controladorPago) {
         this.mainFrame = mainFrame;
         this.controladorPago = controladorPago; 
+        
         initComponents();
+        registrarEventos();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/PayPal.jpg");
-
         if (imgURL != null) {
             jLabelPayPal.setIcon(new javax.swing.ImageIcon(imgURL));
-        registrarEventos();
-    }
+        }
     }
     // Registro de eventos de los botones
     private void registrarEventos() {
@@ -223,7 +224,6 @@ public class PayPalView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 620, 280));
 
-        jLabelPayPal.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\PayPal.jpg")); // NOI18N
         jLabelPayPal.setText("jLabel5");
         jPanel1.add(jLabelPayPal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

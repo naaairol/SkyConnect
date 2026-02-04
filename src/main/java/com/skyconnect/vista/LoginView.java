@@ -13,12 +13,13 @@ public class LoginView extends javax.swing.JPanel {
     public LoginView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
         this.controlador = new ControladorLogin(mainFrame);
+        
         initComponents();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/CreacionUsuario.jpg");
-
         if (imgURL != null) {
             jLabelTienesCuenta.setIcon(new javax.swing.ImageIcon(imgURL));
-    }
+        } 
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,7 +92,6 @@ public class LoginView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 320, 440, 450));
 
-        jLabelTienesCuenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\CreacionUsuario.jpg")); // NOI18N
         jLabelTienesCuenta.setText("jLabel3");
         jPanel1.add(jLabelTienesCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

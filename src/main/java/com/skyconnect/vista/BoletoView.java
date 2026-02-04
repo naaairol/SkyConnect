@@ -12,12 +12,13 @@ public class BoletoView extends javax.swing.JPanel {
     private MainFrame mainFrame; 
     public BoletoView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
+        
         initComponents();
-        java.net.URL imgURL = getClass().getResource("/imagenes/boleto.jpg");
-
+        
+        java.net.URL imgURL = getClass().getResource("/imagenes/Boleto.jpg");
         if (imgURL != null) {
             jLabelBoleto.setIcon(new javax.swing.ImageIcon(imgURL));
-    }
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -117,7 +118,6 @@ public class BoletoView extends javax.swing.JPanel {
 
         jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 960, 500));
 
-        jLabelBoleto.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Boleto.jpg")); // NOI18N
         jLabelBoleto.setText("jLabel2");
         jPanel10.add(jLabelBoleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

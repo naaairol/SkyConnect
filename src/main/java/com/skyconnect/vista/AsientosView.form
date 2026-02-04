@@ -2663,11 +2663,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelAsientos">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Jade\OneDrive\Documentos\NetBeansProjects\SkyConnect\src\main\java\resources\imagenes\AsientosView.jpg"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="0" y="-10" width="1700" height="1000"/>

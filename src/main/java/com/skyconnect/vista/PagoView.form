@@ -511,9 +511,6 @@
         </Container>
         <Component class="javax.swing.JLabel" name="jLabelPago">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Jade\OneDrive\Documentos\NetBeansProjects\SkyConnect\src\main\java\resources\imagenes\Pago.jpg"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
           <Constraints>

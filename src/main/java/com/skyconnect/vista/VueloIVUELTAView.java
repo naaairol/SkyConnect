@@ -25,9 +25,10 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         this.vuelosMostrados = new ArrayList<>();
+        
         initComponents();
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/Vuelo.jpg");
-
         if (imgURL != null) {
             jLabelVUELTA.setIcon(new javax.swing.ImageIcon(imgURL));
         }
@@ -494,7 +495,6 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 1050, 980));
 
-        jLabelVUELTA.setIcon(new javax.swing.ImageIcon("C:\\Users\\vemom\\Documents\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Vuelo.jpg")); // NOI18N
         jLabelVUELTA.setText("jLabel13");
         jPanel1.add(jLabelVUELTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 

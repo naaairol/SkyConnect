@@ -34,17 +34,18 @@ import javax.swing.JOptionPane;
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
         this.controladorPasajeros = new ControladorPasajeros();
+        
         initComponents();
         jdtFechaRetorno.setEnabled(false);
+        
         java.net.URL imgURL = getClass().getResource("/imagenes/BuscarVueloView.jpg");
         if (imgURL != null) {
             jLabelBuscarVuelo.setIcon(new javax.swing.ImageIcon(imgURL));
         }
-    
+        
         grupoTipoVuelo = new javax.swing.ButtonGroup();
         grupoTipoVuelo.add(radBtnIda);
         grupoTipoVuelo.add(radBtnIdaVuelta);
-        
         
         controladorAeropuerto = new ControladorAeropuerto();
         cargarAeropuertos();
@@ -236,7 +237,6 @@ import javax.swing.JOptionPane;
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 1360, 160));
 
-        jLabelBuscarVuelo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\BuscarVueloView.jpg")); // NOI18N
         jLabelBuscarVuelo.setText("jLabel5");
         jPanel1.add(jLabelBuscarVuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1700, 990));
 
