@@ -254,8 +254,6 @@ public class InicioView extends javax.swing.JPanel {
         btnInSesion2.setText("Iniciar Sesion");
         btnInSesion2.addActionListener(this::btnInSesion2ActionPerformed);
         jPanel1.add(btnInSesion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 100, -1, -1));
-
-        jLabelInicio.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\Inicio.jpg")); // NOI18N
         jPanel1.add(jLabelInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1010));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -263,13 +261,13 @@ public class InicioView extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 994, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 950, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

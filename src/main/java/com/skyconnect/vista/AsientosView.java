@@ -239,6 +239,8 @@ public class AsientosView extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jCheckBoxAgregarEquipajeExtra = new javax.swing.JCheckBox();
         jLabelAsientos = new javax.swing.JLabel();
+        txtObtenerNombreUsuario = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
 
         jLabel11.setText("2");
 
@@ -1363,9 +1365,9 @@ public class AsientosView extends javax.swing.JPanel {
         jLabel1.setText("Seleccione sus asientos ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 680, 50));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("Ecuador $ (USD) ");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 100, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 100, 200, 30));
 
         jbtnSeleccionarConfirmarAsientos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnSeleccionarConfirmarAsientos.setText("Seleccionar");
@@ -1392,9 +1394,15 @@ public class AsientosView extends javax.swing.JPanel {
         jCheckBoxAgregarEquipajeExtra.setText("Si, agregar equipaje.");
         jCheckBoxAgregarEquipajeExtra.addActionListener(this::jCheckBoxAgregarEquipajeExtraActionPerformed);
         jPanel1.add(jCheckBoxAgregarEquipajeExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 640, 320, -1));
-
-        jLabelAsientos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Jade\\OneDrive\\Documentos\\NetBeansProjects\\SkyConnect\\src\\main\\java\\resources\\imagenes\\AsientosView.jpg")); // NOI18N
         jPanel1.add(jLabelAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1700, 1000));
+
+        txtObtenerNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtObtenerNombreUsuario.setEnabled(false);
+        jPanel1.add(txtObtenerNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1510, 100, 190, 40));
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel33.setText("Usuario:");
+        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 100, 80, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -1464,6 +1472,7 @@ public class AsientosView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1606,5 +1615,6 @@ public class AsientosView extends javax.swing.JPanel {
     private javax.swing.JPanel jpPanelPasillo2;
     private java.awt.Label label1;
     private javax.swing.JTextField txtAsientosSeleccionados;
+    private javax.swing.JTextField txtObtenerNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }

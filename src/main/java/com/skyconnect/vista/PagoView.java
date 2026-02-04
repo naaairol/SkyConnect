@@ -75,6 +75,8 @@ public class PagoView extends javax.swing.JPanel {
         jbtnPagarPayPal = new javax.swing.JButton();
         jbtnPagarTarjeta1 = new javax.swing.JButton();
         jLabelPago = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         jTextField5.setEnabled(false);
         jTextField5.addActionListener(this::jTextField5ActionPerformed);
@@ -319,6 +321,14 @@ public class PagoView extends javax.swing.JPanel {
         jLabelPago.setText("jLabel10");
         jPanel1.add(jLabelPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jTextField1.setEnabled(false);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 50, 190, 40));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Usuario:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 50, 80, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -398,6 +408,7 @@ public class PagoView extends javax.swing.JPanel {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -411,6 +422,7 @@ public class PagoView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JButton jbtnPagarPayPal;

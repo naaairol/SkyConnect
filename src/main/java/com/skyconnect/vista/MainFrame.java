@@ -104,7 +104,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelContenedor.add(facturaView, "FACTURA");
         
         // Inicializamos la vista de inicio
-        mostrarVista("BOLETO");
+        mostrarVista("VUELOS IDA");
     }
 
     //Getters para pedir las ventanas sin crear una nueva instancia

@@ -107,6 +107,8 @@ public class PayPalView extends javax.swing.JPanel {
         jbtnAceptarPagoPayPal = new javax.swing.JButton();
         JbtnCancelarPagoPayPal = new javax.swing.JButton();
         jLabelPayPal = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -227,6 +229,14 @@ public class PayPalView extends javax.swing.JPanel {
         jLabelPayPal.setText("jLabel5");
         jPanel1.add(jLabelPayPal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jTextField1.setEnabled(false);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 50, 190, 40));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Usuario:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 50, 80, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -260,6 +270,7 @@ public class PayPalView extends javax.swing.JPanel {
     private javax.swing.JButton JbtnCancelarPagoPayPal;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -268,6 +279,7 @@ public class PayPalView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtnAceptarPagoPayPal;
     private javax.swing.JPasswordField txtFContraseñaPayPal;
     private javax.swing.JTextField txtFIniciarSesionPayPal;

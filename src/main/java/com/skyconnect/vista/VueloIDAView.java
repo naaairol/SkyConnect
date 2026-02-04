@@ -171,6 +171,8 @@ public class VueloIDAView extends javax.swing.JPanel {
         txtFCosto3 = new javax.swing.JTextField();
         radBtnSeleccionar3 = new javax.swing.JRadioButton();
         jLabelIDA = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
@@ -526,6 +528,14 @@ public class VueloIDAView extends javax.swing.JPanel {
         jLabelIDA.setText("jLabel13");
         jPanel1.add(jLabelIDA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Usuario:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 20, 80, 40));
+
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jTextField1.setEnabled(false);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1490, 20, 190, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -601,6 +611,7 @@ public class VueloIDAView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -616,6 +627,7 @@ public class VueloIDAView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JRadioButton radBtnSeleccionar1;
     private javax.swing.JRadioButton radBtnSeleccionar2;
     private javax.swing.JRadioButton radBtnSeleccionar3;

@@ -46,8 +46,9 @@ public class ClaseVueloView extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
-        btnInSesion1 = new javax.swing.JButton();
         jLabelClase = new javax.swing.JLabel();
+        txtObtenerNombreUsuario = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         jLabel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -119,13 +120,16 @@ public class ClaseVueloView extends javax.swing.JPanel {
         jLabel2.setText("Ecuador $ (USD) ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 100, -1, -1));
 
-        btnInSesion1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnInSesion1.setText("Iniciar Sesion");
-        btnInSesion1.addActionListener(this::btnInSesion1ActionPerformed);
-        jPanel1.add(btnInSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 100, 200, -1));
-
         jLabelClase.setText("jLabel7");
         jPanel1.add(jLabelClase, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
+
+        txtObtenerNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtObtenerNombreUsuario.setEnabled(false);
+        jPanel1.add(txtObtenerNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 100, 190, 40));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Usuario:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 100, 80, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -166,17 +170,13 @@ public class ClaseVueloView extends javax.swing.JPanel {
       }
     }//GEN-LAST:event_btnSeleccionarBusinessClassActionPerformed
 
-    private void btnInSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInSesion1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnInSesion1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInSesion;
-    private javax.swing.JButton btnInSesion1;
     private javax.swing.JButton btnSeleccionarBusinessClass;
     private javax.swing.JButton btnSeleccionarEconomiClass;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -189,5 +189,6 @@ public class ClaseVueloView extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField txtObtenerNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }

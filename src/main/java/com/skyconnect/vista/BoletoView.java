@@ -47,6 +47,8 @@ public class BoletoView extends javax.swing.JPanel {
         txtObtenerHoraBoleto = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jLabelBoleto = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -121,6 +123,14 @@ public class BoletoView extends javax.swing.JPanel {
         jLabelBoleto.setText("jLabel2");
         jPanel10.add(jLabelBoleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jTextField1.setEnabled(false);
+        jPanel10.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1450, 70, 190, 40));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Usuario:");
+        jPanel10.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 70, 80, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,6 +154,7 @@ public class BoletoView extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -154,6 +165,7 @@ public class BoletoView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbtnSiguienteBoletoGenerado;
     private javax.swing.JTextField txtObtenerApellidoBoleto;
     private javax.swing.JTextField txtObtenerDestinoBoleto;

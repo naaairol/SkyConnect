@@ -177,6 +177,9 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         txtFCostoV3 = new javax.swing.JTextField();
         radBtnSeleccionar3 = new javax.swing.JRadioButton();
         jLabelVUELTA = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        txtObtenerNombreUsuario = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -498,6 +501,19 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
         jLabelVUELTA.setText("jLabel13");
         jPanel1.add(jLabelVUELTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButton1.setText("Siguiente");
+        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 900, 190, 40));
+
+        txtObtenerNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtObtenerNombreUsuario.setEnabled(false);
+        jPanel1.add(txtObtenerNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1490, 30, 190, 40));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Usuario:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 30, 80, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -569,10 +585,12 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     private javax.swing.JPanel btnPredeterminadoGuayaquil1;
     private javax.swing.JPanel btnPredeterminadoGuayaquil2;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -604,5 +622,6 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     private javax.swing.JTextField txtFFechaV1;
     private javax.swing.JTextField txtFFechaV2;
     private javax.swing.JTextField txtFFechaV3;
+    private javax.swing.JTextField txtObtenerNombreUsuario;
     // End of variables declaration//GEN-END:variables
 }

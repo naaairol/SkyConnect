@@ -42,6 +42,8 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         txtCIRegistroPasajero1 = new javax.swing.JTextField();
         jbtnSiguienteRegistroPasajero = new javax.swing.JButton();
         jLabelRegistro = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtObtenerNombreUsuario = new javax.swing.JTextField();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -97,6 +99,14 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         jLabelRegistro.setText("jLabel5");
         jPanel1.add(jLabelRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 1000));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("Usuario:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 30, 80, 40));
+
+        txtObtenerNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        txtObtenerNombreUsuario.setEnabled(false);
+        jPanel1.add(txtObtenerNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 20, 190, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,6 +153,7 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelRegistro;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -150,6 +161,7 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     private javax.swing.JButton jbtnSiguienteRegistroPasajero;
     private javax.swing.JTextField txtApellidoRegistroPasajero;
     private javax.swing.JTextField txtCIRegistroPasajero1;
+    private javax.swing.JTextField txtObtenerNombreUsuario;
     private javax.swing.JTextField txtPasaporteRegistroPasajero;
     private javax.swing.JTextField txtRegistroNombrePasajero;
     // End of variables declaration//GEN-END:variables

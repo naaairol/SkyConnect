@@ -71,6 +71,8 @@ public class FacturaView extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtFacturaFinal = new javax.swing.JTextArea();
         jLabelFactura = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -103,6 +105,14 @@ public class FacturaView extends javax.swing.JPanel {
         jLabelFactura.setText("jLabel1");
         jPanel1.add(jLabelFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1690, 1000));
 
+        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jTextField1.setEnabled(false);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 50, 190, 40));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Usuario:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 50, 80, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,10 +132,12 @@ public class FacturaView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabelFactura;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextArea txtFacturaFinal;
     // End of variables declaration//GEN-END:variables
     }
