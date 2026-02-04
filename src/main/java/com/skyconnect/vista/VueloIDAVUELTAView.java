@@ -1,6 +1,10 @@
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorBusqueda;
+import com.skyconnect.controlador.ControladorVuelo;
+import com.skyconnect.modelo.Vuelo;
+import java.util.ArrayList;
+import com.skyconnect.vista.VueloIVUELTAView;
 
 public class VueloIDAVUELTAView extends javax.swing.JPanel {
 
@@ -18,6 +22,74 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void cargarDatosYBuscar() {
+        //Crea un controlador para obtener el arreglo con todos los vuelos
+        ControladorVuelo controlador = new ControladorVuelo();
+        ArrayList<Vuelo> vuelos = controlador.obtenerVuelos();
+        //Toma toda la lista de vuelos, pero solo devuelve y dibuja los que
+        //nos interesa, o sea los seleccionados por el usuario
+        mostrarVuelos(vuelos);
+    }
+    
+    public void mostrarVuelos(ArrayList<Vuelo> todosLosVuelos) {
+        limpiarCampos();
+
+        //Controlador toma todos los vuelos y devuelve los 
+        //que coinciden con lo que quiere el usuario
+        ArrayList<Vuelo> vuelosFiltrados = controladorBusqueda.buscarVuelosIDA(todosLosVuelos);
+
+        //La visa muestra los vuelos que son los que quiere el usuario
+        for (int i = 0; i < vuelosFiltrados.size() && i < 3; i++) {
+            Vuelo v = vuelosFiltrados.get(i);
+            switch (i) {
+                case 0 -> cargarVuelo1(v);
+                case 1 -> cargarVuelo2(v);
+                case 2 -> cargarVuelo3(v);
+            }
+        }
+    }
+    
+    //Metodos para que aparezcan los vuelos
+    private void cargarVuelo1(Vuelo v) {
+        txtFDestinoV1.setText(v.getRuta().getAeroLlegada().getCiudad());
+        txtFFechaV1.setText(v.getFechaSalida());
+        txtFDuracionV1.setText(v.getDuracion());
+        txtFCostoV1.setText(String.valueOf(v.getPrecioEstimado()));
+    }
+
+    private void cargarVuelo2(Vuelo v) {
+        txtFDestinoV2.setText(v.getRuta().getAeroLlegada().getCiudad());
+        txtFFechaV2.setText(v.getFechaSalida());
+        txtFDuracionV2.setText(v.getDuracion());
+        txtFCostoV2.setText(String.valueOf(v.getPrecioEstimado()));
+    }
+
+    private void cargarVuelo3(Vuelo v) {
+        txtFDestinoV3.setText(v.getRuta().getAeroLlegada().getCiudad());
+        txtFFechaV3.setText(v.getFechaSalida());
+        txtFDuracionV3.setText(v.getDuracion());
+        txtFCostoV3.setText(String.valueOf(v.getPrecioEstimado()));
+    }
+    
+    // Limpia
+    private void limpiarCampos() {
+        txtFDestinoV1.setText("");
+        txtFFechaV1.setText("");
+        txtFDuracionV1.setText("");
+        txtFCostoV1.setText("");
+
+        txtFDestinoV2.setText("");
+        txtFFechaV2.setText("");
+        txtFDuracionV2.setText("");
+        txtFCostoV2.setText("");
+
+        txtFDestinoV3.setText("");
+        txtFFechaV3.setText("");
+        txtFDuracionV3.setText("");
+        txtFCostoV3.setText("");
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -265,7 +337,11 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
     }//GEN-LAST:event_txtFCostoV3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+            //No vuelve a instanciar VueloIDAVUELTA, sino que obtiene la ventana creada antes
+            VueloIVUELTAView vueloVUELTAView = mainFrame.getVueloVUELTAView();
+            //Con los datos obtenidos, vueloIDAView muestra los vuelos
+            vueloVUELTAView.cargarDatosYBuscar();
+            mainFrame.mostrarVista("VUELOS VUELTA");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

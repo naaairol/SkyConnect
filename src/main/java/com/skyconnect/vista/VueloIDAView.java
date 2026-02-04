@@ -36,7 +36,7 @@ public class VueloIDAView extends javax.swing.JPanel {
 
         //Controlador toma todos los vuelos y devuelve los 
         //que coinciden con lo que quiere el usuario
-        ArrayList<Vuelo> vuelosFiltrados = controladorBusqueda.buscarVuelosSoloIDA(todosLosVuelos);
+        ArrayList<Vuelo> vuelosFiltrados = controladorBusqueda.buscarVuelosIDA(todosLosVuelos);
 
         //La visa muestra los vuelos que son los que quiere el usuario
         for (int i = 0; i < vuelosFiltrados.size() && i < 3; i++) {

@@ -7,7 +7,7 @@ public class App {
 
     public static void main(String[] args) {
         
-
+        
        
         //Se inicializan las pestañas de las GUI creadas
         SwingUtilities.invokeLater(() -> {
@@ -16,7 +16,7 @@ public class App {
         mainFrame.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         mainFrame.setLocationRelativeTo(null); 
         mainFrame.setVisible(true);
-
+        
         });
         
     }

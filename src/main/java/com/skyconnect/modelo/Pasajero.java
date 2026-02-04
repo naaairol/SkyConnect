@@ -1,23 +1,19 @@
 package com.skyconnect.modelo;
 
-public class Pasajero {
+public abstract class Pasajero {
     
     private String nombre;
     private String apellido;
     private String cedula;
     private String pasaporte;
+    private float descuento;
 
-    public Pasajero(String nombre, String apellido, String cedula, String pasaporte) {
+    public Pasajero(String nombre, String apellido, String cedula, String pasaporte, float descuento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.pasaporte = pasaporte;
-    }
-
-    public Pasajero(String nombre, String apellido, String cedula) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cedula = cedula;
+        this.descuento = descuento;
     }
 
     public String getNombre() {
@@ -50,6 +46,14 @@ public class Pasajero {
 
     public void setPasaporte(String pasaporte) {
         this.pasaporte = pasaporte;
+    }
+    
+    public float getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(float descuento) {
+        this.descuento = descuento;
     }
 
     @Override

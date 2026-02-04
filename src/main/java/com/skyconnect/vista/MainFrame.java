@@ -64,7 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         buscarVueloView = new BuscarVueloView(this, controladorBusqueda);
         vueloIDAView = new VueloIDAView(this, controladorBusqueda);
         vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda);
-        vueloIVUELTAView = new VueloIVUELTAView(this);
+        vueloIVUELTAView = new VueloIVUELTAView(this, controladorBusqueda);
         claseVueloView = new ClaseVueloView(this);
         asientosView = new AsientosView(this, controladorReserva);
         equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
@@ -101,6 +101,7 @@ public class MainFrame extends javax.swing.JFrame {
         mostrarVista("INICIO");
     }
 
+    //Getters para pedir las ventanas sin crear una nueva instancia
     public void mostrarVista(String nombreVista) {
         cardLayout.show(PanelContenedor, nombreVista);
     }
@@ -111,6 +112,10 @@ public class MainFrame extends javax.swing.JFrame {
 
     public VueloIDAVUELTAView getVueloIDAVUELTAView() {
         return vueloIDAVUELTAView;
+    }
+    
+    public VueloIVUELTAView getVueloVUELTAView() {
+        return vueloIVUELTAView;
     }
 
     // Para que todos usen el mismo controlador, es decir, los mismos datos

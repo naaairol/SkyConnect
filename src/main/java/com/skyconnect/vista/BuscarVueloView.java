@@ -368,32 +368,23 @@ import javax.swing.JOptionPane;
         SimpleDateFormat fFRetorno = new SimpleDateFormat("yyyy-MM-dd");
         this.fechaRetorno = fFRetorno.format(fechaRetornoTemp);
         }
+        
+        //Pasa las elecciones del usuario a variables en el Controlador
+        controladorBusqueda.setCriteriosBusqueda(origen, destino, fechaViaje, fechaRetorno);
 
         //Cambiamos la vista según el tipo de vuelo seleccionado
             if(radBtnIda.isSelected()){
-                //Pasa las preferencias del usuario a variables en el Controlador
-                controladorBusqueda.setCriteriosBusquedaIDA(origen, destino, fechaViaje);
                 //No vuelve a instanciar VueloIDAView, sino que obtiene la ventana creada antes
                 VueloIDAView vueloIDAView = mainFrame.getVueloIDAView();
                 //Con los datos obtenidos, vueloIDAView muestra los vuelos
                 vueloIDAView.cargarDatosYBuscar();
                 mainFrame.mostrarVista("VUELOS IDA");
             } else if(radBtnIdaVuelta.isSelected()){
-                
-                /*
-                
-                PENSAR MEJOR TODO ESTO, HASTA MIENTRAS NO SE VA A MOSTRAR NINGUNA
-                VENTANA AL LANZAR SELECCIONANDO IDA Y VUELTA
-                
-                //Pasa las preferencias del usuario a variables en el Controlador
-                controladorBusqueda.setCriteriosBusquedaIDAVUELTA(origen, destino, fechaViaje, fechaRetorno);
                 //No vuelve a instanciar VueloIDAVUELTA, sino que obtiene la ventana creada antes
-                VueloIDAView vueloIDAView = mainFrame.getVueloIDAView();
+                VueloIDAVUELTAView vueloIDAVUELTAView = mainFrame.getVueloIDAVUELTAView();
                 //Con los datos obtenidos, vueloIDAView muestra los vuelos
-                vueloIDAView.cargarDatosYBuscar();
-                mainFrame.mostrarVista("VUELOS IDA");
+                vueloIDAVUELTAView.cargarDatosYBuscar();
                 mainFrame.mostrarVista("VUELOS IDA Y VUELTA");
-                */
             }
     }//GEN-LAST:event_jbtnSiguienteBuscarVueloActionPerformed
 
