@@ -173,6 +173,7 @@ public class VueloIDAView extends javax.swing.JPanel {
         jLabelIDA = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jbtnSiguienteVueloIDA = new javax.swing.JButton();
 
         jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
@@ -536,6 +537,11 @@ public class VueloIDAView extends javax.swing.JPanel {
         jTextField1.setEnabled(false);
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1490, 20, 190, 40));
 
+        jbtnSiguienteVueloIDA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jbtnSiguienteVueloIDA.setText("Siguiente");
+        jbtnSiguienteVueloIDA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(jbtnSiguienteVueloIDA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1460, 890, 180, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -628,6 +634,7 @@ public class VueloIDAView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jbtnSiguienteVueloIDA;
     private javax.swing.JRadioButton radBtnSeleccionar1;
     private javax.swing.JRadioButton radBtnSeleccionar2;
     private javax.swing.JRadioButton radBtnSeleccionar3;
