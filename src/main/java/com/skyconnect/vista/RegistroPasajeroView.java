@@ -20,6 +20,40 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
             jLabelRegistro.setIcon(new javax.swing.ImageIcon(imgURL));
         }
     }
+    
+    //Getters y Setters
+    public String getNombre() {return txtRegistroNombrePasajero.getText().trim();}
+    public String getApellido() {return txtApellidoRegistroPasajero.getText().trim();}
+    public String getCedula() {return txtCIRegistroPasajero1.getText().trim();}
+    public String getPasaporte() {return txtPasaporteRegistroPasajero.getText().trim();}
+    
+    //Listener
+    public void addBtnGuardarListener(java.awt.event.ActionListener listener) {
+        jbtnGuardarRegistroPasajero.addActionListener(listener);
+        jbtnGuardarRegistroPasajero.setActionCommand("Guardar");
+    }
+
+    public void addBtnSiguienteListener(java.awt.event.ActionListener listener) {
+        jbtnSiguienteRegistroPasajero.addActionListener(listener);
+        jbtnSiguienteRegistroPasajero.setActionCommand("Siguiente");
+    }
+    
+    
+    //metodo que limpia los campos
+    public void limpiarCampos() {
+        txtRegistroNombrePasajero.setText("");
+        txtApellidoRegistroPasajero.setText("");
+        txtCIRegistroPasajero1.setText("");
+        txtPasaporteRegistroPasajero.setText("");
+        txtRegistroNombrePasajero.requestFocus(); // Pone el cursor de nuevo en el nombre
+    }
+    
+    // Método para actualizar el mensaje de qué pasajero se está registrando
+    public void actualizarIdentificador(String tipo, int numero) {
+        this.txtIdentificadorPasajero.setText("Pasajero: " + tipo + " " + numero);
+    }
+     
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,6 +74,7 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         jbtnGuardarRegistroPasajero = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtCIRegistroPasajero1 = new javax.swing.JTextField();
+        txtIdentificadorPasajero = new javax.swing.JLabel();
         jbtnSiguienteRegistroPasajero = new javax.swing.JButton();
         jLabelRegistro = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -53,43 +88,48 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel1.setText("Nombre:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 210, 43));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 210, 43));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel2.setText("Apellido: ");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 210, 50));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 210, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel3.setText("Pasaporte:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 290, 43));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 290, 43));
 
         txtApellidoRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtApellidoRegistroPasajero.addActionListener(this::txtApellidoRegistroPasajeroActionPerformed);
-        jPanel2.add(txtApellidoRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 319, 50));
+        jPanel2.add(txtApellidoRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 319, 50));
 
         txtRegistroNombrePasajero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtRegistroNombrePasajero.addActionListener(this::txtRegistroNombrePasajeroActionPerformed);
-        jPanel2.add(txtRegistroNombrePasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 319, 50));
+        jPanel2.add(txtRegistroNombrePasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 319, 50));
 
         txtPasaporteRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtPasaporteRegistroPasajero.addActionListener(this::txtPasaporteRegistroPasajeroActionPerformed);
-        jPanel2.add(txtPasaporteRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 320, 50));
+        jPanel2.add(txtPasaporteRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, 320, 50));
 
         jbtnGuardarRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnGuardarRegistroPasajero.setText("Guardar");
         jbtnGuardarRegistroPasajero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtnGuardarRegistroPasajero.addActionListener(this::jbtnGuardarRegistroPasajeroActionPerformed);
-        jPanel2.add(jbtnGuardarRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 500, 170, 40));
+        jPanel2.add(jbtnGuardarRegistroPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 580, 170, 40));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel4.setText("Cédula:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 290, 43));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 290, 43));
 
         txtCIRegistroPasajero1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtCIRegistroPasajero1.addActionListener(this::txtCIRegistroPasajero1ActionPerformed);
-        jPanel2.add(txtCIRegistroPasajero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 320, 50));
+        jPanel2.add(txtCIRegistroPasajero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 320, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 820, 560));
+        txtIdentificadorPasajero.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtIdentificadorPasajero.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtIdentificadorPasajero.setText("Pasajero: ");
+        jPanel2.add(txtIdentificadorPasajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 490, 50));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 820, 680));
 
         jbtnSiguienteRegistroPasajero.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jbtnSiguienteRegistroPasajero.setText("Siguiente");
@@ -161,6 +201,7 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     private javax.swing.JButton jbtnSiguienteRegistroPasajero;
     private javax.swing.JTextField txtApellidoRegistroPasajero;
     private javax.swing.JTextField txtCIRegistroPasajero1;
+    private javax.swing.JLabel txtIdentificadorPasajero;
     private javax.swing.JTextField txtObtenerNombreUsuario;
     private javax.swing.JTextField txtPasaporteRegistroPasajero;
     private javax.swing.JTextField txtRegistroNombrePasajero;

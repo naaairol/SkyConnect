@@ -3,10 +3,15 @@ import com.skyconnect.controlador.ControladorBusqueda;
 import com.skyconnect.controlador.ControladorFactura;
 import com.skyconnect.controlador.ControladorPago;
 import com.skyconnect.controlador.ControladorDescuentos;
+import com.skyconnect.controlador.ControladorPasajeros;
 import com.skyconnect.controlador.ControladorReserva;
 import com.skyconnect.controlador.ControladorUsuario;
 import com.skyconnect.modelo.Factura;
+import com.skyconnect.modelo.Pasajero;
+import com.skyconnect.modelo.PasajeroDAO;
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainFrame extends javax.swing.JFrame {
     
@@ -18,6 +23,8 @@ public class MainFrame extends javax.swing.JFrame {
     private ControladorBusqueda controladorBusqueda;
     private ControladorDescuentos controladorPasajero;
     private ControladorUsuario controladorUsuario;
+    private ControladorPasajeros controladorPasajeros;
+    private PasajeroDAO pasajeroDAO;
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -64,7 +71,19 @@ public class MainFrame extends javax.swing.JFrame {
         
         // Inicializamos el ControladorPago con ControladorFactura
         controladorPago = new ControladorPago(reserva, controladorFactura);  // Pasar la reserva y el controladorFactura
-
+        
+        List<Pasajero> listaCompartida = new ArrayList<>();
+        
+        PasajeroDAO pasajeroDAO = new PasajeroDAO();
+        RegistroPasajeroView registroPasajeroView = new RegistroPasajeroView(this);
+        
+        this.controladorPasajeros = new ControladorPasajeros(
+            registroPasajeroView, 
+            pasajeroDAO,
+            listaCompartida// Aquí ya no será null
+        );
+        
+        
         // VISTAS
         inicioView = new InicioView(this);
         buscarVueloView = new BuscarVueloView(this, controladorBusqueda, controladorPasajero);
