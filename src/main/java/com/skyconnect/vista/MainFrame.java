@@ -24,7 +24,7 @@ public class MainFrame extends javax.swing.JFrame {
     private ControladorDescuentos controladorDescuentos;
     private ControladorUsuario controladorUsuario;
     private ControladorPasajeros controladorPasajeros;
-    private PasajeroDAO pasajeroDAO;
+
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -87,9 +87,9 @@ public class MainFrame extends javax.swing.JFrame {
         // VISTAS
         inicioView = new InicioView(this);
         buscarVueloView = new BuscarVueloView(this, controladorBusqueda, controladorDescuentos);
-        iniciarSesionView = new IniciarSesionView(this, controladorUsuario);
+        iniciarSesionView = new IniciarSesionView(this, controladorUsuario, controladorPasajeros, controladorDescuentos);
         creacionUsuarioView = new CreacionUsuarioView(this, controladorUsuario);
-        registroPasajeroView = new RegistroPasajeroView(this); 
+        registroPasajeroView = new RegistroPasajeroView(this, controladorDescuentos, controladorPasajeros); 
         vueloIDAView = new VueloIDAView(this, controladorBusqueda);
         vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda, controladorDescuentos);
         vueloIVUELTAView = new VueloIVUELTAView(this, controladorBusqueda, controladorDescuentos);
@@ -149,6 +149,10 @@ public class MainFrame extends javax.swing.JFrame {
 
     public IniciarSesionView getIniciarSesionView() {
         return iniciarSesionView;
+    }
+    
+    public RegistroPasajeroView getRegistroPasajeroView() {
+        return registroPasajeroView;
     }
     
     public LoginView getLoginView() {

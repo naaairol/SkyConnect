@@ -1,17 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.skyconnect.vista;
 
-/**
- *
- * @author mateo
- */
+import com.skyconnect.controlador.ControladorDescuentos;
+import com.skyconnect.controlador.ControladorPasajeros;
+
 public class RegistroPasajeroView extends javax.swing.JPanel {
-    private MainFrame mainFrame; 
-    public RegistroPasajeroView(MainFrame mainFrame) {
-        this.mainFrame = mainFrame; 
+    
+    private ControladorDescuentos controladorDescuento;
+    private ControladorPasajeros controladorPasajero;
+    private MainFrame mainFrame;
+    
+    public RegistroPasajeroView(MainFrame mainFrame, ControladorDescuentos controladorDescuentos, ControladorPasajeros controladorPasajero) {
+        this.mainFrame = mainFrame;
+        this.controladorDescuento = new ControladorDescuentos();
+        this.controladorPasajero = new ControladorPasajeros();
         
         initComponents();
         
@@ -19,6 +20,14 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         if (imgURL != null) {
             jLabelRegistro.setIcon(new javax.swing.ImageIcon(imgURL));
         }
+    }
+    
+    public void setControladorDescuentos(ControladorDescuentos controladorDescuento){
+        this.controladorDescuento = controladorDescuento;
+    }
+    
+    public void setControladorPasajeros(ControladorPasajeros controladorPasajero){
+        this.controladorPasajero = controladorPasajero;
     }
     
     //Getters y Setters

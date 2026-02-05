@@ -1,19 +1,26 @@
 package com.skyconnect.vista;
 
+import com.skyconnect.controlador.ControladorDescuentos;
+import com.skyconnect.controlador.ControladorPasajeros;
 import com.skyconnect.controlador.ControladorUsuario;
 import javax.swing.JOptionPane;
 
 public class IniciarSesionView extends javax.swing.JPanel {
     private ControladorUsuario controladorUsuario;
+    private ControladorPasajeros controladorPasajero;
+    private ControladorDescuentos controladorDescuento;
     /**
      * Creates new form IniciarSesionView
      */
     private MainFrame mainFrame; 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public IniciarSesionView(MainFrame mainFrame,ControladorUsuario controladorUsuario) {
+    public IniciarSesionView(MainFrame mainFrame,ControladorUsuario controladorUsuario, ControladorPasajeros controladorPasajero, ControladorDescuentos controladroDescuento) {
         this.mainFrame = mainFrame; 
         this.controladorUsuario = new ControladorUsuario();
+        this.controladorPasajero = controladorPasajero;
+        this.controladorDescuento = controladroDescuento;
+        
         initComponents();
         
         java.net.URL imgURL = getClass().getResource("/imagenes/CreacionUsuario.jpg");
@@ -118,6 +125,11 @@ public class IniciarSesionView extends javax.swing.JPanel {
         //Comprueba las credenciales del usuario con las guardadas en archivos
         if(controladorUsuario.iniciarSesion(usuario, clave)){
             JOptionPane.showMessageDialog(this, "Inicio de sesion exitoso.", "" ,JOptionPane.INFORMATION_MESSAGE);
+            
+            RegistroPasajeroView registroPasajeroView = mainFrame.getRegistroPasajeroView();
+            // Entregamos el controlador lleno de pasajeros a la siguiente vista
+            registroPasajeroView.setControladorDescuentos(controladorDescuento);
+            registroPasajeroView.setControladorPasajeros(controladorPasajero);
             mainFrame.mostrarVista("REGISTRO");
         } else {
             JOptionPane.showMessageDialog(this, "Inicio de sesion fallido.", "" ,JOptionPane.WARNING_MESSAGE);
