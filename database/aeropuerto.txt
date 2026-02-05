@@ -1,6 +1,5 @@
 UIO, Mariscal Sucre, Quito, Ecuador
 GYE, José Joaquín de Olmedo, Guayaquil, Ecuador
-CUE, Mariscal Lamar, Cuenca, Ecuador
 BOG, El Dorado, Bogotá, Colombia
 GPS, Seymour, Galápagos, Ecuador
 PTY, Tocumen, Ciudad de Panamá, Panamá

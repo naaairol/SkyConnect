@@ -74,14 +74,6 @@ public class MainFrame extends javax.swing.JFrame {
         
         List<Pasajero> listaCompartida = new ArrayList<>();
         
-        PasajeroDAO pasajeroDAO = new PasajeroDAO();
-        RegistroPasajeroView registroPasajeroView = new RegistroPasajeroView(this);
-        
-        this.controladorPasajeros = new ControladorPasajeros(
-            registroPasajeroView, 
-            pasajeroDAO,
-            listaCompartida// Aquí ya no será null
-        );
         
         
         // VISTAS

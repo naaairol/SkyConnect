@@ -84,6 +84,8 @@ public class VueloIDAView extends javax.swing.JPanel {
         }
     }
     
+    
+    
     //Metodos para que aparezcan los vuelos
     private void cargarVuelo1(Vuelo v) {
     txtFDestino1.setText(v.getRuta().getAeroLlegada().getCiudad());

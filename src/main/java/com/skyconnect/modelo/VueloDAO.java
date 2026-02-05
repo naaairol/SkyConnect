@@ -57,8 +57,6 @@ public class VueloDAO {
 
                             vuelos.add(vuelo);
                             
-                        } else {
-                            System.err.println("No se encontró aeropuerto para la ruta " + aeroOrigen + "-" + aeroDestino);
                         }
 
                     } catch (NumberFormatException e) {

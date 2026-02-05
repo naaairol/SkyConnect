@@ -72,6 +72,7 @@ public class AsientosView extends javax.swing.JPanel {
 
         jLabel11 = new javax.swing.JLabel();
         label1 = new java.awt.Label();
+        jLabelAsientos = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jbtnPagarAsientosView = new javax.swing.JButton();
         jpPanelAvion1 = new javax.swing.JPanel();
@@ -238,7 +239,6 @@ public class AsientosView extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jCheckBoxAgregarEquipajeExtra = new javax.swing.JCheckBox();
-        jLabelAsientos = new javax.swing.JLabel();
         txtObtenerNombreUsuario = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
 
@@ -1394,7 +1394,6 @@ public class AsientosView extends javax.swing.JPanel {
         jCheckBoxAgregarEquipajeExtra.setText("Si, agregar equipaje.");
         jCheckBoxAgregarEquipajeExtra.addActionListener(this::jCheckBoxAgregarEquipajeExtraActionPerformed);
         jPanel1.add(jCheckBoxAgregarEquipajeExtra, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 640, 320, -1));
-        jPanel1.add(jLabelAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1700, 1000));
 
         txtObtenerNombreUsuario.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         txtObtenerNombreUsuario.setEnabled(false);
@@ -1418,6 +1417,8 @@ public class AsientosView extends javax.swing.JPanel {
 
     private void jbtnPagarAsientosViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPagarAsientosViewActionPerformed
         // TODO add your handling code here:
+        mainFrame.mostrarVista("PAGO");
+        
     }//GEN-LAST:event_jbtnPagarAsientosViewActionPerformed
 
     private void txtAsientosSeleccionadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAsientosSeleccionadosActionPerformed

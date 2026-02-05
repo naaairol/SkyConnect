@@ -1,6 +1,7 @@
 package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorPago;
+import com.skyconnect.controlador.ControladorVuelo;
 
 public class PagoView extends javax.swing.JPanel {
     private ControladorPago controladorPago; 

@@ -12,7 +12,7 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     public RegistroPasajeroView(MainFrame mainFrame, ControladorDescuentos controladorDescuentos, ControladorPasajeros controladorPasajero) {
         this.mainFrame = mainFrame;
         this.controladorDescuento = new ControladorDescuentos();
-        this.controladorPasajero = new ControladorPasajeros();
+        //this.controladorPasajero = new ControladorPasajeros();
         
         initComponents();
         
