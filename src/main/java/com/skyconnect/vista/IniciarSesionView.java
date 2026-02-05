@@ -20,6 +20,13 @@ public class IniciarSesionView extends javax.swing.JPanel {
         if (imgURL != null) {
             jLabelIniciarSesion.setIcon(new javax.swing.ImageIcon(imgURL));
         }
+        
+        
+    }
+    
+    
+    public void setControladorUsuario(ControladorUsuario controladorUsuario) {
+        this.controladorUsuario = controladorUsuario;
     }
     
     
