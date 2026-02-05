@@ -66,23 +66,24 @@ public class VueloIDAVUELTAView extends javax.swing.JPanel {
     }
     
     private void seleccionarVuelo(int indice) {
+        // 1. Validaciones
         if (controladorPasajeros == null) {
             JOptionPane.showMessageDialog(this, "Error: No se han recibido datos de pasajeros.");
             return;
         }
 
         if (indice < vuelosMostrados.size()) {
+            // 2. Obtener el vuelo real
             Vuelo vueloSeleccionado = vuelosMostrados.get(indice);
-
-            // RECORRER PASAJEROS Y ASIGNAR DESCUENTOS SEGÚN EL DESTINO
-            for (Pasajero p : controladorPasajeros.getListaPasajeros()) {
-                ControladorDescuentos.asignarDescuento(p, vueloSeleccionado);
-            }
-
-            JOptionPane.showMessageDialog(this, "Vuelo seleccionado.");
             
-            // Navegar a la siguiente pantalla de pago/resumen
-            // mainFrame.mostrarVista("PAGO"); 
+            // A. Guardamos el PRECIO de este vuelo
+            controladorBusqueda.setPrecioVueloSeleccionado(vueloSeleccionado.getPrecioEstimado());
+            
+            // B. Guardamos la HORA real de este vuelo
+            controladorBusqueda.setHoraVueloSeleccionado(vueloSeleccionado.getHoraSalida());
+
+
+            JOptionPane.showMessageDialog(this, "Vuelo de IDA seleccionado.\nPrecio: $" + vueloSeleccionado.getPrecioEstimado());
         }
     }
     

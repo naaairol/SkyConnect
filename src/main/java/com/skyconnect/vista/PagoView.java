@@ -1,40 +1,89 @@
 package com.skyconnect.vista;
 
-import com.skyconnect.controlador.ControladorPago;
-import com.skyconnect.controlador.ControladorVuelo;
+import com.skyconnect.controlador.ControladorBusqueda;
+import com.skyconnect.controlador.ControladorPasajeros;
+import com.skyconnect.modelo.Pasajero;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PagoView extends javax.swing.JPanel {
-    private ControladorPago controladorPago; 
-    private MainFrame mainFrame; 
-    // Constructor que inicializa la vista y permite la navegación entre pantallas
-    public PagoView(MainFrame mainFrame, ControladorPago controladorPago) {
+    private MainFrame mainFrame;
+    
+    // Constructor
+    public PagoView(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
-        this.controladorPago = controladorPago;
-        
         initComponents();
-        cargarResumen();
         
         java.net.URL imgURL = getClass().getResource("/imagenes/Pago.jpg");
         if (imgURL != null) {
-            // Usamos el nombre que me indicaste: pago (suponiendo que es jLabelPago o pago)
             jLabelPago.setIcon(new javax.swing.ImageIcon(imgURL));
         }
     }
-    //Imprime el resumen de compra 
-    private void cargarResumen() {
-    txtFResumenOrigen.setText(controladorPago.getOrigen());
-    txtFResumenDestino.setText(controladorPago.getDestino());
-    txtFResumenFecha.setText(controladorPago.getFecha());
-    txtFResumenHorario.setText(controladorPago.getHorario());
+    
+    // --- MÉTODO IMPORTANTE: CALCULA TODO EN TIEMPO REAL ---
+    public void cargarDatosCalculados(ControladorBusqueda ctrlBusqueda, ControladorPasajeros ctrlPasajeros) {
+        
+        // 1. Datos del Vuelo (Origen/Destino/Fecha)
+        if (ctrlBusqueda != null) {
+            txtFResumenOrigen.setText(ctrlBusqueda.getOrigen());
+            txtFResumenDestino.setText(ctrlBusqueda.getDestino());
+            txtFResumenFecha.setText(ctrlBusqueda.getFechaIda()); 
+            txtFResumenHorario.setText(ctrlBusqueda.getHoraVueloSeleccionado());        }
 
-    txtFResumenNPasajeros.setText(String.valueOf(controladorPago.getNumeroPasajeros()));
-    txtFResumenAsientos.setText(String.join(", ", controladorPago.getAsientos()));
-    txtFResumenPrecioBase.setText(String.valueOf(controladorPago.getPrecioBase()));
-    txtFResumenImpuestos.setText(String.valueOf(controladorPago.getImpuestos()));
-    txtFResumenAdicionales.setText(String.valueOf(controladorPago.getAdicionales()));
-    txtFResumenDescuentos.setText(String.valueOf(controladorPago.getDescuentos()));
-    txtFResumenTotalPagar.setText(String.valueOf(controladorPago.getTotal()));
-}
+        // 2. Datos Financieros y Pasajeros
+        if (ctrlPasajeros != null) {
+            List<Pasajero> lista = ctrlPasajeros.getListaPasajeros();
+            
+            // Variables para la matemática
+            double precioBasePorPersona = ctrlBusqueda.getPrecioVueloSeleccionado();
+            double subtotal = 0;
+            double totalDescuentos = 0;
+            double totalExtras = 0; // Maletas
+            List<String> asientosList = new ArrayList<>();
+            int contadorMaletas = 0;
+
+            // Recorremos la lista de pasajeros UNA sola vez para calcular todo
+            for (Pasajero p : lista) {
+                // A. Asientos
+                String asiento = p.getCodigoAsiento();
+                if (asiento == null || asiento.isEmpty()) asiento = "Pendiente";
+                asientosList.add(asiento);
+
+                // B. Precio Base
+                subtotal += precioBasePorPersona;
+
+                // C. Descuentos (El objeto pasajero ya tiene su % guardado, ej: 0.50)
+                // Calculamos cuánto se ahorra: Precio * (1 - porcentaje_a_pagar)
+                // O si tu descuento es directo (ej 0.50), el ahorro es Precio * 0.50
+                // Asumiendo que p.getDescuento() devuelve lo que PAGA (ej 0.75):
+                double ahorro = precioBasePorPersona * (1.0 - p.getDescuento());
+                totalDescuentos += ahorro;
+
+                // D. Extras (Maletas) - Ej: $40 por maleta
+                if (p.isEquipajeExtra()) {
+                    totalExtras += 40.00;
+                    contadorMaletas++;
+                }
+            }
+
+            // 3. Cálculos Finales
+            double baseMenosDescuento = subtotal - totalDescuentos;
+            double impuestos = baseMenosDescuento * 0.12; // 12% IVA
+            double granTotal = baseMenosDescuento + impuestos + totalExtras;
+
+            // 4. Llenar los campos de texto (Tus variables)
+            txtFResumenNPasajeros.setText(String.valueOf(lista.size()));
+            txtFResumenAsientos.setText(String.join(", ", asientosList));
+            
+            txtFResumenPrecioBase.setText(String.format("$ %.2f", subtotal));
+            txtFResumenDescuentos.setText(String.format("- $ %.2f", totalDescuentos));
+            txtFResumenAdicionales.setText(contadorMaletas + " Maletas ($" + totalExtras + ")");
+            txtFResumenImpuestos.setText(String.format("$ %.2f", impuestos));
+            
+            // TOTAL GRANDE
+            txtFResumenTotalPagar.setText(String.format("$ %.2f", granTotal));
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

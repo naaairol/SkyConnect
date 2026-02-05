@@ -72,9 +72,23 @@ public class MainFrame extends javax.swing.JFrame {
         // Inicializamos el ControladorPago con ControladorFactura
         controladorPago = new ControladorPago(reserva, controladorFactura);  // Pasar la reserva y el controladorFactura
         
+        // 1. Preparamos los datos necesarios
         List<Pasajero> listaCompartida = new ArrayList<>();
+        PasajeroDAO dao = new PasajeroDAO(); // Asegúrate de tener esta clase
+
+        // 2. ¡CREAMOS EL CONTROLADOR! (Antes esto no se hacía)
+        controladorPasajeros = new ControladorPasajeros(dao, listaCompartida);
         
+        // 3. Ahora creamos la vista pasándole el controlador YA CREADO
+        // (Nota el orden: primero el controlador, luego la vista)
+        controladorDescuentos = new ControladorDescuentos(); // Asegúrate de iniciarlo también
+        registroPasajeroView = new RegistroPasajeroView(this, controladorDescuentos, controladorPasajeros);
         
+        // Inicializar AsientosView (Asegúrate de importar la clase si te lo pide)
+        asientosView = new AsientosView(this); 
+    
+        // Agregarla al panel de cartas con el nombre "ASIENTOS" (IMPORTANTE: Debe ser mayúscula igual que en tu otro código)
+        PanelContenedor.add(asientosView, "ASIENTOS");
         
         // VISTAS
         inicioView = new InicioView(this);
@@ -86,11 +100,11 @@ public class MainFrame extends javax.swing.JFrame {
         vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda, controladorDescuentos);
         vueloIVUELTAView = new VueloIVUELTAView(this, controladorBusqueda, controladorDescuentos);
         claseVueloView = new ClaseVueloView(this);
-        asientosView = new AsientosView(this, controladorReserva);
+        asientosView = new AsientosView(this);
         equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
         //boletoView = new BoletoView(this);
         loginView = new LoginView(this);
-        pagoView = new PagoView(this, controladorPago);
+        pagoView = new PagoView(this);
         tarjetaView = new TarjetaView(this, controladorPago);
         payPalView = new PayPalView(this, controladorPago);
         
@@ -125,6 +139,13 @@ public class MainFrame extends javax.swing.JFrame {
     //Getters para pedir las ventanas sin crear una nueva instancia
     public void mostrarVista(String nombreVista) {
         cardLayout.show(PanelContenedor, nombreVista);
+        
+        if (nombreVista.equals("PAGO")) {
+            // Pasamos los controladores con la info real (Vuelo y Pasajeros)
+            if (pagoView != null) {
+                pagoView.cargarDatosCalculados(this.controladorBusqueda, this.controladorPasajeros);
+            }
+        }
     }
     
     public VueloIDAView getVueloIDAView() {
@@ -159,6 +180,10 @@ public class MainFrame extends javax.swing.JFrame {
     // Para que todos usen el mismo controlador, es decir, los mismos datos
     public ControladorDescuentos getControladorDescuentos() {
         return controladorDescuentos;
+    }
+    
+    public AsientosView getAsientosView() {
+        return asientosView;
     }
 
     /**

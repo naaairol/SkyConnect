@@ -10,6 +10,8 @@ public class ControladorBusqueda {
     private String destinoBuscado;
     private String fechaIdaBuscado;
     private String fechaRetornoBuscado;
+    private double precioVueloSeleccionado; // Variable para guardar el precio
+    private String horaVueloSeleccionado; // Variable para guardar la hora (ej: "08:00 AM")
 
     //Pasar ciudad obtenida del combobox a codigoIATA
     public static String ciudadAIATA(String ciudad){
@@ -80,6 +82,39 @@ public class ControladorBusqueda {
         this.destinoBuscado = destino;
         this.fechaIdaBuscado = fechaIda;
         this.fechaRetornoBuscado = fechaRetornoBuscado;
+    }
+    
+    public String getOrigen() {
+        return origenBuscado; 
+    }
+
+    public String getDestino() {
+        return destinoBuscado; 
+    }
+
+    public String getFechaIda() {
+        return fechaIdaBuscado; // Ojo: Asegúrate de que la variable se llame 'fechaViaje' o 'fechaIda' arriba
+    }
+    public String getFechaRetorno() {
+        return fechaRetornoBuscado;
+    }
+    public void setPrecioVueloSeleccionado(double precio) {
+        this.precioVueloSeleccionado = precio;
+    }
+
+    public double getPrecioVueloSeleccionado() {
+        return this.precioVueloSeleccionado;
+    }
+    public void setHoraVueloSeleccionado(String hora) {
+        this.horaVueloSeleccionado = hora;
+    }
+
+    public String getHoraVueloSeleccionado() {
+        // Seguridad: Si no hay hora guardada, devolvemos un texto por defecto para que no salga vacío
+        if (this.horaVueloSeleccionado == null) {
+            return "Pendiente"; 
+        }
+        return this.horaVueloSeleccionado;
     }
     
 }

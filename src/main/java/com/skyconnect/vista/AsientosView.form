@@ -51,7 +51,7 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jbtnPagarAsientosView">
+        <Component class="javax.swing.JButton" name="btnPagar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
@@ -59,7 +59,7 @@
             <Property name="text" type="java.lang.String" value="Pagar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnPagarAsientosViewActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPagarActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -67,7 +67,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Container class="javax.swing.JPanel" name="jpPanelAvion1">
+        <Container class="javax.swing.JPanel" name="txtAreaAsientos">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -281,11 +281,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="jToggleButton55" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="btnA3" min="-2" pref="19" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton56" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="btnB3" min="-2" pref="19" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton57" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="btnC3" min="-2" pref="19" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jToggleButton58" min="-2" pref="19" max="-2" attributes="0"/>
@@ -423,9 +423,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton56" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jToggleButton57" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jToggleButton55" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="btnB3" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="btnC3" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="btnA3" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -541,41 +541,53 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton55">
+                <Component class="javax.swing.JToggleButton" name="btnA3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="A3"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA3ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton56">
+                <Component class="javax.swing.JToggleButton" name="btnB3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="B3"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnB3ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton57">
+                <Component class="javax.swing.JToggleButton" name="btnC3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="C3"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC3ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="jToggleButton58">
                   <Properties>
@@ -1243,14 +1255,14 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jToggleButton97" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnH1" min="-2" pref="27" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton98" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnK1" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jToggleButton133" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnH2" min="-2" pref="27" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton134" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnK2" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1262,13 +1274,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton98" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jToggleButton97" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnK1" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnH1" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton134" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jToggleButton133" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnK2" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnH2" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -1276,53 +1288,69 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton97">
+                <Component class="javax.swing.JToggleButton" name="btnH1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="H1"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnH1ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton98">
+                <Component class="javax.swing.JToggleButton" name="btnK1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="K1"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnK1ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton133">
+                <Component class="javax.swing.JToggleButton" name="btnH2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="H2"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnH2ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton134">
+                <Component class="javax.swing.JToggleButton" name="btnK2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="K2"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnK2ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1347,14 +1375,14 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jToggleButton139" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnA1" min="-2" pref="27" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton140" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnC1" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jToggleButton141" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnA2" min="-2" pref="27" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jToggleButton142" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="btnC2" min="-2" pref="27" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1366,13 +1394,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton140" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jToggleButton139" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnC1" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnA1" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton142" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jToggleButton141" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnC2" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnA2" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -1380,53 +1408,69 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton139">
+                <Component class="javax.swing.JToggleButton" name="btnA1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="A1"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA1ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton140">
+                <Component class="javax.swing.JToggleButton" name="btnC1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="C1"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC1ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton141">
+                <Component class="javax.swing.JToggleButton" name="btnA2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="A2"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnA2ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton142">
+                <Component class="javax.swing.JToggleButton" name="btnC2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="C2"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnC2ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1451,11 +1495,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jToggleButton73" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="btnH3" min="-2" pref="19" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton74" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="btnJ3" min="-2" pref="19" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton75" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="btnK3" min="-2" pref="19" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jToggleButton76" min="-2" pref="19" max="-2" attributes="0"/>
@@ -1593,9 +1637,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton74" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jToggleButton75" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jToggleButton73" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="btnJ3" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="btnK3" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="btnH3" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1711,41 +1755,53 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton73">
+                <Component class="javax.swing.JToggleButton" name="btnH3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="H3"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnH3ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton74">
+                <Component class="javax.swing.JToggleButton" name="btnJ3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="J3"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJ3ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton75">
+                <Component class="javax.swing.JToggleButton" name="btnK3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="10" style="0"/>
                     </Property>
+                    <Property name="text" type="java.lang.String" value="K3"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
                       </Border>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnK3ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JToggleButton" name="jToggleButton76">
                   <Properties>
@@ -2552,7 +2608,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="jLabelTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="36" style="1"/>
@@ -2561,7 +2617,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="330" y="210" width="680" height="50"/>
+              <AbsoluteConstraints x="30" y="210" width="980" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -2578,7 +2634,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jbtnSeleccionarConfirmarAsientos">
+        <Component class="javax.swing.JButton" name="btnSeleccionar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
@@ -2586,7 +2642,7 @@
             <Property name="text" type="java.lang.String" value="Seleccionar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSeleccionarConfirmarAsientosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeleccionarActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -2605,21 +2661,6 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="txtAsientosSeleccionados">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAsientosSeleccionadosActionPerformed"/>
-              </Events>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="31" y="87" width="413" height="212"/>
-                </Constraint>
-              </Constraints>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2633,6 +2674,27 @@
                 </Constraint>
               </Constraints>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="80" width="430" height="190"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTextArea" name="txtResumen">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="columns" type="int" value="20"/>
+                    <Property name="rows" type="int" value="5"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -2648,7 +2710,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBoxAgregarEquipajeExtra">
+        <Component class="javax.swing.JCheckBox" name="chkEquipaje">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="0"/>
@@ -2656,7 +2718,7 @@
             <Property name="text" type="java.lang.String" value="Si, agregar equipaje."/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxAgregarEquipajeExtraActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chkEquipajeActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

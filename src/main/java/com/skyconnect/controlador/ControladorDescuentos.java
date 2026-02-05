@@ -7,78 +7,82 @@ import java.util.List;
 public class ControladorDescuentos {
     
     private List<Pasajero> listaPasajeros;
+    private String ciudadOrigen = "Quito"; // Valor por defecto
 
     public ControladorDescuentos() {
         this.listaPasajeros = new ArrayList<>();
     }
     
-    //Logica para obtener cantidades
-    public void procesarPasajeros(int adultos, int ninios, int adultosMayores, int discapacitados) {
-        listaPasajeros.clear(); // Limpiar lista antes de una nueva búsqueda
-
-        for (int i = 0; i < adultos; i++) 
-            listaPasajeros.add(new Adulto("", "", "", ""));
-        
-        for (int i = 0; i < ninios; i++) 
-            listaPasajeros.add(new Ninio("", "", "", ""));
-        
-        for (int i = 0; i < adultosMayores; i++) 
-            listaPasajeros.add(new AdultoMayor("", "", "", ""));
-            
-        for (int i = 0; i < discapacitados; i++) 
-            listaPasajeros.add(new Discapacitado("", "", "", ""));
+    // Método para guardar de dónde sale el vuelo (Lo llamaremos desde la pantalla de buscar)
+    public void setCiudadOrigen(String ciudad) {
+        this.ciudadOrigen = ciudad;
     }
-    
-    //Logica para asignar descuentos
-    public static void asignarDescuento(Pasajero pasajero, Vuelo vuelo){
-        if (pasajero == null || vuelo == null || vuelo.getRuta() == null) {
-        return; 
-        }
+
+    // --- AQUÍ ESTÁ LA LÓGICA COMPLETA ---
+    public void aplicarDescuento(Pasajero pasajero) {
+        if (pasajero == null) return;
+
+        float descuentoCalculado = 1.00f; // 1.00 es precio completo (100%)
         
-        String IATAorigen = vuelo.getRuta().getAeroSalida().getCodigoIATA();
-        float descuentoCalculado = 1.00f;
-        
-        switch (IATAorigen){
-            case "UIO", "GYE", "CUE", "GPS" -> {
+        // Usamos la ciudad guardada para decidir
+        // Convertimos a switch usando los nombres de tu ComboBox
+        switch (ciudadOrigen) {
+            case "Quito":
+            case "Guayaquil":
+            case "Cuenca":
+            case "Galápagos":
+                // Regla Nacional: 50% Seniors/Discapacitados, 25% Niños
                 if (pasajero instanceof AdultoMayor || pasajero instanceof Discapacitado) {
-                    descuentoCalculado = 0.50f;
+                    descuentoCalculado = 0.50f; 
                 } else if (pasajero instanceof Ninio) {
-                    descuentoCalculado = 0.25f;
+                    descuentoCalculado = 0.75f; // (Nota: Si el descuento es 25%, pagan el 0.75)
                 }
-            }
-            case "MAD" -> {
+                break;
+
+            case "Madrid":
+                // Regla Europa: 80% (Pagan 0.20?) o Pagan 80%? 
+                // Asumo según tu código anterior: 
                 if (pasajero instanceof AdultoMayor || pasajero instanceof Discapacitado) {
-                    descuentoCalculado = 0.80f;
+                    descuentoCalculado = 0.80f; 
                 } else if (pasajero instanceof Ninio) {
-                    descuentoCalculado = 0.30f;
+                    descuentoCalculado = 0.70f; // 30% descuento -> pagan 0.70
                 }
-            }
-            case "MIA" -> {
+                break;
+
+            case "Miami":
                 if (pasajero instanceof AdultoMayor || pasajero instanceof Ninio) {
-                    descuentoCalculado = 0.85f;
-                }else if (pasajero instanceof Discapacitado) {
-                    descuentoCalculado = 1.00f;
+                    descuentoCalculado = 0.85f; 
+                } else if (pasajero instanceof Discapacitado) {
+                    descuentoCalculado = 1.00f; // Tu código decía 1.00f (Pagan completo)
                 }
-            }
-            case "PTY" -> {
+                break;
+
+            case "Ciudad de Panamá":
                 if (pasajero instanceof AdultoMayor || pasajero instanceof Discapacitado) {
-                    descuentoCalculado = 0.75f;
+                    descuentoCalculado = 0.75f; 
                 } else if (pasajero instanceof Ninio) {
-                    descuentoCalculado = 0.85f;
+                    descuentoCalculado = 0.85f; 
                 }
-            }
-            default -> descuentoCalculado = 1.00f;
+                break;
+                
+            default:
+                descuentoCalculado = 1.00f;
+                break;
         }
+
         pasajero.setDescuento(descuentoCalculado);
     }
     
-    public static float precioConDescuento(Pasajero pasajero, Vuelo vuelo) {
-        return vuelo.getPrecioEstimado() * pasajero.getDescuento();
+    // Mantenemos tus otros métodos
+    public void procesarPasajeros(int adultos, int ninios, int adultosMayores, int discapacitados) {
+        listaPasajeros.clear(); 
+        for (int i = 0; i < adultos; i++) listaPasajeros.add(new Adulto("", "", "", ""));
+        for (int i = 0; i < ninios; i++) listaPasajeros.add(new Ninio("", "", "", ""));
+        for (int i = 0; i < adultosMayores; i++) listaPasajeros.add(new AdultoMayor("", "", "", ""));
+        for (int i = 0; i < discapacitados; i++) listaPasajeros.add(new Discapacitado("", "", "", ""));
     }
-    
+
     public List<Pasajero> getListaPasajeros() {
         return listaPasajeros;
     }
-    
 }
-

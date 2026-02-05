@@ -130,7 +130,7 @@ public class IniciarSesionView extends javax.swing.JPanel {
             // Entregamos el controlador lleno de pasajeros a la siguiente vista
             registroPasajeroView.setControladorDescuentos(controladorDescuento);
             registroPasajeroView.setControladorPasajeros(controladorPasajero);
-            mainFrame.mostrarVista("ASIENTOS");
+            mainFrame.mostrarVista("REGISTRO");
         } else {
             JOptionPane.showMessageDialog(this, "Inicio de sesion fallido.", "" ,JOptionPane.WARNING_MESSAGE);
         }

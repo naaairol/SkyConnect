@@ -315,6 +315,18 @@ import javax.swing.JOptionPane;
         
         //Pasa las elecciones del usuario a variables en el Controlador
         controladorBusqueda.setCriteriosBusqueda(origen, destino, fechaViaje, fechaRetorno);
+        
+        // 1. Enviamos la ciudad de origen al Controlador de Descuentos
+        if (controladorDescuentos != null) {
+            controladorDescuentos.setCiudadOrigen(this.origen);
+        }
+
+        // 2. Preparamos la "Cola de Espera" en la pantalla de Registro
+        if (mainFrame != null) {
+            RegistroPasajeroView registroView = mainFrame.getRegistroPasajeroView();
+            // Le pasamos cuántos de cada tipo hay para que arme la fila
+            registroView.configurarPasajeros(adultos, ninios, terceraEdad, discapacidad);
+        }
 
         //Cambiamos la vista según el tipo de vuelo seleccionado
             if(radBtnIda.isSelected()){

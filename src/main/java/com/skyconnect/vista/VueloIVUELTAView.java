@@ -67,23 +67,32 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     }
     
     private void seleccionarVuelo(int indice) {
+        // 1. Validaciones de seguridad
         if (controladorPasajeros == null) {
             JOptionPane.showMessageDialog(this, "Error: No se han recibido datos de pasajeros.");
             return;
         }
 
         if (indice < vuelosMostrados.size()) {
-            Vuelo vueloSeleccionado = vuelosMostrados.get(indice);
-
-            // RECORRER PASAJEROS Y ASIGNAR DESCUENTOS SEGÚN EL DESTINO
-            for (Pasajero p : controladorPasajeros.getListaPasajeros()) {
-                ControladorDescuentos.asignarDescuento(p, vueloSeleccionado);
-            }
-
-            JOptionPane.showMessageDialog(this, "Vuelo seleccionado.");
+            // 2. Obtener el vuelo de REGRESO seleccionado
+            Vuelo vueloRegreso = vuelosMostrados.get(indice);
             
-            // Navegar a la siguiente pantalla de pago/resumen
-            // mainFrame.mostrarVista("PAGO"); 
+            // A. PRECIO: ¡Sumamos! (Precio Ida + Precio Vuelta)
+            // Primero, recuperamos cuánto costaba la Ida (que guardamos en la pantalla anterior)
+            double precioIda = controladorBusqueda.getPrecioVueloSeleccionado();
+            double precioVuelta = vueloRegreso.getPrecioEstimado();
+            
+            // Guardamos la suma total
+            controladorBusqueda.setPrecioVueloSeleccionado(precioIda + precioVuelta);
+            
+            // B. HORA: Combinamos las dos (Ej: "08:00 AM - 16:00 PM")
+            String horaIda = controladorBusqueda.getHoraVueloSeleccionado(); // La hora de la Ida
+            String horaVuelta = vueloRegreso.getHoraSalida(); // La hora de este vuelo
+            
+            // Guardamos el texto combinado para que en el resumen salgan los dos
+            controladorBusqueda.setHoraVueloSeleccionado(horaIda + " (Ida) / " + horaVuelta + " (Vuelta)");
+
+            JOptionPane.showMessageDialog(this, "Vuelo de VUELTA seleccionado.\nPrecio total acumulado: $" + (precioIda + precioVuelta));
         }
     }
     

@@ -64,23 +64,33 @@ public class VueloIDAView extends javax.swing.JPanel {
     }
     
     private void seleccionarVuelo(int indice) {
-        if (controladorPasajeros == null) {
-            JOptionPane.showMessageDialog(this, "Error: No se han recibido datos de pasajeros.");
-            return;
+        // 1. Seguridad: Verificar que el controlador existe
+        if (controladorBusqueda == null) {
+             JOptionPane.showMessageDialog(this, "Error: Controlador no inicializado.");
+             return;
         }
 
+        // 2. Verificar índice válido
         if (indice < vuelosMostrados.size()) {
+            
+            // --- OBTENEMOS EL VUELO REAL ---
             Vuelo vueloSeleccionado = vuelosMostrados.get(indice);
 
-            // RECORRER PASAJEROS Y ASIGNAR DESCUENTOS SEGÚN EL DESTINO
-            for (Pasajero p : controladorPasajeros.getListaPasajeros()) {
-                ControladorDescuentos.asignarDescuento(p, vueloSeleccionado);
-            }
-
-            JOptionPane.showMessageDialog(this, "Vuelo seleccionado.");
+            // --- GUARDAMOS LOS DATOS EXISTENTES EN EL CONTROLADOR ---
             
-            // Navegar a la siguiente pantalla de pago/resumen
-            // mainFrame.mostrarVista("PAGO"); 
+            // A. Precio: Usamos el que ya tiene el vuelo
+            controladorBusqueda.setPrecioVueloSeleccionado(vueloSeleccionado.getPrecioEstimado());
+            
+            // B. Hora: Usamos la que ya tiene el vuelo (getHoraSalida)
+            // ¡Aquí está el cambio que querías! Sin inventar nada.
+            controladorBusqueda.setHoraVueloSeleccionado(vueloSeleccionado.getHoraSalida()); 
+            
+            // --------------------------------------------------------
+
+            JOptionPane.showMessageDialog(this, "Vuelo seleccionado correctamente.");
+            
+            // Opcional: Pasar a la siguiente pantalla automáticamente si quieres
+            // mainFrame.mostrarVista("CLASE"); // O la vista que siga en tu flujo
         }
     }
     

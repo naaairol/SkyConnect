@@ -7,6 +7,8 @@ public abstract class Pasajero {
     private String cedula;
     private String pasaporte;
     private float descuento;
+    protected String codigoAsiento; // Ej: "A1", "C4"
+    protected boolean equipajeExtra;
 
     public Pasajero(String nombre, String apellido, String cedula, String pasaporte, float descuento) {
         this.nombre = nombre;
@@ -55,6 +57,11 @@ public abstract class Pasajero {
     public void setDescuento(float descuento) {
         this.descuento = descuento;
     }
+    public String getCodigoAsiento() { return codigoAsiento; }
+    public void setCodigoAsiento(String codigoAsiento) { this.codigoAsiento = codigoAsiento; }
+
+    public boolean isEquipajeExtra() { return equipajeExtra; }
+    public void setEquipajeExtra(boolean equipajeExtra) { this.equipajeExtra = equipajeExtra; }
 
     @Override
     public String toString() {

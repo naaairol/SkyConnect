@@ -2,17 +2,25 @@ package com.skyconnect.vista;
 
 import com.skyconnect.controlador.ControladorDescuentos;
 import com.skyconnect.controlador.ControladorPasajeros;
+import com.skyconnect.modelo.Adulto;
+import com.skyconnect.modelo.AdultoMayor;
+import com.skyconnect.modelo.Discapacitado;
+import com.skyconnect.modelo.Ninio;
+import com.skyconnect.modelo.Pasajero;
+import javax.swing.JOptionPane;
 
 public class RegistroPasajeroView extends javax.swing.JPanel {
     
     private ControladorDescuentos controladorDescuento;
     private ControladorPasajeros controladorPasajero;
     private MainFrame mainFrame;
+    // Una lista para recordar el orden: ["Adulto", "Adulto", "Niño", ...]
+    private java.util.ArrayList<String> colaTiposPorRegistrar = new java.util.ArrayList<>();
     
     public RegistroPasajeroView(MainFrame mainFrame, ControladorDescuentos controladorDescuentos, ControladorPasajeros controladorPasajero) {
         this.mainFrame = mainFrame;
-        this.controladorDescuento = new ControladorDescuentos();
-        //this.controladorPasajero = new ControladorPasajeros();
+        this.controladorDescuento = controladorDescuentos;
+        this.controladorPasajero =  controladorPasajero;
         
         initComponents();
         
@@ -57,11 +65,33 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
         txtRegistroNombrePasajero.requestFocus(); // Pone el cursor de nuevo en el nombre
     }
     
-    // Método para actualizar el mensaje de qué pasajero se está registrando
-    public void actualizarIdentificador(String tipo, int numero) {
-        this.txtIdentificadorPasajero.setText("Pasajero: " + tipo + " " + numero);
+    // Este método recibe la lista de cantidades desde la pantalla de Búsqueda
+    public void configurarPasajeros(int adultos, int ninios, int tercera, int discap) {
+        colaTiposPorRegistrar.clear();
+        
+        // Llenamos la fila india
+        for (int i = 0; i < adultos; i++) colaTiposPorRegistrar.add("Adulto");
+        for (int i = 0; i < ninios; i++) colaTiposPorRegistrar.add("Niño");
+        for (int i = 0; i < tercera; i++) colaTiposPorRegistrar.add("Tercera Edad");
+        for (int i = 0; i < discap; i++) colaTiposPorRegistrar.add("Discapacitado");
+        
+        actualizarTitulo(); // Mostramos el primero
     }
-     
+
+    // Este método revisa la cola y actualiza el título y el ComboBox automáticamente
+    private void actualizarTitulo() {
+        if (!colaTiposPorRegistrar.isEmpty()) {
+            String siguiente = colaTiposPorRegistrar.get(0);
+            
+            // Actualizamos el título visual
+            txtIdentificadorPasajero.setText("Registrando: " + siguiente + " (Faltan: " + colaTiposPorRegistrar.size() + ")");
+            
+        } else {
+            txtIdentificadorPasajero.setText("¡Todos los pasajeros registrados!");
+            jbtnGuardarRegistroPasajero.setEnabled(false); // Bloqueamos guardar
+            jbtnSiguienteRegistroPasajero.setEnabled(true); // Habilitamos Siguiente
+        }
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -177,11 +207,67 @@ public class RegistroPasajeroView extends javax.swing.JPanel {
     }//GEN-LAST:event_txtCIRegistroPasajero1ActionPerformed
 
     private void jbtnGuardarRegistroPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarRegistroPasajeroActionPerformed
-        // TODO add your handling code here:
+    
+        // 0. Seguridad
+        if (colaTiposPorRegistrar.isEmpty()) return;
+
+        // 1. Capturar datos
+        String nombre = txtRegistroNombrePasajero.getText().trim();
+        String apellido = txtApellidoRegistroPasajero.getText().trim();
+        String cedula = txtCIRegistroPasajero1.getText().trim();
+        String pasaporte = txtPasaporteRegistroPasajero.getText().trim();
+
+        // 2. Validación
+        if (nombre.isEmpty() || apellido.isEmpty() || cedula.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Llene campos obligatorios.");
+            return;
+        }
+
+        // 3. Crear Objeto
+        String tipoActual = colaTiposPorRegistrar.get(0); 
+        Pasajero nuevoPasajero = null;
+
+        if (tipoActual.equals("Adulto")) nuevoPasajero = new Adulto(nombre, apellido, cedula, pasaporte);
+        else if (tipoActual.equals("Niño")) nuevoPasajero = new Ninio(nombre, apellido, cedula, pasaporte);
+        else if (tipoActual.equals("Tercera Edad")) nuevoPasajero = new AdultoMayor(nombre, apellido, cedula, pasaporte);
+        else if (tipoActual.equals("Discapacitado")) nuevoPasajero = new Discapacitado(nombre, apellido, cedula, pasaporte);
+
+        // 4. Guardar y Avanzar
+        if (nuevoPasajero != null && controladorPasajero != null) {
+            
+            if (controladorDescuento != null) {
+                controladorDescuento.aplicarDescuento(nuevoPasajero);
+            }
+
+            controladorPasajero.agregarPasajero(nuevoPasajero);
+            
+            javax.swing.JOptionPane.showMessageDialog(this, "Guardado: " + tipoActual);
+            
+            colaTiposPorRegistrar.remove(0); // Quitamos de la fila
+            
+            actualizarTitulo(); 
+            limpiarCampos();
+        }
+        
     }//GEN-LAST:event_jbtnGuardarRegistroPasajeroActionPerformed
 
     private void jbtnSiguienteRegistroPasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSiguienteRegistroPasajeroActionPerformed
         // TODO add your handling code here:
+        // Solo dejamos pasar si la cola está vacía (todos registrados)
+        if (colaTiposPorRegistrar.isEmpty()) {
+            
+            // 1. Obtener la vista de asientos
+            AsientosView asientosView = mainFrame.getAsientosView(); 
+            
+            // 2. Pasarle el controlador lleno de gente
+            asientosView.setControladorPasajeros(this.controladorPasajero);
+            
+            // 3. Mostrar la vista
+            mainFrame.mostrarVista("ASIENTOS"); 
+            
+        } else {
+             javax.swing.JOptionPane.showMessageDialog(this, "Aún faltan pasajeros por registrar (" + colaTiposPorRegistrar.size() + ")");
+        }
     }//GEN-LAST:event_jbtnSiguienteRegistroPasajeroActionPerformed
 
     private void txtRegistroNombrePasajeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegistroNombrePasajeroActionPerformed
