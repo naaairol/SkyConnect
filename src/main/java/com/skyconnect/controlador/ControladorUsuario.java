@@ -1,34 +1,55 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.skyconnect.controlador;
 
 import com.skyconnect.modelo.Usuario;
+import com.skyconnect.modelo.UsuarioDAO;
 import com.skyconnect.vista.MainFrame;
+import java.util.ArrayList;
 
 public class ControladorUsuario {
+    
+    private ArrayList<Usuario> usuarios = new ArrayList<>();
+    private UsuarioDAO usuarioDAO;
     private MainFrame mainFrame; 
-    //Constructor
-    public ControladorUsuario(MainFrame mainFrame) {
-    this.mainFrame = mainFrame;
-}
+    private final static String RUTA = "database/usuarios.txt";
+    
     /**
      * Controlador que gestiona la autenticación
      * y registro de usuarios del sistema.
+     * @param mainFrame
      */
-    public boolean iniciarSesion(String correo, String clave) {
-        // Lógica real se implementará después
-        return true;
+    
+    //Constructor
+    public ControladorUsuario() {
+        usuarios = UsuarioDAO.cargarUsuarios(RUTA);
     }
 
-    public void registrarUsuario(Usuario usuario) {
-        // Implementación futura
+    public ArrayList<Usuario> getUsuarios() {
+        return usuarios;
     }
     
-    public void registrarUsuario(String nombre, String apellido, String correo, String clave) {
-    // Aquí luego irá la lógica real de registro (validaciones, BD, etc.)
-    System.out.println("Usuario registrado:");
-    System.out.println(nombre + " " + apellido + " - " + correo);
+    
+    public boolean iniciarSesion(String correo, String password) {
+        for (Usuario u : usuarios) {
+        if (u.getCorreo().equals(correo) && u.getPassword().equals(password)) {
+        return true; //COINCIDE Y PUEDE INICIAR SESIÓN
+            }
+        }
+        return false; //CLAVE INCORRECTA o usuario no registrado
     }
+
+    //Recibe los datos de CreacionUsuario, los pasa por el constructor
+    //de usuario y los añade a la lista con todos los usuarios
+    public void registrarUsuario(String nombre, String apellido, String correo, String clave) {
+        Usuario tempUsuario = new Usuario(nombre, apellido, correo, clave);
+                //Añade al usuario a la lista que se inicializa con el programa
+                usuarios.add(tempUsuario);
+               //Guarda las credenciales en el txt
+                guardarUsuario(tempUsuario);
+    }
+    
+    //Recibe un objeto USUARIO y lo guarda en el txt del database
+    public void guardarUsuario(Usuario usuario){
+        usuarioDAO.guardarUsuarios(usuario);
+    }
+    
 }

@@ -4,6 +4,7 @@ import com.skyconnect.controlador.ControladorFactura;
 import com.skyconnect.controlador.ControladorPago;
 import com.skyconnect.controlador.ControladorDescuentos;
 import com.skyconnect.controlador.ControladorReserva;
+import com.skyconnect.controlador.ControladorUsuario;
 import com.skyconnect.modelo.Factura;
 import java.awt.CardLayout;
 
@@ -16,6 +17,7 @@ public class MainFrame extends javax.swing.JFrame {
     private ControladorFactura controladorFactura;
     private ControladorBusqueda controladorBusqueda;
     private ControladorDescuentos controladorPasajero;
+    private ControladorUsuario controladorUsuario;
     
     // ===== VISTAS (UNA SOLA INSTANCIA) =====
     private InicioView inicioView;
@@ -66,8 +68,8 @@ public class MainFrame extends javax.swing.JFrame {
         // VISTAS
         inicioView = new InicioView(this);
         buscarVueloView = new BuscarVueloView(this, controladorBusqueda, controladorPasajero);
-        iniciarSesionView = new IniciarSesionView(this);
-        creacionUsuarioView = new CreacionUsuarioView(this);
+        iniciarSesionView = new IniciarSesionView(this, controladorUsuario);
+        creacionUsuarioView = new CreacionUsuarioView(this, controladorUsuario);
         registroPasajeroView = new RegistroPasajeroView(this); 
         vueloIDAView = new VueloIDAView(this, controladorBusqueda);
         vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda, controladorPasajero);
@@ -126,6 +128,14 @@ public class MainFrame extends javax.swing.JFrame {
         return vueloIVUELTAView;
     }
 
+    public IniciarSesionView getIniciarSesionView() {
+        return iniciarSesionView;
+    }
+    
+    public LoginView getLoginView() {
+        return loginView;
+    }
+    
     // Para que todos usen el mismo controlador, es decir, los mismos datos
     public ControladorBusqueda getControladorBusqueda() {
         return controladorBusqueda;

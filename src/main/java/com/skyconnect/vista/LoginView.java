@@ -1,9 +1,9 @@
 package com.skyconnect.vista;
 
-import com.skyconnect.controlador.ControladorLogin;
+import com.skyconnect.controlador.ControladorUsuario;
 
 public class LoginView extends javax.swing.JPanel {
-    private ControladorLogin controlador;
+    
     /**
      * Creates new form LoginView
      */
@@ -12,7 +12,6 @@ public class LoginView extends javax.swing.JPanel {
     // a través del MainFrame usando CardLayout.
     public LoginView(MainFrame mainFrame) {
         this.mainFrame = mainFrame; 
-        this.controlador = new ControladorLogin(mainFrame);
         
         initComponents();
         
@@ -68,24 +67,22 @@ public class LoginView extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnIniciarSesionLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnIniciarSesionLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarseLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btnRegistrarseLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(161, 161, 161)
+                        .addComponent(jLabel2)))
                 .addGap(30, 30, 30))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addComponent(btnIniciarSesionLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(btnIniciarSesionLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel2)
-                .addGap(38, 38, 38)
+                .addGap(32, 32, 32)
                 .addComponent(btnRegistrarseLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(93, Short.MAX_VALUE))
         );
@@ -108,11 +105,15 @@ public class LoginView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarSesionLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionLoginActionPerformed
-        controlador.irAIniciarSesion();
+
+        mainFrame.mostrarVista("INICIAR");
+        
     }//GEN-LAST:event_btnIniciarSesionLoginActionPerformed
 
     private void btnRegistrarseLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseLoginActionPerformed
-        controlador.irACrearUsuario();
+        
+        mainFrame.mostrarVista("CREAR");
+        
     }//GEN-LAST:event_btnRegistrarseLoginActionPerformed
 
 
