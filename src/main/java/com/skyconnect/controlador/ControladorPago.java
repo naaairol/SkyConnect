@@ -1,35 +1,17 @@
 package com.skyconnect.controlador;
 
-import com.skyconnect.modelo.Factura;
+import com.skyconnect.vista.MainFrame;
 import java.util.List;
 import javax.swing.JOptionPane;
 
 public class ControladorPago {
-
-    private Factura reserva;
-    private ControladorFactura controladorFactura; // Integrar ControladorFactura
+    private MainFrame mainFrame;
+ 
 
     // Constructor
-    public ControladorPago(Factura reserva, ControladorFactura controladorFactura) {
-        this.reserva = reserva;
-        this.controladorFactura = controladorFactura;
+    public ControladorPago(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
     }
-
-    // ============================
-    // Métodos de pago (getters para la vista)
-    // ============================
-    public String getOrigen() { return reserva.getOrigen(); }
-    public String getDestino() { return reserva.getDestino(); }
-    public String getFecha() { return reserva.getFecha(); }
-    public String getHorario() { return reserva.getHorario(); }
-    public int getNumeroPasajeros() { return reserva.getNumeroPasajeros(); }
-    public List<String> getAsientos() { return reserva.getAsientosSeleccionados(); }
-    public double getPrecioBase() { return reserva.getPrecioBase(); }
-    public double getImpuestos() { return reserva.getImpuestos(); }
-    public double getAdicionales() { return reserva.getAdicionales(); }
-    public double getDescuentos() { return reserva.getDescuentos(); }
-    public double getTotal() { return reserva.getTotal(); }
-
     // ============================
     // Método para procesar pagos con PayPal
     // ============================
@@ -39,17 +21,19 @@ public class ControladorPago {
             return;
         }
 
-        // Aquí podrías agregar una validación real con PayPal, pero por ahora se simula el éxito
+        // Validación exitosa
         JOptionPane.showMessageDialog(null, "Pago realizado con éxito con PayPal.", "Pago Aprobado", JOptionPane.INFORMATION_MESSAGE);
 
-        // Después de procesar el pago, mostrar la factura
-        controladorFactura.mostrarFactura("PayPal");
+        // --- MAGIA: CAMBIAR A LA PANTALLA DE FACTURA ---
+        mainFrame.setMetodoPagoActual("PayPal"); // Guardamos el método
+        mainFrame.mostrarVista("FACTURA");       // Cambiamos de vista
     }
 
     // ============================
     // Método para procesar pagos con tarjeta
     // ============================
     public void procesarPagoTarjeta(String numeroTarjeta, String fechaVencimiento, String cvv) {
+        // Validaciones
         if (numeroTarjeta.isEmpty() || fechaVencimiento.isEmpty() || cvv.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
             return;
@@ -65,9 +49,11 @@ public class ControladorPago {
             return;
         }
 
+        // Validación exitosa
         JOptionPane.showMessageDialog(null, "Pago con tarjeta realizado con éxito", "Pago Aprobado", JOptionPane.INFORMATION_MESSAGE);
 
-        // Después de procesar el pago, mostrar la factura
-        controladorFactura.mostrarFactura("Tarjeta de Crédito/Débito");
+        // --- MAGIA: CAMBIAR A LA PANTALLA DE FACTURA ---
+        mainFrame.setMetodoPagoActual("Tarjeta de Crédito"); // Guardamos el método
+        mainFrame.mostrarVista("FACTURA");                   // Cambiamos de vista
     }
 }

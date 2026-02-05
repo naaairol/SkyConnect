@@ -1,56 +1,106 @@
 package com.skyconnect.vista;
 
-import com.skyconnect.modelo.Factura;
-import javax.swing.JTextArea;
+import com.skyconnect.controlador.ControladorBusqueda;
+import com.skyconnect.controlador.ControladorPasajeros;
+import com.skyconnect.modelo.Pasajero;
+import java.util.List;
 
 public class FacturaView extends javax.swing.JPanel {
-    private Factura factura; // El modelo Factura
     private MainFrame mainFrame;
-    private String metodoDePago; // Para almacenar el método de pago
 
     // Constructor que inicializa la vista con los datos de la factura.
-    public FacturaView(MainFrame mainFrame, Factura factura, String metodoDePago) {
+    // Constructor limpio (sin pasarle datos todavía)
+    public FacturaView(MainFrame mainFrame) {
         this.mainFrame = mainFrame;
-        this.factura = factura;
-        this.metodoDePago = metodoDePago; // Guardamos el método de pago
+        initComponents();
         
-        initComponents();  // NetBeans genera este método, no lo modifiques
-        mostrarFactura(); // Llamamos al método para mostrar la factura.
-    
         java.net.URL imgURL = getClass().getResource("/imagenes/Factura.jpg");
         if (imgURL != null) {
             jLabelFactura.setIcon(new javax.swing.ImageIcon(imgURL));
         }
- }
+    }
     // Método para mostrar los datos de la factura en un JTextArea.
-    private void mostrarFactura() {
-        // Formato de factura
-        StringBuilder facturaTexto = new StringBuilder();
-        facturaTexto.append("************* FACTURA DE RESERVA DE VUELO *************\n");
-        facturaTexto.append("-------------------------------------------------------\n");
-        facturaTexto.append("Origen: " + factura.getOrigen() + "\n");
-        facturaTexto.append("Destino: " + factura.getDestino() + "\n");
-        facturaTexto.append("Fecha: " + factura.getFecha() + "\n");
-        facturaTexto.append("Horario: " + factura.getHorario() + "\n");
-        facturaTexto.append("N° Pasajeros: " + factura.getNumeroPasajeros() + "\n");
-        facturaTexto.append("-------------------------------------------------------\n");
-        facturaTexto.append("Precio Base: $" + factura.getPrecioBase() + "\n");
-        facturaTexto.append("Impuestos: $" + factura.getImpuestos() + "\n");
-        facturaTexto.append("Adicionales: $" + factura.getAdicionales() + "\n");
-        facturaTexto.append("Descuentos: $" + factura.getDescuentos() + "\n");
-        facturaTexto.append("-------------------------------------------------------\n");
-        facturaTexto.append("Total: $" + factura.getTotal() + "\n");
-        facturaTexto.append("-------------------------------------------------------\n");
+    public void generarFactura(ControladorBusqueda ctrlBusqueda, ControladorPasajeros ctrlPasajeros, String metodoPago) {
+        
+        StringBuilder ticket = new StringBuilder();
+        
+        // 1. Validar datos
+        if (ctrlBusqueda == null || ctrlPasajeros == null) {
+            txtFacturaFinal.setText("Error: No hay datos de vuelo o pasajeros.");
+            return;
+        }
 
-        // Método de pago
-        facturaTexto.append("Método de Pago: " + metodoDePago + "\n");
+        // 2. Variables para cálculos (Igual que en PagoView para que cuadre)
+        double precioBaseUnitario = ctrlBusqueda.getPrecioVueloSeleccionado();
+        double subtotalBase = 0;
+        double totalDescuentos = 0;
+        double totalExtras = 0;
+        
+        List<Pasajero> lista = ctrlPasajeros.getListaPasajeros();
+        
+        // 3. Encabezado
+        ticket.append("************************************************\n");
+        ticket.append("             SKYCONNECT AIRLINES             \n");
+        ticket.append("************************************************\n\n");
+        
+        ticket.append("FECHA DE EMISIÓN: ").append(java.time.LocalDate.now()).append("\n");
+        ticket.append("MÉTODO DE PAGO:   ").append(metodoPago).append("\n\n");
+        
+        ticket.append("=== DETALLES DEL VUELO ===\n");
+        ticket.append("Origen:   ").append(ctrlBusqueda.getOrigen()).append("\n");
+        ticket.append("Destino:  ").append(ctrlBusqueda.getDestino()).append("\n");
+        ticket.append("Fecha:    ").append(ctrlBusqueda.getFechaIda()).append("\n");
+        ticket.append("Horario:  ").append(ctrlBusqueda.getHoraVueloSeleccionado()).append("\n");
+        ticket.append("------------------------------------------------\n\n");
 
-        // Mensaje de agradecimiento
-        facturaTexto.append("\nGracias por preferirnos. ¡UN BUEN VIAJE!\n");
-        facturaTexto.append("-------------------------------------------------------\n");
+        ticket.append("=== DETALLES DE PASAJEROS ===\n");
+        
+        // 4. Bucle de Pasajeros y Cálculos
+        for (Pasajero p : lista) {
+            subtotalBase += precioBaseUnitario;
+            
+            // Cálculo Descuento
+            double ahorro = precioBaseUnitario * (1.0 - p.getDescuento());
+            totalDescuentos += ahorro;
+            
+            // Cálculo Extras
+            String extraTxt = "";
+            if (p.isEquipajeExtra()) {
+                totalExtras += 40.00;
+                extraTxt = " (+Maleta $40)";
+            }
+            
+            // Imprimir línea por pasajero
+            ticket.append("- ").append(p.getNombre().toUpperCase())
+                  .append(" ").append(p.getApellido().toUpperCase())
+                  .append("\n  Asiento: ").append(p.getCodigoAsiento())
+                  .append(extraTxt).append("\n");
+        }
+        
+        // 5. Cálculos Finales
+        double baseMenosDescuento = subtotalBase - totalDescuentos;
+        double impuestos = baseMenosDescuento * 0.12;
+        double granTotal = baseMenosDescuento + impuestos + totalExtras;
 
-        // Mostrar en el JTextArea
-        txtFacturaFinal.setText(facturaTexto.toString());  // Usa solo txtFacturaFinal, el que fue generado en initComponents
+        ticket.append("------------------------------------------------\n");
+        ticket.append("=== DESGLOSE DE PAGO ===\n");
+        ticket.append(String.format("Precio Base (%d pax):   $ %8.2f\n", lista.size(), subtotalBase));
+        ticket.append(String.format("Descuentos Aplicados:  -$ %8.2f\n", totalDescuentos));
+        ticket.append(String.format("Equipaje Adicional:     $ %8.2f\n", totalExtras));
+        ticket.append(String.format("Impuestos (IVA 12%%):    $ %8.2f\n", impuestos));
+        ticket.append("================================================\n");
+        ticket.append(String.format("TOTAL PAGADO:           $ %8.2f\n", granTotal));
+        ticket.append("================================================\n\n");
+        
+        ticket.append("      ¡Gracias por volar con SkyConnect!      \n");
+        ticket.append("************************************************\n");
+
+        // 6. Mostrar en el área de texto
+        txtFacturaFinal.setText(ticket.toString());
+        
+        // Opcional: Bloquear edición y poner cursor al inicio
+        txtFacturaFinal.setEditable(false);
+        txtFacturaFinal.setCaretPosition(0);
     }
 
     // Método para regresar a la vista anterior (ej. PagoView)

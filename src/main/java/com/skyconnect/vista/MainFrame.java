@@ -1,6 +1,5 @@
 package com.skyconnect.vista;
 import com.skyconnect.controlador.ControladorBusqueda;
-import com.skyconnect.controlador.ControladorFactura;
 import com.skyconnect.controlador.ControladorPago;
 import com.skyconnect.controlador.ControladorDescuentos;
 import com.skyconnect.controlador.ControladorPasajeros;
@@ -19,7 +18,6 @@ public class MainFrame extends javax.swing.JFrame {
     private CardLayout cardLayout;
     private ControladorReserva controladorReserva;
     private ControladorPago controladorPago;
-    private ControladorFactura controladorFactura;
     private ControladorBusqueda controladorBusqueda;
     private ControladorDescuentos controladorDescuentos;
     private ControladorUsuario controladorUsuario;
@@ -60,27 +58,20 @@ public class MainFrame extends javax.swing.JFrame {
         // CONTROLADORES (UNA SOLA INSTANCIA)
         controladorReserva = new ControladorReserva();
         
+        controladorPago = new ControladorPago(this);
+        
         // Inicializamos el ControladorBusqueda
         controladorBusqueda = new ControladorBusqueda();
         
         // Crear la reserva antes de instanciar el controladorPago
         Factura reserva = controladorReserva.getReserva();  // Obtener la reserva de controladorReserva
         
-        // Inicializamos el ControladorFactura
-        controladorFactura = new ControladorFactura(this, reserva);  // Ahora pasamos reserva al controlador
-        
-        // Inicializamos el ControladorPago con ControladorFactura
-        controladorPago = new ControladorPago(reserva, controladorFactura);  // Pasar la reserva y el controladorFactura
-        
-        // 1. Preparamos los datos necesarios
+        //Preparamos los datos necesarios
         List<Pasajero> listaCompartida = new ArrayList<>();
         PasajeroDAO dao = new PasajeroDAO(); // Asegúrate de tener esta clase
 
-        // 2. ¡CREAMOS EL CONTROLADOR! (Antes esto no se hacía)
         controladorPasajeros = new ControladorPasajeros(dao, listaCompartida);
-        
-        // 3. Ahora creamos la vista pasándole el controlador YA CREADO
-        // (Nota el orden: primero el controlador, luego la vista)
+
         controladorDescuentos = new ControladorDescuentos(); // Asegúrate de iniciarlo también
         registroPasajeroView = new RegistroPasajeroView(this, controladorDescuentos, controladorPasajeros);
         
@@ -106,10 +97,10 @@ public class MainFrame extends javax.swing.JFrame {
         loginView = new LoginView(this);
         pagoView = new PagoView(this);
         tarjetaView = new TarjetaView(this, controladorPago);
-        payPalView = new PayPalView(this, controladorPago);
+        //payPalView = new PayPalView(this, controladorPago);
         
         // FacturaView: la vista de la factura
-        facturaView = new FacturaView(this, reserva, "Tarjeta de Crédito");
+        facturaView = new FacturaView(this);
 
         // CARD LAYOUT
         PanelContenedor.add(inicioView, "INICIO");
@@ -127,7 +118,7 @@ public class MainFrame extends javax.swing.JFrame {
         PanelContenedor.add(creacionUsuarioView, "CREAR");
         PanelContenedor.add(pagoView, "PAGO");
         PanelContenedor.add(tarjetaView, "TARJETA");
-        PanelContenedor.add(payPalView, "PAYPAL");
+        //PanelContenedor.add(payPalView, "PAYPAL");
         
         // Agregar FacturaView al CardLayout
         PanelContenedor.add(facturaView, "FACTURA");
@@ -141,9 +132,15 @@ public class MainFrame extends javax.swing.JFrame {
         cardLayout.show(PanelContenedor, nombreVista);
         
         if (nombreVista.equals("PAGO")) {
-            // Pasamos los controladores con la info real (Vuelo y Pasajeros)
             if (pagoView != null) {
                 pagoView.cargarDatosCalculados(this.controladorBusqueda, this.controladorPasajeros);
+            }
+        }
+        
+        if (nombreVista.equals("FACTURA")) {
+            if (facturaView != null) {
+                // Pasamos el método de pago guardado
+                facturaView.generarFactura(this.controladorBusqueda, this.controladorPasajeros, this.metodoPagoActual);
             }
         }
     }
@@ -184,6 +181,12 @@ public class MainFrame extends javax.swing.JFrame {
     
     public AsientosView getAsientosView() {
         return asientosView;
+    }
+    private String metodoPagoActual = "Desconocido"; 
+
+    // 2. El método que te está marcando error en rojo
+    public void setMetodoPagoActual(String metodo) {
+        this.metodoPagoActual = metodo;
     }
 
     /**

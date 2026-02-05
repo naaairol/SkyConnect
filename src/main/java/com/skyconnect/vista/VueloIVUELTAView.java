@@ -3,22 +3,20 @@ package com.skyconnect.vista;
 import com.skyconnect.controlador.ControladorBusqueda;
 import com.skyconnect.controlador.ControladorDescuentos;
 import com.skyconnect.controlador.ControladorVuelo;
-import com.skyconnect.modelo.Pasajero;
 import com.skyconnect.modelo.Vuelo;
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JOptionPane;
 
 public class VueloIVUELTAView extends javax.swing.JPanel {
 
     private ControladorBusqueda controladorBusqueda;
     private ControladorDescuentos controladorPasajeros;
-    private ArrayList<Vuelo> vuelosMostrados; // Para identificar qué vuelo se seleccionó
+    private ArrayList<Vuelo> vuelosMostrados; 
+    private MainFrame mainFrame; // Para identificar qué vuelo se seleccionó
     
     /**
      * Creates new form VueloIVUELTAView
-     */
-    private MainFrame mainFrame; 
+     */ 
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
     public VueloIVUELTAView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorDescuentos controladorPasajero) {
@@ -39,22 +37,25 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     }
     
     public void cargarDatosYBuscar() {
-        //Crea un controlador para obtener el arreglo con todos los vuelos
         ControladorVuelo controlador = new ControladorVuelo();
         ArrayList<Vuelo> vuelos = controlador.obtenerVuelos();
-        //Toma toda la lista de vuelos, pero solo devuelve y dibuja los que
-        //nos interesa, o sea los seleccionados por el usuario
         mostrarVuelos(vuelos);
     }
     
     public void mostrarVuelos(ArrayList<Vuelo> todosLosVuelos) {
         limpiarCampos();
         vuelosMostrados.clear();
-        //Controlador toma todos los vuelos y devuelve los 
-        //que coinciden con lo que quiere el usuario
+        
+        // Buscamos los vuelos de VUELTA usando el criterio del usuario
         ArrayList<Vuelo> vuelosFiltrados = controladorBusqueda.buscarVuelosVUELTA(todosLosVuelos);
+        
+        if (vuelosFiltrados.isEmpty()) {
+            JOptionPane.showMessageDialog(this, 
+                "No se encontraron vuelos de retorno para la fecha y ruta seleccionadas.\n" +
+                "Por favor verifica que existan vuelos creados en el sistema para ese día.",
+                "Sin resultados", JOptionPane.WARNING_MESSAGE);
+        }
 
-        //La visa muestra los vuelos que son los que quiere el usuario
         for (int i = 0; i < vuelosFiltrados.size() && i < 3; i++) {
             Vuelo v = vuelosFiltrados.get(i);
             vuelosMostrados.add(v);
@@ -67,32 +68,46 @@ public class VueloIVUELTAView extends javax.swing.JPanel {
     }
     
     private void seleccionarVuelo(int indice) {
-        // 1. Validaciones de seguridad
         if (controladorPasajeros == null) {
             JOptionPane.showMessageDialog(this, "Error: No se han recibido datos de pasajeros.");
             return;
         }
 
         if (indice < vuelosMostrados.size()) {
-            // 2. Obtener el vuelo de REGRESO seleccionado
             Vuelo vueloRegreso = vuelosMostrados.get(indice);
-            
-            // A. PRECIO: ¡Sumamos! (Precio Ida + Precio Vuelta)
-            // Primero, recuperamos cuánto costaba la Ida (que guardamos en la pantalla anterior)
-            double precioIda = controladorBusqueda.getPrecioVueloSeleccionado();
-            double precioVuelta = vueloRegreso.getPrecioEstimado();
-            
-            // Guardamos la suma total
-            controladorBusqueda.setPrecioVueloSeleccionado(precioIda + precioVuelta);
-            
-            // B. HORA: Combinamos las dos (Ej: "08:00 AM - 16:00 PM")
-            String horaIda = controladorBusqueda.getHoraVueloSeleccionado(); // La hora de la Ida
-            String horaVuelta = vueloRegreso.getHoraSalida(); // La hora de este vuelo
-            
-            // Guardamos el texto combinado para que en el resumen salgan los dos
-            controladorBusqueda.setHoraVueloSeleccionado(horaIda + " (Ida) / " + horaVuelta + " (Vuelta)");
 
-            JOptionPane.showMessageDialog(this, "Vuelo de VUELTA seleccionado.\nPrecio total acumulado: $" + (precioIda + precioVuelta));
+            // 1. SUMA DE PRECIOS (Ida + Vuelta)
+            double precioIda = controladorBusqueda.getPrecioVueloSeleccionado(); // Recuperamos lo que costó la ida
+            double precioVuelta = vueloRegreso.getPrecioEstimado();
+            double precioTotal = precioIda + precioVuelta;
+            
+            // Guardamos el total acumulado
+            controladorBusqueda.setPrecioVueloSeleccionado(precioTotal);
+            
+            // 2. COMBINACIÓN DE HORARIOS
+            String horaIda = controladorBusqueda.getHoraVueloSeleccionado(); // Recuperamos la hora de ida
+            String horaVuelta = vueloRegreso.getHoraSalida();
+            
+            // Guardamos el texto combinado para el resumen
+            // Ejemplo resultado: "08:00 (Ida) - 15:30 (Vuelta)"
+            if (!horaIda.contains("(Ida)")) { // Evitamos duplicar si el usuario cambia de opinión
+                 controladorBusqueda.setHoraVueloSeleccionado(horaIda + " (Ida) - " + horaVuelta + " (Vuelta)");
+            } else {
+                 // Si ya tenía texto combinado (porque seleccionó otro antes), reconstruimos
+                 String soloHoraIda = horaIda.split(" - ")[0]; 
+                 controladorBusqueda.setHoraVueloSeleccionado(soloHoraIda + " - " + horaVuelta + " (Vuelta)");
+            }
+
+            String mensaje = String.format(
+                "Vuelo de VUELTA seleccionado.\n\n" +
+                "Precio Ida: $ %.2f\n" +
+                "Precio Vuelta: $ %.2f\n" +
+                "--------------------------\n" +
+                "TOTAL ACUMULADO: $ %.2f", 
+                precioIda, precioVuelta, precioTotal
+            );
+
+            JOptionPane.showMessageDialog(this, mensaje);
         }
     }
     

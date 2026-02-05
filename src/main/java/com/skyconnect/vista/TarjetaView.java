@@ -1,12 +1,15 @@
 package com.skyconnect.vista;
 
+//import com.skyconnect.controlador.ControladorPago;
+
 import com.skyconnect.controlador.ControladorPago;
+
 
 public class TarjetaView extends javax.swing.JPanel {
 
     private MainFrame mainFrame; 
     private ControladorPago controladorPago;
-    // Constructor que inicializa la vista y permite la navegación entre pantallas
+//     Constructor que inicializa la vista y permite la navegación entre pantallas
     public TarjetaView(MainFrame mainFrame, ControladorPago controladorPago) {
         this.mainFrame = mainFrame;
         this.controladorPago = controladorPago;
