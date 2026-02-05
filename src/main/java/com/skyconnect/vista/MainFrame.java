@@ -21,7 +21,7 @@ public class MainFrame extends javax.swing.JFrame {
     private ControladorPago controladorPago;
     private ControladorFactura controladorFactura;
     private ControladorBusqueda controladorBusqueda;
-    private ControladorDescuentos controladorPasajero;
+    private ControladorDescuentos controladorDescuentos;
     private ControladorUsuario controladorUsuario;
     private ControladorPasajeros controladorPasajeros;
     private PasajeroDAO pasajeroDAO;
@@ -86,13 +86,13 @@ public class MainFrame extends javax.swing.JFrame {
         
         // VISTAS
         inicioView = new InicioView(this);
-        buscarVueloView = new BuscarVueloView(this, controladorBusqueda, controladorPasajero);
+        buscarVueloView = new BuscarVueloView(this, controladorBusqueda, controladorDescuentos);
         iniciarSesionView = new IniciarSesionView(this, controladorUsuario);
         creacionUsuarioView = new CreacionUsuarioView(this, controladorUsuario);
         registroPasajeroView = new RegistroPasajeroView(this); 
         vueloIDAView = new VueloIDAView(this, controladorBusqueda);
-        vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda, controladorPasajero);
-        vueloIVUELTAView = new VueloIVUELTAView(this, controladorBusqueda, controladorPasajero);
+        vueloIDAVUELTAView = new VueloIDAVUELTAView(this, controladorBusqueda, controladorDescuentos);
+        vueloIVUELTAView = new VueloIVUELTAView(this, controladorBusqueda, controladorDescuentos);
         claseVueloView = new ClaseVueloView(this);
         asientosView = new AsientosView(this, controladorReserva);
         equipajeExtraView = new EquipajeExtraView(this, controladorReserva);
@@ -161,8 +161,8 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     // Para que todos usen el mismo controlador, es decir, los mismos datos
-    public ControladorDescuentos getControladorPasajero() {
-        return controladorPasajero;
+    public ControladorDescuentos getControladorDescuentos() {
+        return controladorDescuentos;
     }
 
     /**

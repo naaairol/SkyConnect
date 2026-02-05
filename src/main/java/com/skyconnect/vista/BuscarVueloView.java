@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
         //Controladores necesarios en esta clase
         private ControladorAeropuerto controladorAeropuerto;
         private ControladorBusqueda controladorBusqueda;
-        private ControladorDescuentos controladorPasajeros;
+        private ControladorDescuentos controladorDescuentos;
         private javax.swing.ButtonGroup grupoTipoVuelo;
         private MainFrame mainFrame;
     
@@ -26,15 +26,15 @@ import javax.swing.JOptionPane;
      * Creates new form BuscarVueloView
      * @param mainFrame
      * @param controladorBusqueda
-     * @param controladorPasajero
+     * @param controladorDescuentos
      */
   
     // Constructor que inicializa la vista y permite la navegación entre pantallas
     // a través del MainFrame usando CardLayout.
-    public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorDescuentos controladorPasajero) {
+    public BuscarVueloView(MainFrame mainFrame, ControladorBusqueda controladorBusqueda, ControladorDescuentos controladorDescuentos) {
         this.mainFrame = mainFrame;
         this.controladorBusqueda = controladorBusqueda;
-        this.controladorPasajeros = new ControladorDescuentos();
+        this.controladorDescuentos = new ControladorDescuentos();
         
         initComponents();
         jdtFechaRetorno.setEnabled(false);
@@ -67,6 +67,12 @@ import javax.swing.JOptionPane;
                 cmbxDestino.addItem(ciudad);
         }
     }
+
+    public ControladorDescuentos getControladorDescuentos() {
+        return controladorDescuentos;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -315,7 +321,7 @@ import javax.swing.JOptionPane;
                 //No vuelve a instanciar VueloIDAView, sino que obtiene la ventana creada antes
                 VueloIDAView vueloIDAView = mainFrame.getVueloIDAView();
                 // Entregamos el controlador lleno de pasajeros a la siguiente vista
-                vueloIDAView.setControladorPasajeros(this.controladorPasajeros);
+                vueloIDAView.setControladorPasajeros(this.controladorDescuentos);
                 //Con los datos obtenidos, vueloIDAView muestra los vuelos
                 vueloIDAView.cargarDatosYBuscar();
                 mainFrame.mostrarVista("VUELOS IDA");
@@ -325,7 +331,7 @@ import javax.swing.JOptionPane;
                 
                 
                 // Entregamos el controlador lleno de pasajeros a la siguiente vista
-                vueloIDAVUELTAView.setControladorPasajeros(this.controladorPasajeros);
+                vueloIDAVUELTAView.setControladorPasajeros(this.controladorDescuentos);
                 
                 
                 //Con los datos obtenidos, vueloIDAView muestra los vuelos
